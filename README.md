@@ -9,10 +9,18 @@ This project aims to be for those who in general are not familiar with Linux dis
 It is a one-page script to be of simple conference to the user, not needing to consult an immensity of source code to trust or not in the execution, just checking the changes that will be carried out in just one page of easy conference and understanding, obviously that there's still a lot to simplify in this script.
 
 OpenSUSE Tumbleweed:
-The choice of OpenSUSE Tumbleweed was based on several tests that I performed on many distributions, and Tumbleweed in my opinion (I know it's completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance for open applications and perform daily tasks.
-In particular, I noticed that in Wine the performance is much superior to other distributions, due to Tumbleweed always delivering the latest updates, it makes the system fluids impeccable!
-In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, modifications that for the most part, Tumbleweed dispenses with these fixes already applied in the most recent updates.
-Another factor is that for me Tumbleweed has become an "unbreakable" system even though it is Rolling Release, because with the use of Snapper (already integrated into the system) I can revert the slightest changes to the system without difficulty, not to mention the possibility of using Timeshift for full system backups to be facilitated by using standard BTRFS formatting.
+
+   The choice of OpenSUSE Tumbleweed was based on several tests that I performed on many distributions, and Tumbleweed in my opinion (I know it's 
+   completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance for open applications 
+   and perform daily tasks.
+   In particular, I noticed that in Wine the performance is much superior to other distributions, due to Tumbleweed always delivering the latest updates, 
+   it makes the system fluids impeccable!
+   In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and 
+   winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, 
+   modifications that for the most part, Tumbleweed dispenses with these fixes already applied in the most recent updates.
+   Another factor is that for me Tumbleweed has become an "unbreakable" system even though it is Rolling Release, because with the use of Snapper (already 
+   integrated into the system) I can revert the slightest changes to the system without difficulty, not to mention the possibility of using Timeshift for 
+   full system backups to be facilitated by using standard BTRFS formatting.
 
 My work here consisted of small modifications for compatibility of Nvidia drivers, PCI Passthroug for those who use Virtual Machine and adaptations in the interface such as standard Windows shortcuts to open common applications and some small additions of startup parameters for some applications.
 
