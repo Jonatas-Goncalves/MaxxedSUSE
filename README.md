@@ -4,6 +4,15 @@ This project is a script for the main and most common day-to-day applications of
 
     * --- This Script is to run on a clean install of OpenSUSE Tumbleweed, not designed for OpenSUSE Leap! --- *
 
+# Installation
+
+Run directly from web with this command: 
+curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE.sh | bash
+
+or
+Download the zip, extract, and "sudo bash MaxxedSUSE.sh"
+
+
 This project aims to be for those who in general are not familiar with Linux distributions and looking for a fast and stable system to work, to play or both, without having to spend hours figuring out how to install this or here. And that's why the use of just a Script, mostly optional to the user, if you don't want games, nothing will be installed about games, being totally under the user's control.
 
 It is a one-page script to be of simple conference to the user, not needing to consult an immensity of source code to trust or not in the execution, just checking the changes that will be carried out in just one page of easy conference and understanding, obviously that there's still a lot to simplify in this script.
