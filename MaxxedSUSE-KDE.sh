@@ -373,69 +373,6 @@ else
     sudo snap install onlyoffice-desktopeditors
 fi
 
-    #++------------------ REMOVE PRE-INSTALLED BLOATWARES ------------------++#
-    echo
-    echo -e "$YELLOW***********************************************************$COL_RESET"
-    echo -e "$YELLOW                  Pre-installed Softwares !!!              $COL_RESET"
-    echo -e "$YELLOW***********************************************************$COL_RESET"
-    echo
-    sleep 2
-
-zenity --question --text="You are Using GNOME DESKTOP? \n \n And want to remove Pre-installed softwares?"
-if [ $? = 1 ]; then
-    zenity --info --text="None GNOME pre-installed Applications will be removed!"
-else
-    Bloatwares=$( zenity --list --multiple --title "Select items to Uninstall"\
-    --text "The following application(s) will be removed" 2>/dev/null\
-    --checklist --height=480 --width=720 --ok-label "Remove" --cancel-label "Skip"\
-    --column "Pick" --column "Software(s)" --column "Description"\
-    TRUE 		cheese			"Allows you to take photos, videos with your webcam"\
-    TRUE 		eog			"Is the GNOME image viewer"\
-    TRUE 		evolution		"Integrated mail, with calendaring and address book functionality"\
-    TRUE 		nautilus		"A file browser for GNOME, internally known by its historical name nautilus"\
-    TRUE 		gimp			"Cross-platform image editor like Photoshop"\
-    TRUE 		pidgin			"Chat program which lets you log into accounts on multiple chat networks"\
-    TRUE 		polari			"IRC client which enables you to chat with people around world"\
-    TRUE 		tigervnc		"High-performance, platform-neutral implementation of VNC"\
-    TRUE 		opensuse-welcome	"(IF YOU ARE NEW LET IT!) A built to welcome new users to openSUSE"\
-    TRUE 		baobab			"Is the GNOME Disk Usage Analyzer"\
-    TRUE 		bijiben			"is a note editor that is designed to be intuitive and easy to use"\
-    TRUE 		totem			"Totem is a movie player designed for GNOME"\
-    TRUE 		vinagre			"Vinagre is a remote desktop viewer for GNOME"\
-    TRUE 		evince			"Evince is a document viewer for multiple document formats"\
-    TRUE 		yelp 			"Default help viewer in GNOME"\
-    TRUE 		simple-scan		"Scanning application for GNOME It allows you to capture images using image scanners"\
-    TRUE 		transmission-common	"Transmission is a fast, easy, and free BitTorrent client"\
-    TRUE 		iagno			"Iagno is the two player strategy game of Othello"\
-    TRUE 		lightsoff 		"Puzzle game where the objective is to turn off all of the tiles on the board"\
-    TRUE 		swell-foop		"puzzle game, previously known as Same GNOME"\
-    TRUE 		quadrapassel 		"Your goal is to create as many complete horizontal lines as possible"\
-    TRUE 		gnome-mahjongg		"A solitaire (one player) version of the classic Eastern tile game"\
-    TRUE 		gnome-chess		"This is a game for playing the classic board game of chess"\
-    TRUE 		gnome-mines		"Mines is a clone of the game Minesweeper"\
-    TRUE 		gnome-sudoku		"Sudoku was originally programmed in Python by Thomas Hinkle"\
-    TRUE 		gnome-music		"Is a music playing application for GNOME"\
-    TRUE 		gnome-characters	"Utility to find & insert unusual characters in GNOME"\
-    TRUE 		gnome-clocks		"Stopwatch, timer & world clock in GNOME"\
-    TRUE 		gnome-contacts		"Integrated contact address book for GNOME"\
-    TRUE 		gnome-photos		"Access, organize and share your photos on GNOME"\
-    TRUE 		gnome-maps		"A simple map client for GNOME"\
-    TRUE 		gnome-weather		"A small application that allows you to monitor the current weather conditions for your city" );
-
-if [[ $? -eq 0 && -z "$Bloatwares"  ]]; then
-    zenity --warning \
-    --text "\nNo Option Selected. Nothing will be removed!"\
-    2>/dev/null --no-wrap
-else
-    #removing the selected Utility Software(s)
-    (
-    for i in $(echo $Bloatwares | tr "|" "\n") ;
-do
-    echo -e "#Removing $i";
-    sudo zypper remove -y -y $i
-done
-    ) | zenity --progress --auto-close --width=720 --no-cancel --title "Removing Gnome Bloatwares" 2>/dev/null
-fi
 fi
 
     #++---------------------- ENDING OF FIRST RUN OF SCRIPT -------------------++#
