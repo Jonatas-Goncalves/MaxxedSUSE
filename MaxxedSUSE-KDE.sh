@@ -399,22 +399,23 @@ Applications=$( zenity --list --multiple --checklist\
     FALSE          'Discord'			"Talk, chat, hang out, and stay close with your friends"\
     FALSE          'Discord Tweks'		"Otimizations to Discord"\
     FALSE          'Flameshot'			"Cross-platform tool to take screenshots with many built-in features"\
-    FALSE          'Git'                "A cli Fast, Scalable, Distributed Free & Open-Source VCS"\
-    FALSE          'Github'             "GUI Open source Electron-based GitHub app"\
+    FALSE          'Git'		    	"A cli Fast, Scalable, Distributed Free & Open-Source VCS"\
+    FALSE          'Github'		    	"GUI Open source Electron-based GitHub app"\
     FALSE          'Gparted'			"Free partition editor for graphically managing your disk partitions"\
-    FALSE          'gThumb'             "Is an open-source software image viewer, image organizer"\
-    FALSE          'Chrome'             "A cross-platform web browser by Google"\
+    FALSE          'gThumb'		    	"Is an open-source software image viewer, image organizer"\
+    FALSE          'Chrome'		    	"A cross-platform web browser by Google"\
     FALSE          'Kdenlive'			"Free, Open-source, Non-Linear Video Editor by KDE"\
     FALSE          'KeePassxc'			"Securely store passwords using industry standard encryption"\
     FALSE          'Mailspring'			"Mailspring is a new version of Nylas Mail"\
-    FALSE          'Nemo'               "It is a lightweight and functional file manager with many features"\
+    FALSE          'Nemo'		    	"It is a lightweight and functional file manager with many features"\
     FALSE          'Neofetch'			"Is a command-line system information tool"\
     FALSE          'Notepadqq'			"A notepad++ clone for Linux loaded with functions and features"\
     FALSE          'OBS Studio'			"Capturing, compositing, recording, and streaming video content"\
-    FALSE          'Peazip'             "Free file archiver utility, based on Open Source 7-Zip/p7zip"\
+    FALSE          'Peazip'		    	"Free file archiver utility, based on Open Source 7-Zip/p7zip"\
+    FALSE          'qBittorrent'		"An open-source Bittorrent client"\    
     FALSE          'QDirStat'			"Graphical application to show where your disk space has gone"\
-    FALSE          'Signal'             "Signal - Private Messenger: Say Hello to Privacy"\
-    FALSE          'Stacer'             "Linux System Optimizer & Monitoring"\
+    FALSE          'Signal'		    	"Signal - Private Messenger: Say Hello to Privacy"\
+    FALSE          'Stacer'		    	"Linux System Optimizer & Monitoring"\
     FALSE          'Spotify'			"Spotify Music Player"\
     FALSE          'Imagewriter'		"A powerful OS image that copies images to drives byte by byte"\
     FALSE          'TeamViewer'			"Is without a doubt one of the best remote desktop software programs"\
@@ -422,9 +423,9 @@ Applications=$( zenity --list --multiple --checklist\
     FALSE          'Timeshift'			"System snapshots backup and restore tool for Linux"\
     FALSE          'ulauncher'			"Is a fast application launcher for Linux"\
     FALSE          'Virtualbox'			"Powerful virtualization product for enterprise as well as home use"\
-    FALSE          'VLC'                "VLC Media Player"\
-    FALSE          'Whatsapp'           "An unofficial WhatsApp desktop application for Linux"\
-    FALSE          'WoeUSB-NG'          "Utility that enables you to create your own bootable Windows USB" );
+    FALSE          'VLC'		    	"VLC Media Player"\
+    FALSE          'Whatsapp'		    	"An unofficial WhatsApp desktop application for Linux"\
+    FALSE          'WoeUSB-NG'		    	"Utility that enables you to create your own bootable Windows USB" );
 
 	#column="2" is sent to output by default
 if [[ $? -eq 0 && -z "$Applications"  ]]; then
@@ -564,6 +565,11 @@ case $option in
     sleep 5
     ;;
 
+    "qBittorrent")             #An open-source Bittorrent client
+    flatpak install flathub org.qbittorrent.qBittorrent -y
+    sleep 5
+    ;;
+    
     "QDirStat")             #Graphical application to show where your disk space has gone, help you to clean it up
     sudo zypper --non-interactive install qdirstat
     sleep 5
