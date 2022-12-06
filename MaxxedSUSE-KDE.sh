@@ -373,8 +373,6 @@ else
     sudo snap install onlyoffice-desktopeditors
 fi
 
-fi
-
     #++---------------------- ENDING OF FIRST RUN OF SCRIPT -------------------++#
 
 fi
