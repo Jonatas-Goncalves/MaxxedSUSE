@@ -346,7 +346,7 @@ fi
     echo
     sleep 2
 
-zenity --question --text="Swap Firefox for Brave, a more secure and private browser based on chrome?"
+zenity --question --text="Swap Firefox for Brave, a more secure and private browser based on chrome?\nYou can install Brave in the next steps if you want to keep Firefox"
 if [ $? = 1 ]; then
     zenity --info --text="The firefox has been kept!"
 else
