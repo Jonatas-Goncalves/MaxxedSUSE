@@ -418,8 +418,8 @@ Applications=$( zenity --list --multiple --checklist\
     FALSE          'Spotify'			"Spotify Music Player"\
     FALSE          'Imagewriter'		"A powerful OS image that copies images to drives byte by byte"\
     FALSE          'TeamViewer'			"Is without a doubt one of the best remote desktop software programs"\
-    FALSE          'Telegram'			"System snapshots backup and restore tool for Linux"\
-    FALSE          'Timeshift'			"Official Desktop Client for the Telegram Messenger"\
+    FALSE          'Telegram'			"Official Desktop Client for the Telegram Messenger"\
+    FALSE          'Timeshift'			"System snapshots backup and restore tool for Linux"\
     FALSE          'ulauncher'			"Is a fast application launcher for Linux"\
     FALSE          'Virtualbox'			"Powerful virtualization product for enterprise as well as home use"\
     FALSE          'VLC'                "VLC Media Player"\
