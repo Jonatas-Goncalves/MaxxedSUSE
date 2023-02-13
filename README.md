@@ -110,6 +110,7 @@ Added parameters to launch some applications:
 
 
 **GNOME SCRIPT WILL BE ADDED SOON**
+
 Changing keyboard shortcuts to standard Windows using the gsetings command for those using gnome:
 
 
