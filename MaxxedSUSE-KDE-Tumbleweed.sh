@@ -772,11 +772,16 @@ Games=$( zenity --list --multiple --checklist\
         sleep 5
     ;;
 
-    "Lutris")               #Play all your games on Linux
+    "Lutris-Native")        #Play all your games on Linux
         sudo zypper --non-interactive install lutris
         sleep 5
     ;;
 
+    "Lutris-Flatpak")       #Play all your games on Linux
+        sudo flatpak install flathub net.lutris.Lutris
+        sleep 5
+    ;;
+    
     "MangoHud")             #A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU...
         sudo zypper --non-interactive install mangohud
         sleep 5
@@ -803,16 +808,16 @@ Games=$( zenity --list --multiple --checklist\
         sleep 5
     ;;
 
-    "SteamFlatpack")        #Flatpak version of Steam, Recommended for Stream and BigPicture mode
-        sudo snap install whatsapp-for-linux
-        sleep 5
-    ;;
-
-    "SteamNative")          #Is a digital game distribution platform for computers
+    "Steam-Native")         #Is a digital game distribution platform for computers
         sudo zypper --non-interactive install steam
         sleep 5
     ;;
 
+    "Steam-Flatpack")       #Flatpak version of Steam, Recommended for Stream and BigPicture mode
+        sudo snap install whatsapp-for-linux
+        sleep 5
+    ;;
+    
     esac
     done
     )| zenity --progress --auto-close --width=720 --pulsate --no-cancel --title "Installing Games(s)" 2>/dev/null
