@@ -2,7 +2,7 @@
 
 This project is a script for the main and most common day-to-day applications of a common Windows user and to facilitate the installation of games for those who are not familiar with Linux.
 
-    * --- This Script is to run on a clean install of OpenSUSE Leap 14.3, 14.4 or Tumbleweed --- *
+    * --- This Script is to run on a clean install of OpenSUSE Leap 15.3, 15.4 or Tumbleweed --- *
 
 # Installation
 
@@ -25,7 +25,7 @@ This project aims to be for those who in general are not familiar with Linux dis
 
 It is a one-page script to be of simple conference to the user, not needing to consult an immensity of source code to trust or not in the execution, just checking the changes that will be carried out in just one page of easy conference and understanding, obviously that there's still a lot to simplify in this script.
 
-OpenSUSE Leap 14.3 / 14.4 / Tumbleweed:
+OpenSUSE Leap 15.3 / 15.4 / Tumbleweed:
 The choice of OpenSUSE was based on several tests that I performed on many distributions, and Opensuse in my opinion (I know it's completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance for open applications and perform daily tasks.
 In particular, I noticed that in Wine the performance is much superior to other distributions, due to Opensuse always delivering the latest updates, it makes the system fluids impeccable, With better results on Tumbleweed for being Rolling Release!
 In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, modifications that for the most part, Opensuse dispenses with these fixes already applied in the most recent updates.
@@ -40,18 +40,10 @@ I am fully aware that this script needs to be improved, reduced and simplified, 
 
 What system modifications does the MaxxedSUSE Script perform?
 
-Opensuse 14.4:
+Opensuse 15.3 / 15.4:
 
     Added repositories:
     https://download.nvidia.com/opensuse/leap/15.4/' NVIDIA
-    http://opensuse.c3sl.ufpr.br/distribution/leap/15.4/repo/oss/ C3SL-OSS
-    http://opensuse.c3sl.ufpr.br/distribution/leap/15.4/repo/non-oss/ C3SL-Non-OSS
-    http://opensuse.c3sl.ufpr.br/factory/repo/oss/ C3SL-Factory-OSS
-    http://opensuse.c3sl.ufpr.br/factory/repo/non-oss/ C3SL-Factory-Non-OSS
-    http://mirror.uepg.br/opensuse/update/leap/15.4/oss/ UniversidadeEstadualPontaGrossa-OSS
-    http://mirror.uepg.br/opensuse/update/leap/15.4/non-oss/ UniversidadeEstadualPontaGrossa-Non-OSS
-    http://mirror.uepg.br/opensuse/factory/repo/oss/ UniversidadeEstadualPontaGrossa-Factory-OSS
-    http://mirror.uepg.br/opensuse/factory/repo/non-oss/ UniversidadeEstadualPontaGrossa-Factory-Non-OSS
     https://download.opensuse.org/repositories/home:Dead_Mozay/15.4/ Dead_Mozay
     https://download.opensuse.org/repositories/home:/munix9/15.4/ munix9
     https://download.opensuse.org/repositories/home:/munix9:/test/15.4/ munix9:test
@@ -67,10 +59,6 @@ Opensuse Tumbleweed:
     https://download.opensuse.org/repositories/mozilla/openSUSE_Tumbleweed/ Mozzila
     https://download.opensuse.org/repositories/openSUSE:/Tumbleweed/standard/ openSUSE:Tumbleweed
     https://download.opensuse.org/repositories/openSUSE:/Factory:/NonFree/standard/
-    http://mirror.uepg.br/opensuse/tumbleweed/repo/oss/ Universidade Estadual de Ponta Grossa-OSS
-    http://mirror.uepg.br/opensuse/tumbleweed/repo/non-oss/ Universidade Estadual de Ponta Grossa-NonOSS
-    http://mirror.uepg.br/opensuse/factory/repo/oss/ Universidade Estadual de Ponta Grossa-Factory-OSS
-    http://mirror.uepg.br/opensuse/factory/repo/non-oss/ Universidade Estadual de Ponta Grossa-Factory-NonOSS
     https://download.opensuse.org/repositories/home:/munix9/openSUSE_Tumbleweed/ munix9
     https://download.opensuse.org/repositories/home:/munix9:/test/openSUSE_Tumbleweed/ munix9:test
     https://download.opensuse.org/repositories/home:Dead_Mozay/openSUSE_Tumbleweed/ Dead_Mozay
