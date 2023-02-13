@@ -54,9 +54,9 @@ Opensuse 15.3 / 15.4:
     https://download.opensuse.org/repositories/home:darix:valve/openSUSE_Tumbleweed/home:darix:valve.repo
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/ packman
     
-Opensuse Tumbleweed:
+Opensuse 15.3 / 15.4:
 
-   added repositories:
+    Added repositories:
     https://download.nvidia.com/opensuse/tumbleweed NVIDIA
     https://download.opensuse.org/repositories/mozilla/openSUSE_Tumbleweed/ Mozzila
     https://download.opensuse.org/repositories/openSUSE:/Tumbleweed/standard/ openSUSE:Tumbleweed
@@ -64,10 +64,11 @@ Opensuse Tumbleweed:
     https://download.opensuse.org/repositories/home:/munix9/openSUSE_Tumbleweed/ munix9
     https://download.opensuse.org/repositories/home:/munix9:/test/openSUSE_Tumbleweed/ munix9:test
     https://download.opensuse.org/repositories/home:Dead_Mozay/openSUSE_Tumbleweed/ Dead_Mozay
-    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy
     https://download.opensuse.org/repositories/home:jason-kurzik/openSUSE_Tumbleweed/ jason-kurzik
+    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
-    
+
+
 
 Some kernel modules loaded for better Nvidia driver operation and to enable PCI Passthrough, added depending on the processor options selected during script execution:
     
