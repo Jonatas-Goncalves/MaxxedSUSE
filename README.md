@@ -1,8 +1,8 @@
 # MaxxedSUSE
 
-This project is a script for the main and most common day-to-day applications of a common Windows user and to facilitate the installation of Games for those who are not familiar with Linux.
+This project is a script for the main and most common day-to-day applications of a common Windows user and to facilitate the installation of games for those who are not familiar with Linux.
 
-    * --- This Script is to run on a clean install of OpenSUSE Tumbleweed, not designed for OpenSUSE Leap! --- *
+    * --- This Script is to run on a clean install of OpenSUSE Leap 14.3, 14.4 or Tumbleweed --- *
 
 # Installation
 
@@ -11,6 +11,7 @@ This project is a script for the main and most common day-to-day applications of
     for KDE run:
     curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE.sh | bash
     
+    **Will be added soon**
     for GNOME run:
     curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-GNOME.sh | bash
 
@@ -24,35 +25,59 @@ This project aims to be for those who in general are not familiar with Linux dis
 
 It is a one-page script to be of simple conference to the user, not needing to consult an immensity of source code to trust or not in the execution, just checking the changes that will be carried out in just one page of easy conference and understanding, obviously that there's still a lot to simplify in this script.
 
-OpenSUSE Tumbleweed:
-The choice of OpenSUSE Tumbleweed was based on several tests that I performed on many distributions, and Tumbleweed in my opinion (I know it's completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance for open applications and perform daily tasks.
-In particular, I noticed that in Wine the performance is much superior to other distributions, due to Tumbleweed always delivering the latest updates, it makes the system fluids impeccable!
-In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, modifications that for the most part, Tumbleweed dispenses with these fixes already applied in the most recent updates.
-Another factor is that for me Tumbleweed has become an "unbreakable" system even though it is Rolling Release, because with the use of Snapper (already integrated into the system) I can revert the slightest changes to the system without difficulty, not to mention the possibility of using Timeshift for full system backups to be facilitated by using standard BTRFS formatting.
+OpenSUSE Leap 14.3 / 14.4 / Tumbleweed:
+The choice of OpenSUSE was based on several tests that I performed on many distributions, and Opensuse in my opinion (I know it's completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance for open applications and perform daily tasks.
+In particular, I noticed that in Wine the performance is much superior to other distributions, due to Opensuse always delivering the latest updates, it makes the system fluids impeccable, With better results on Tumbleweed for being Rolling Release!
+In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, modifications that for the most part, Opensuse dispenses with these fixes already applied in the most recent updates.
+Another factor is that for me Opensuse has become an "unbreakable" system, even if it's Rolling Release in the case of Tumbleweed, because with the use of Snapper (already integrated into the system) I can revert the slightest changes to the system without difficulty, not to mention the possibility of using Timeshift for full system backups to be facilitated by using standard BTRFS formatting.
 
 My work here consisted of small modifications for compatibility of Nvidia drivers, PCI Passthroug for those who use Virtual Machine and adaptations in the interface such as standard Windows shortcuts to open common applications and some small additions of startup parameters for some applications.
 
 Now about the Script:
-I tried to make the tasks of installing basic applications from a Windows Desktop simple and not very confusing, and as selective as possible to let the user choose properly what type of applications he would like to use, the focus here is not to use a modified image of the system so that the user can have the confidence of a Rolling Release system straight from the original source without modifications and without having to check everything that has been modified, he can make a simple and uncomplicated conference in the script code to see exactly what is being installed and choose not to make changes you don't want or remove and add others you don't want.
+I tried to make the tasks of installing basic applications from a Windows Desktop simple and not very confusing, and as selective as possible to let the user choose properly what type of applications he would like to use, the focus here is not to use a modified image of the system so that the user can have the confidence of a Opensuse stable and Rolling Release system straight from the original source without modifications and without having to check everything that has been modified, he can make a simple and uncomplicated conference in the script code to see exactly what is being installed and choose not to make changes you don't want or remove and add others you don't want.
 I am fully aware that this script needs to be improved, reduced and simplified, but I am a beginner in Shell Script. Any contribution to this project will be welcome.
 
 
 What system modifications does the MaxxedSUSE Script perform?
 
+Opensuse 14.4:
 
     Added repositories:
+    https://download.nvidia.com/opensuse/leap/15.4/' NVIDIA
+    http://opensuse.c3sl.ufpr.br/distribution/leap/15.4/repo/oss/ C3SL-OSS
+    http://opensuse.c3sl.ufpr.br/distribution/leap/15.4/repo/non-oss/ C3SL-Non-OSS
+    http://opensuse.c3sl.ufpr.br/factory/repo/oss/ C3SL-Factory-OSS
+    http://opensuse.c3sl.ufpr.br/factory/repo/non-oss/ C3SL-Factory-Non-OSS
+    http://mirror.uepg.br/opensuse/update/leap/15.4/oss/ UniversidadeEstadualPontaGrossa-OSS
+    http://mirror.uepg.br/opensuse/update/leap/15.4/non-oss/ UniversidadeEstadualPontaGrossa-Non-OSS
+    http://mirror.uepg.br/opensuse/factory/repo/oss/ UniversidadeEstadualPontaGrossa-Factory-OSS
+    http://mirror.uepg.br/opensuse/factory/repo/non-oss/ UniversidadeEstadualPontaGrossa-Factory-Non-OSS
+    https://download.opensuse.org/repositories/home:Dead_Mozay/15.4/ Dead_Mozay
+    https://download.opensuse.org/repositories/home:/munix9/15.4/ munix9
+    https://download.opensuse.org/repositories/home:/munix9:/test/15.4/ munix9:test
+    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
+    https://download.opensuse.org/repositories/home:/jason-kurzik/15.4/ jason-kurzik
+    https://download.opensuse.org/repositories/home:darix:valve/openSUSE_Tumbleweed/home:darix:valve.repo
+    http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/ packman
+    
+Opensuse Tumbleweed:
+
+   added repositories:
     https://download.nvidia.com/opensuse/tumbleweed NVIDIA
-    http://download.opensuse.org/repositories/mozilla/openSUSE_Tumbleweed/
+    https://download.opensuse.org/repositories/mozilla/openSUSE_Tumbleweed/ Mozzila
     https://download.opensuse.org/repositories/openSUSE:/Tumbleweed/standard/ openSUSE:Tumbleweed
-    https://download.opensuse.org/repositories/openSUSE:/Factory:/NonFree/standard/ openSUSE:Factory
-    https://download.opensuse.org/repositories/openSUSE:/Factory:/NonFree/standard/ openSUSE:Factory:NonFree
-    https://dl.cloudsmith.io/public/balena/etcher/rpm/any-distro/any-version/noarch balena-etcher
-    https://download.opensuse.org/repositories/home:/munix9/openSUSE_Tumbleweed/ home:munix9
-    https://download.opensuse.org/repositories/home:/munix9:/test/openSUSE_Tumbleweed/ home:munix9:test
-    https://download.opensuse.org/repositories/home:Dead_Mozay/openSUSE_Tumbleweed/home:Dead_Mozay.repo
+    https://download.opensuse.org/repositories/openSUSE:/Factory:/NonFree/standard/
+    http://mirror.uepg.br/opensuse/tumbleweed/repo/oss/ Universidade Estadual de Ponta Grossa-OSS
+    http://mirror.uepg.br/opensuse/tumbleweed/repo/non-oss/ Universidade Estadual de Ponta Grossa-NonOSS
+    http://mirror.uepg.br/opensuse/factory/repo/oss/ Universidade Estadual de Ponta Grossa-Factory-OSS
+    http://mirror.uepg.br/opensuse/factory/repo/non-oss/ Universidade Estadual de Ponta Grossa-Factory-NonOSS
+    https://download.opensuse.org/repositories/home:/munix9/openSUSE_Tumbleweed/ munix9
+    https://download.opensuse.org/repositories/home:/munix9:/test/openSUSE_Tumbleweed/ munix9:test
+    https://download.opensuse.org/repositories/home:Dead_Mozay/openSUSE_Tumbleweed/ Dead_Mozay
     https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy
-    https://download.opensuse.org/repositories/home:jason-kurzik/openSUSE_Tumbleweed/home:jason-kurzik.repo
+    https://download.opensuse.org/repositories/home:jason-kurzik/openSUSE_Tumbleweed/ jason-kurzik
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+    
 
 Some kernel modules loaded for better Nvidia driver operation and to enable PCI Passthrough, added depending on the processor options selected during script execution:
     
@@ -88,7 +113,12 @@ Added parameters to launch some applications:
     Itch.io:
 
     --no-sandbox
+    
+    atom:
+    --in-process-gpu
 
+
+**GNOME SCRIPT WILL BE ADDED SOON**
 Changing keyboard shortcuts to standard Windows using the gsetings command for those using gnome:
 
 
