@@ -734,13 +734,14 @@ Games=$( zenity --list --multiple --checklist\
     FALSE          'Gamemode'           "Allows games to request a set of optimisations for a games process"\
     FALSE          'Gamescope'          "Allows for games to run in an isolated Xwayland instance"\
     FALSE          'Lutris'             "Play all your games on Linux"\
+    FALSE          'Lutris-Flatpak'     "Flatpak version of Lutris (Better libs compatibility)"\
     FALSE          'MangoHud'           "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
     FALSE          'vkBasalt'           "Vulkan post processing layer to enhance the visual graphics of games"\
     FALSE          'GOverlay'           "A Graphical UI to help manage Linux monitoring overlays"\
     FALSE          'HeroicLauncher'     "Open Source Game Launcher for Epic and GOG"\
     FALSE          'ProtonUP'           "Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
-    FALSE          'Steam-Flatpack'     "Flatpak version of Steam, Recommended for Stream and BigPicture mode"\
-    FALSE          'Steam-Native'       "Is a digital game distribution platform for computers" );
+    FALSE          'Steam-Native'       "Is a digital game distribution platform for computers"\
+    FALSE          'Steam-Flatpack'     "Flatpak version of Steam, Recommended for Stream and BigPicture mode" );
 
     #column="2" is sent to output by default
     if [[ $? -eq 0 && -z "$Games"  ]]; then
