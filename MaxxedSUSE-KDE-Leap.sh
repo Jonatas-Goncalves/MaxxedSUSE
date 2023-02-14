@@ -115,14 +115,6 @@ zenity --info --text="The default repositories has been kept!"
     echo
     sleep 2
     sudo zypper addrepo --refresh 'https://download.nvidia.com/opensuse/leap/15.4/' NVIDIA
-    sudo zypper --gpg-auto-import-keys addrepo http://opensuse.c3sl.ufpr.br/distribution/leap/15.4/repo/oss/ C3SL-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://opensuse.c3sl.ufpr.br/distribution/leap/15.4/repo/non-oss/ C3SL-Non-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://opensuse.c3sl.ufpr.br/factory/repo/oss/ C3SL-Factory-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://opensuse.c3sl.ufpr.br/factory/repo/non-oss/ C3SL-Factory-Non-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://mirror.uepg.br/opensuse/update/leap/15.4/oss/ UniversidadeEstadualPontaGrossa-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://mirror.uepg.br/opensuse/update/leap/15.4/non-oss/ UniversidadeEstadualPontaGrossa-Non-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://mirror.uepg.br/opensuse/factory/repo/oss/ UniversidadeEstadualPontaGrossa-Factory-OSS
-    sudo zypper --gpg-auto-import-keys addrepo http://mirror.uepg.br/opensuse/factory/repo/non-oss/ UniversidadeEstadualPontaGrossa-Factory-Non-OSS
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:Dead_Mozay/15.4/ Dead_Mozay
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/munix9/15.4/ munix9
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/munix9:/test/15.4/ munix9:test
