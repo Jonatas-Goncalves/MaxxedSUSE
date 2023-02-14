@@ -129,6 +129,7 @@ zenity --info --text="The default repositories has been kept!"
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/jason-kurzik/15.4/ jason-kurzik
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:darix:valve/openSUSE_Tumbleweed/home:darix:valve.repo
+    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.4/
     sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/ packman
     sudo zypper --gpg-auto-import-keys refresh
     sudo zypper --non-interactive dist-upgrade --from packman --allow-downgrade --allow-vendor-change
@@ -766,7 +767,7 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "BoilR")                #Synchronize games from other platforms into your Steam library
-        sudo flatpak install flathub io.github.philipk.boilr
+        sudo flatpak install flathub io.github.philipk.boilr -y
         sleep 5
     ;;
 
@@ -797,7 +798,7 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "Lutris-Flatpak")               #Play all your games on Linux
-        sudo flatpak install flathub net.lutris.Lutris
+        sudo flatpak install flathub net.lutris.Lutris -y
         sleep 5
     ;;
 
@@ -833,7 +834,8 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "Steam-Flatpack")        #Flatpak version of Steam, Recommended for Stream and BigPicture mode
-        sudo snap install whatsapp-for-linux
+        sudo flatpak install flathub com.valvesoftware.Steam -y
+        sudo zypper --non-interactive install steam-devices
         sleep 5
     ;;
 
