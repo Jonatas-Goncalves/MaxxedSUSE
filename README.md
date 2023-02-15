@@ -52,9 +52,10 @@ Opensuse 15.3 / 15.4:
     https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
     https://download.opensuse.org/repositories/home:/jason-kurzik/15.4/ jason-kurzik
     https://download.opensuse.org/repositories/home:darix:valve/openSUSE_Tumbleweed/home:darix:valve.repo
+    https://download.opensuse.org/repositories/Emulators:/Wine/15.4/
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/ packman
     
-Opensuse 15.3 / 15.4:
+Opensuse Tumbleweed:
 
     Added repositories:
     https://download.nvidia.com/opensuse/tumbleweed NVIDIA
@@ -66,7 +67,8 @@ Opensuse 15.3 / 15.4:
     https://download.opensuse.org/repositories/home:Dead_Mozay/openSUSE_Tumbleweed/ Dead_Mozay
     https://download.opensuse.org/repositories/home:jason-kurzik/openSUSE_Tumbleweed/ jason-kurzik
     https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy
-    https://download.opensuse.org/repositories/Emulators:/Wine/15.4/
+    https://download.opensuse.org/repositories/Mono/openSUSE_Tumbleweed/ WineMono
+    https://mirrorcache-us.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
 
 
