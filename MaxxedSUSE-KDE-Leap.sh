@@ -490,7 +490,7 @@ Applications=$( zenity --list --multiple --checklist\
         echo "Actions=new-window;new-file;" | sudo tee --append /usr/share/applications/atom.desktop
         sudo chown $USER:$USER -R `echo /usr/share/applications`/usr/share/applications/atom.desktop
         sudo chmod 755 `echo /usr/share/applications`/usr/share/applications/atom.desktop
-        alias atom='atom --in-process-gpu'
+        echo "alias atom='atom --in-process-gpu'" | sudo tee --append /etc/bash.bashrc
         sleep 5
     ;;
 
