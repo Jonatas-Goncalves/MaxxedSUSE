@@ -619,8 +619,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Stacer")               #Stacer Linux Optimizer & Monitoring
-        curl -s https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep '[.]rpm' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/stacer.rpm
-        sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses /tmp/stacer.rpm
+        sudo zypper --non-interactive install stacer
         sleep 5
     ;;
 
