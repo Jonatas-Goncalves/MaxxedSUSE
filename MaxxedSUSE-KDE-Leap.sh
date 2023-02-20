@@ -631,7 +631,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Stacer")               #Stacer Linux Optimizer & Monitoring
-        sudo zypper in stacer
+        sudo zypper --non-interactive install stacer
         sleep 5
     ;;
 
