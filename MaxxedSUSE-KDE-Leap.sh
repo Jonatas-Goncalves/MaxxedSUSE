@@ -94,14 +94,14 @@ whoami=`whoami`
 
     #++---------------------- BEGINING OF FIRST RUN OF SCRIPT -------------------++#
 
-zenity --question --text="Are you running script first time?" --height=80 --width=300
-    if [ $? = 1 ]; then
-zenity --info --text="Jumping to the softwares installations!"
+zenity --question --text="Are you running script first time?" --height=80 --width=200
+if [ $? = 1 ]; then
+zenity --info --text="Jumping to the softwares installations!" --height=80 --width=200
     else
 
 zenity --question --text="Add additional repositories to install applications? \n \n OBLIGATORY FOR INSTALL APPS AND GAMES STORES !!!" --height=100 --width=300
     if [ $? = 1 ]; then
-zenity --info --text="The default repositories has been kept!"
+zenity --info --text="The default repositories has been kept!" --height=80 --width=200
     else
 
     #++------------------- INSTALL ADITIONAL REPOSITORIES ------------------++#
@@ -114,14 +114,10 @@ zenity --info --text="The default repositories has been kept!"
     echo
     echo
     sleep 2
-    sudo zypper addrepo --refresh 'https://download.nvidia.com/opensuse/leap/15.4/' NVIDIA
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:Dead_Mozay/15.4/ Dead_Mozay
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/munix9/15.4/ munix9
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/munix9:/test/15.4/ munix9:test
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/jason-kurzik/15.4/ jason-kurzik
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:darix:valve/openSUSE_Tumbleweed/home:darix:valve.repo
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.4/
+    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/ MaxxedSUSE
+    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.4/ Wine
+    sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://download.nvidia.com/opensuse/leap/$releasever' NVIDIA
+    sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
     sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/ packman
     sudo zypper --gpg-auto-import-keys refresh
     sudo zypper --non-interactive dist-upgrade --from packman --allow-downgrade --allow-vendor-change
@@ -192,23 +188,23 @@ zenity --info --text="The default repositories has been kept!"
     echo
     sleep 2
 
-zenity --question --text "Hostname Changer! \n This script helps you set your hostname. \n Do you wish to proceed?"
+zenity --question --text "Hostname Changer! \n This script helps you set your hostname. \n Do you wish to proceed?" --height=80 --width=200
     rc=$?
 
     if [ "${rc}" == "0" ]; then
         ## answer="yes"
-        zenity --question --text "Do you want to provide a hostname? \n(Otherwise we'll generate a cool random one for you)"
+        zenity --question --text "Do you want to provide a hostname? \n(Otherwise we'll generate a cool random one for you)" --height=80 --width=200
         rc=$?
 
     if [ "${rc}" == "0" ]; then
         ## answer="yes"
-        hostAnswer=$(zenity --entry --text "What hostname would you like?" --entry-text "localhost")
+        hostAnswer=$(zenity --entry --text "What hostname would you like?" --entry-text "localhost" --height=80 --width=200)
         hostnamectl set-hostname $hostAnswer
         sudo sed -i '/127.0.0.1/c\127.0.0.1       localhost.localdomain   localhost '$hostAnswer'' /etc/hosts
         ##properly sets our new host in /etc/hosts file
         hostname $hostAnswer
         ##avoids need to reboot before showing our new hostname in terminals etc.
-        zenity --info --text "New hostname set to "$hostAnswer"."
+        zenity --info --text "New hostname set to "$hostAnswer"." --height=80 --width=200
 
     else
         ## answer="no"
@@ -219,12 +215,12 @@ zenity --question --text "Hostname Changer! \n This script helps you set your ho
         ##properly sets our new host in /etc/hosts file
         hostname $RNDHOST
         ##avoids need to reboot before showing our new hostname in terminals etc.
-        zenity --info --text "New hostname set to "$RNDHOST".\nRun me again at any time to change your hostname again."
+        zenity --info --text "New hostname set to "$RNDHOST".\nRun me again at any time to change your hostname again." --height=80 --width=200
     fi
 
     else
         ##answer="no"
-        zenity --error --text "Hostname not changed. Exiting!"
+        zenity --error --text "Hostname not changed. Exiting!" --height=80 --width=200
     fi
 
 
@@ -243,7 +239,7 @@ Graphics=$( zenity --list --multiple --checklist\
     --text="The following Software(s) will be Installed"\
     --ok-label "Install" --cancel-label "Skip"\
     --column "Pick" --column "Software(s)" --column "Description"\
-    FALSE 		'ADM'               "AMD Radeon Open Source Drivers"\
+    FALSE 		'AMD'               "AMD Radeon Open Source Drivers"\
     FALSE 		'INTEL'             "Intel iGPU Graphics Driver"\
     FALSE 		'NVIDIA 515'        "Nvidia Graphics drivers 515+"\
     FALSE 		'NVIDIA 470'        "Nvidia Graphics drivers 470"\
@@ -276,20 +272,17 @@ Graphics=$( zenity --list --multiple --checklist\
 
     "NVIDIA 515")			#Nvidia Graphics drivers 515+
     sudo sh -c 'echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf'
-    sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses nvidia-glG06 nvidia-compute-G06
-    sudo zypper install nvidia-glG06-32bit nvidia-computeG06-32bit x11-video-nvidiaG06-32bit
+    sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses ffnvcodec-devel kernel-firmware-nvidia nvidia-compute-G06 nvidia-compute-G06-32bit nvidia-compute-utils-G06 nvidia-driver-G06-kmp-default nvidia-drivers-G06 nvidia-gl-G06 nvidia-gl-G06-32bit nvidia-utils-G06 nvidia-video-G06 nvidia-video-G06-32bit
     ;;
 
     "NVIDIA 470")			#Nvidia Graphics drivers 470 Series
     sudo sh -c 'echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf'
-    sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses nvidia-glG05 nvidia-compute-G05
-    sudo zypper install nvidia-glG05-32bit nvidia-computeG05-32bit x11-video-nvidiaG05-32bit
+    sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses nvidia-computeG05 nvidia-computeG05-32bit nvidia-gfxG05-kmp-default nvidia-glG05 nvidia-glG05-32bit x11-video-nvidiaG05 x11-video-nvidiaG05-32bit
     ;;
 
     "NVIDIA 390")			#Nvidia Graphics drivers 390 Series
     sudo sh -c 'echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf'
-    sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses nvidia-glG04 nvidia-compute-G04
-    sudo zypper install nvidia-glG04-32bit nvidia-computeG04-32bit x11-video-nvidiaG04-32bit
+    sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses nvidia-computeG04 nvidia-computeG04-32bit nvidia-gfxG04-kmp-default nvidia-glG04 nvidia-glG04-32bit x11-video-nvidiaG04 x11-video-nvidiaG04-32bit
     ;;
 
     "Vulkan-Libraries")			#Vulkan Libraries (RECOMENDED INSTALL)
@@ -356,7 +349,7 @@ CPU=$(zenity --list --title "SELECT YOUR CPU." --text "Select your configuration
 
 zenity --question --text="Optimize swap and swapness to reduze disk usage and improve performance and life time?" --height=120 --width=300
     if [ $? = 1 ]; then
-        zenity --info --text="Swap has not changed"
+        zenity --info --text="Swap has not changed" --height=80 --width=200
     else
         sudo touch /etc/sysctl.d/98-swap.conf
         echo "vm.swappiness=1" | sudo tee /etc/sysctl.d/98-swap.conf
@@ -371,7 +364,7 @@ zenity --question --text="Optimize swap and swapness to reduze disk usage and im
     echo
     sleep 2
 
-zenity --question --text="Swap Firefox for Brave, a more secure and private browser based on chrome?\nYou can install Brave in the next steps if you want to keep Firefox" --height=120 --width=300
+zenity --question --text="Swap Firefox for Brave, a more secure and private browser based on chrome?\nYou can install Brave in the next steps if you want to keep Firefox" --height=200 --width=350
     if [ $? = 1 ]; then
         zenity --info --text="The firefox has been kept!"
     else
@@ -382,6 +375,21 @@ zenity --question --text="Swap Firefox for Brave, a more secure and private brow
         sudo zypper --non-interactive install brave-browser
     fi
 
+    #++------------------------------ INSTALL OPI -------------------------------++#
+    echo
+    echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
+    echo -e "$YELLOW                                  OBS Package Installer (CLI) !!!                                     $COL_RESET"
+    echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
+    echo
+    sleep 2
+
+    zenity --question --text="Install Opi (OBS Package Installer)?\nOpi is a tool that finds and installs packages for openSUSE and SLE found in OBS or Packman." --height=120 --width=300
+    if [ $? = 1 ]; then
+        zenity --info --text="opi was not installed!"
+    else
+        sudo zypper --non-interactive install opi
+    fi
+
     #++------------------------------ INSTALL ONLYOFFICE -------------------------------++#
     echo
     echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
@@ -390,7 +398,7 @@ zenity --question --text="Swap Firefox for Brave, a more secure and private brow
     echo
     sleep 2
 
-zenity --question --text="Swap LibreOffice for OnlyOffice?" --height=80 --width=300
+    zenity --question --text="Swap LibreOffice for OnlyOffice?" --height=80 --width=300
     if [ $? = 1 ]; then
         zenity --info --text="The LibreOffice has been kept!"
     else
@@ -398,9 +406,26 @@ zenity --question --text="Swap LibreOffice for OnlyOffice?" --height=80 --width=
         sudo snap install onlyoffice-desktopeditors
     fi
 
+    #++------------------------ CONFIGURE ANDROID TOOLS ---------------------++#
+    echo
+    echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
+    echo -e "$YELLOW                                         Configuring Android Services !!!                                        $COL_RESET"
+    echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
+    echo
+    sleep 2
+
+    zenity --question --text="Install and configure android tools for correct access to android phoe storage and if you need flash android phones images and recovery" --height=120 --width=300
+    if [ $? = 1 ]; then
+        zenity --info --text="The firefox has been kept!"
+    else
+        sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/hardware/15.4/hardware.repo
+        sudo zypper --gpg-auto-import-keys refresh
+        sudo zypper --non-interactive install android-udev-rules android-tools
+    fi
+
     #++---------------------- ENDING OF FIRST RUN OF SCRIPT -------------------++#
 
-    fi
+fi
     #++---------------------- INSTALL APPLICATION BUNDLE -------------------++#
     echo
     echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
@@ -415,43 +440,50 @@ Applications=$( zenity --list --multiple --checklist\
     --text="The following Software(s) will be Installed"\
     --ok-label "Install" --cancel-label "Skip"\
     --column "Pick" --column "Software(s)" 	--column "Description"\
-    FALSE          'Atom'               "A hackable text editor for the 21st Century"\
-    FALSE          'Authy'              "Two-factor authentication adds an additional layer of protection"\
-    FALSE          'BalenaEtcher'		"Powerful utility for writing raw disk images & ISOs to USB keys"\
-    FALSE          'Bottles'			"Environments to easily manage and run Windows apps on Linux"\
-    FALSE          'Blueman'			"Is a Bluetooth manager with a modern interface"\
-    FALSE          'Brave'		    	"Secure, Fast & Private Brave Browser with Adblocker"\
-    FALSE          'ClamTk'		       	"Is the graphical interface of the open source antivirus ClamAV"\
-    FALSE          'Discord'			"Talk, chat, hang out, and stay close with your friends"\
-    FALSE          'Discord Tweks'		"Otimizations to Discord"\
-    FALSE          'Flameshot'			"Cross-platform tool to take screenshots with many built-in features"\
-    FALSE          'Git'		    	"A cli Fast, Scalable, Distributed Free & Open-Source VCS"\
-    FALSE          'Github'		    	"GUI Open source Electron-based GitHub app"\
-    FALSE          'Gparted'			"Free partition editor for graphically managing your disk partitions"\
-    FALSE          'gThumb'		    	"Is an open-source software image viewer, image organizer"\
-    FALSE          'Chrome'		    	"A cross-platform web browser by Google"\
-    FALSE          'Kdenlive'			"Free, Open-source, Non-Linear Video Editor by KDE"\
-    FALSE          'KeePassxc'			"Securely store passwords using industry standard encryption"\
-    FALSE          'Mailspring'			"Mailspring is a new version of Nylas Mail"\
-    FALSE          'Nemo'		    	"It is a lightweight and functional file manager with many features"\
-    FALSE          'Neofetch'			"Is a command-line system information tool"\
-    FALSE          'Notepadqq'			"A notepad++ clone for Linux loaded with functions and features"\
-    FALSE          'OBS Studio'			"Capturing, compositing, recording, and streaming video content"\
-    FALSE          'Peazip'		    	"Free file archiver utility, based on Open Source 7-Zip/p7zip"\
-    FALSE          'qBittorrent'		"An open-source Bittorrent client"\
-    FALSE          'QDirStat'			"Graphical application to show where your disk space has gone"\
-    FALSE          'Signal'		    	"Signal - Private Messenger: Say Hello to Privacy"\
-    FALSE          'Stacer'		    	"Linux System Optimizer & Monitoring"\
-    FALSE          'Spotify'			"Spotify Music Player"\
-    FALSE          'Imagewriter'		"A powerful OS image that copies images to drives byte by byte"\
-    FALSE          'TeamViewer'			"Is without a doubt one of the best remote desktop software programs"\
-    FALSE          'Telegram'			"Official Desktop Client for the Telegram Messenger"\
-    FALSE          'Timeshift'			"System snapshots backup and restore tool for Linux"\
-    FALSE          'ulauncher'			"Is a fast application launcher for Linux"\
-    FALSE          'Virtualbox'			"Powerful virtualization product for enterprise as well as home use"\
-    FALSE          'VLC'		    	"VLC Media Player"\
-    FALSE          'Whatsapp'		    	"An unofficial WhatsApp desktop application for Linux"\
-    FALSE          'WoeUSB-NG'		    	"Utility that enables you to create your own bootable Windows USB" );
+    FALSE          'Atom'                   "A hackable text editor for the 21st Century"\
+    FALSE          'Authy'                  "Two-factor authentication adds an additional layer of protection"\
+    FALSE          'BalenaEtcher'		    "Powerful utility for writing raw disk images & ISOs to USB keys"\
+    FALSE          'Bitwarden'              "Move fast and securely with the password manager trusted by millions"\
+    FALSE          'Bottles'			    "Environments to easily manage and run Windows apps on Linux"\
+    FALSE          'Blueman'			    "Is a Bluetooth manager with a modern interface"\
+    FALSE          'Brave'		    	    "Secure, Fast & Private Brave Browser with Adblocker"\
+    FALSE          'ClamTk'		       	    "Is the graphical interface of the open source antivirus ClamAV"\
+    FALSE          'Discord'			    "Talk, chat, hang out, and stay close with your friends"\
+    FALSE          'Discord Tweks'		    "Otimizations to Discord"\
+    FALSE          'Flameshot'			    "Cross-platform tool to take screenshots with many built-in features"\
+    FALSE          'Git'		    	    "A cli Fast, Scalable, Distributed Free & Open-Source VCS"\
+    FALSE          'Github'		    	    "GUI Open source Electron-based GitHub app"\
+    FALSE          'Gnome Disk'			    "View, modify and configure disks and media"\
+    FALSE          'Gparted'			    "Free partition editor for graphically managing your disk partitions"\
+    FALSE          'gThumb'		    	    "Is an open-source software image viewer, image organizer"\
+    FALSE          'Chrome'		    	    "A cross-platform web browser by Google"\
+    FALSE          'FDM'		    	    "FDM is a powerful modern download accelerator and organizer"\
+    FALSE          'Kdenlive'			    "Free, Open-source, Non-Linear Video Editor by KDE"\
+    FALSE          'KeePassxc'			    "Securely store passwords using industry standard encryption"\
+    FALSE          'Mailspring'			    "Mailspring is a new version of Nylas Mail"\
+    FALSE          'Nemo'		    	    "It is a lightweight and functional file manager with many features"\
+    FALSE          'Neofetch'			    "Is a command-line system information tool"\
+    FALSE          'Notepadqq'			    "A notepad++ clone for Linux loaded with functions and features"\
+    FALSE          'OnlyOffice'			    "An office suite that allows to create, view and edit local documents"\
+    FALSE          'OBS Studio'			    "Capturing, compositing, recording, and streaming video content"\
+    FALSE          'Peazip'		    	    "Free file archiver utility, based on Open Source 7-Zip/p7zip"\
+    FALSE          'Python 3.10'		    "Python 3.10.0 is the newest major release of the Python programming language"\
+    FALSE          'qBittorrent'		    "An open-source Bittorrent client"\
+    FALSE          'QDirStat'			    "Graphical application to show where your disk space has gone"\
+    FALSE          'Signal'		    	    "Signal - Private Messenger: Say Hello to Privacy"\
+    FALSE          'Stacer'		    	    "Linux System Optimizer & Monitoring"\
+    FALSE          'Stremio'		        "Watch videos, movies, TV series and TV channels instantly"\
+    FALSE          'Spotify'			    "Spotify Music Player"\
+    FALSE          'Imagewriter'		    "A powerful OS image that copies images to drives byte by byte"\
+    FALSE          'TeamViewer'			    "Is without a doubt one of the best remote desktop software programs"\
+    FALSE          'Telegram'			    "Official Desktop Client for the Telegram Messenger"\
+    FALSE          'Timeshift'			    "System snapshots backup and restore tool for Linux"\
+    FALSE          'ulauncher'			    "Is a fast application launcher for Linux"\
+    FALSE          'Virtualbox'			    "Powerful virtualization product for enterprise as well as home use"\
+    FALSE          'VLC'		    	    "VLC Media Player"\
+    FALSE          'VSCodium'		        "VSCodium is a community-driven, freely distribution of Microsoft's editor VS Code"\
+    FALSE          'Whatsapp'               "An unofficial WhatsApp desktop application for Linux"\
+    FALSE          'WoeUSB-NG'              "Utility that enables you to create your own bootable Windows USB" );
 
     #column="2" is sent to output by default
     if [[ $? -eq 0 && -z "$Applications"  ]]; then
@@ -471,31 +503,12 @@ Applications=$( zenity --list --multiple --checklist\
 
 
     "Atom")                 #A hackable text editor for the 21st Century
-        wget https://github.com/atom/atom/releases/download/v1.60.0/atom-amd64.tar.gz -P /tmp
-        tar xvf /tmp/atom-amd64.tar.gz -C /tmp
-        sudo mv /tmp/atom-1.60.0-amd64 /opt
-        sudo ln -s /opt/atom-1.60.0-amd64/atom /usr/bin/atom
-        sudo touch /usr/share/applications/atom.desktop
-        echo "[Desktop Entry]" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Type=Application" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Name=Atom" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "TryExec=/opt/atom-1.60.0-amd64/atom" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Exec=/opt/atom-1.60.0-amd64/atom --in-process-gpu %U" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Icon=/opt/atom-1.60.0-amd64/atom.png" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Terminal=false" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Categories=TextEditor;Development;" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "MimeType=text/plain;" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "X-GNOME-Autostart-enabled=true" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Comment=A hackable text editor for the 21st Century" | sudo tee --append /usr/share/applications/atom.desktop
-        echo "Actions=new-window;new-file;" | sudo tee --append /usr/share/applications/atom.desktop
-        sudo chown $USER:$USER -R `echo /usr/share/applications`/usr/share/applications/atom.desktop
-        sudo chmod 755 `echo /usr/share/applications`/usr/share/applications/atom.desktop
-        echo "alias atom='atom --in-process-gpu'" | sudo tee --append /etc/bash.bashrc
+        sudo flatpak install flathub io.atom.Atom -y
         sleep 5
     ;;
 
     "Authy")                #Two-factor authentication adds an additional layer of protection beyond passwords
-        sudo snap install authy
+        sudo snap install authy -y
         sleep 5
     ;;
 
@@ -506,6 +519,14 @@ Applications=$( zenity --list --multiple --checklist\
         sudo sed -i '3 c Exec=/opt/balenaEtcher/balena-etcher-electron --no-sandbox %U' /usr/share/applications/balena-etcher-electron.desktop
         sleep 5
     ;;
+
+    "Bitwarden")			#Move fast and securely with the password manager trusted by millions
+        wget https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/
+        wget --user-agent=Linux https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/ && chmod +x /tmp/Bitwarden-*.appimage
+        /tmp/Bitwarden-*.appimage
+        sleep 5
+    ;;
+
 
     "Bottles")				#Uses environments to easily manage and run Windows apps on Linux
         sudo flatpak install flathub com.usebottles.bottles -y
@@ -530,7 +551,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Discord")              #Talk, chat, hang out, and stay close with your friends
-        sudo zypper --non-interactive install discord
+        sudo flatpak install flathub com.discordapp.Discord -y
         sleep 5
     ;;
 
@@ -540,7 +561,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Flameshot")			#Cross-platform tool to take screenshots with many built-in features to save you time
-        sudo sudo zypper --non-interactive install flameshot
+        sudo flatpak install flathub org.flameshot.Flameshot -y
         sleep 5
     ;;
 
@@ -553,6 +574,11 @@ Applications=$( zenity --list --multiple --checklist\
         sudo rpm --import https://mirror.mwt.me/ghd/gpgkey
         sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://mirror.mwt.me/ghd/rpm\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://mirror.mwt.me/ghd/gpgkey" > /etc/zypp/repos.d/shiftkey-desktop.repo'
         sudo zypper ref && sudo zypper --non-interactive install github-desktop
+        sleep 5
+    ;;
+
+    "Gnome Disk")           #View, modify and configure disks and media
+        sudo zypper --non-interactive install gnome-disk-utility
         sleep 5
     ;;
 
@@ -572,6 +598,11 @@ Applications=$( zenity --list --multiple --checklist\
         sudo rpm --import /tmp/linux_signing_key.pub
         sudo zypper ref
         sudo zypper --non-interactive install google-chrome-stable
+        sleep 5
+    ;;
+
+    "FDM")                  #FDM is a powerful modern download accelerator and organizer.
+        sudo flatpak install flathub org.freedownloadmanager.Manager -y
         sleep 5
     ;;
 
@@ -610,8 +641,25 @@ Applications=$( zenity --list --multiple --checklist\
         sleep 5
     ;;
 
+    "OnlyOffice")              #An office suite that allows to create, view and edit local documents
+        https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v7.3.0/onlyoffice-desktopeditors-x64.tar.gz
+        curl -s https://api.github.com/repos/ONLYOFFICE/DesktopEditors/releases/latest | grep browser_download_url | grep 'x64[.]tar.gz' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/OnlyOffice.tar.gz
+        cd /tmp && sudo tar -xvzf OnlyOffice.tar.gz
+        sudo mv desktopeditors /opt
+
+        sleep 5
+    ;;
+
     "Peazip")               #Free file archiver utility, based on Open Source technologies of 7-Zip/p7zip
         sudo zypper --non-interactive install peazip
+        sleep 5
+    ;;
+
+    "Python 3.10.0")        #Python 3.10.0 is the newest major release of the Python programming language
+        sudo zypper --non-interactive install python310 python310-base python310-devel python310-curses python310-dbm python310-pip python310-tools python310-setuptools
+        sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 50
+        sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 50
+        sudo update-alternatives --set python3 /usr/bin/python3.10
         sleep 5
     ;;
 
@@ -631,9 +679,16 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Stacer")               #Stacer Linux Optimizer & Monitoring
-        sudo zypper --non-interactive install stacer
+        curl -s https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep 'amd64[.]rpm' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/Stacer.rpm
+        sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Stacer.rpm
         sleep 5
     ;;
+
+    "Stremio")              #Watch videos, movies, TV series and TV channels instantly
+        sudo flatpak install flathub com.stremio.Stremio -y
+        sleep 5
+    ;;
+
 
     "Spotify")              #Spotify Music Player
         sudo snap install spotify
@@ -661,11 +716,6 @@ Applications=$( zenity --list --multiple --checklist\
         sleep 5
     ;;
 
-    "ulauncher")			#Is a fast application launcher for Linux
-        sudo zypper --non-interactive install ulauncher
-        sleep 5
-    ;;
-
     "Virtualbox")			#Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use
         sudo zypper --non-interactive install virtualbox
         sleep 5
@@ -678,6 +728,12 @@ Applications=$( zenity --list --multiple --checklist\
         sleep 5
     ;;
 
+    "VSCodium")             #VSCodium is a community-driven, freely-licensed binary distribution of Microsoft's editor VS Code
+        curl -s https://api.github.com/repos/VSCodium/vscodium/releases/latest | grep browser_download_url | grep 'x86_64[.]rpm' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/Vscodium.rpm
+        sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Vscodium.rpm
+        sleep 5
+    ;;
+
     "Whatsapp")            #An unofficial WhatsApp desktop application for Linux
         sudo snap install whatsapp-for-linux
         sleep 5
@@ -687,6 +743,7 @@ Applications=$( zenity --list --multiple --checklist\
         sudo zypper --non-interactive install woeusb-ng
         sleep 5
     ;;
+
 
     esac
     done
@@ -720,21 +777,24 @@ Games=$( zenity --list --multiple --checklist\
     --text="The following Software(s) will be Installed"\
     --ok-label "Install" --cancel-label "Skip"\
     --column "Pick" --column "Software(s)" 	--column "Description"\
-    FALSE          'AntimicroX'         "Used to map gamepad keys to keyboard, mouse, scripts and macros"\
-    FALSE          'BoilR'              "Synchronize games from other platforms into your Steam library"\
-    FALSE          'Ludusavi'           "A tool for backing up your PC video game save data"\
-    FALSE          'GameHub'            "Supports non-native games as well as native games for Linux"\
-    FALSE          'Gamemode'           "Allows games to request a set of optimisations for a games process"\
-    FALSE          'Gamescope'          "Allows for games to run in an isolated Xwayland instance"\
-    FALSE          'Lutris'             "Play all your games on Linux"\
-    FALSE          'Lutris-Flatpak'     "Flatpak version of Lutris (Better libs compatibility)"\
-    FALSE          'MangoHud'           "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
-    FALSE          'vkBasalt'           "Vulkan post processing layer to enhance the visual graphics of games"\
-    FALSE          'GOverlay'           "A Graphical UI to help manage Linux monitoring overlays"\
-    FALSE          'HeroicLauncher'     "Open Source Game Launcher for Epic and GOG"\
-    FALSE          'ProtonUP'           "Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
-    FALSE          'Steam-Native'       "Is a digital game distribution platform for computers"\
-    FALSE          'Steam-Flatpack'     "Flatpak version of Steam, Recommended for Stream and BigPicture mode" );
+    FALSE          'AntimicroX'             "Used to map gamepad keys to keyboard, mouse, scripts and macros"\
+    FALSE          'BoilR'                  "Synchronize games from other platforms into your Steam library"\
+    FALSE          'Ludusavi'               "A tool for backing up your PC video game save data"\
+    FALSE          'GameHub'                "Supports non-native games as well as native games for Linux"\
+    FALSE          'Gamemode'               "Allows games to request a set of optimisations for a games process"\
+    FALSE          'Gamescope'              "Allows for games to run in an isolated Xwayland instance"\
+    FALSE          'GOverlay'               "A Graphical UI to help manage Linux monitoring overlays"\
+    FALSE          'Grapejuice'             "Grapejuice is a launcher for the popular Roblox platform"\
+    FALSE          'Lutris'                 "Play all your games on Linux"\
+    FALSE          'Lutris-Flatpak'         "Flatpak version of Lutris (Better libs compatibility)"\
+    FALSE          'MangoHud'               "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
+    FALSE          'vkBasalt'               "Vulkan post processing layer to enhance the visual graphics of games"\
+    FALSE          'GOverlay'               "A Graphical UI to help manage Linux monitoring overlays"\
+    FALSE          'HeroicLauncher'         "Open Source Game Launcher for Epic and GOG"\
+    FALSE          'ProtonUP'               "Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
+    FALSE          'Steam-Native'           "Is a digital game distribution platform for computers"\
+    FALSE          'Steam-Flatpack'         "Flatpak version of Steam, Recommended for Stream and BigPicture mode"\
+    FALSE          'Sunshine'               "Sunshine is a Gamestream host for Moonlight" );
 
     #column="2" is sent to output by default
     if [[ $? -eq 0 && -z "$Games"  ]]; then
@@ -775,12 +835,30 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "Gamemode")             #Allows games to request a set of optimisations for a games process
-        sudo zypper --non-interactive install gamemoded libgamemode0 libgamemode0-32bit
+        sudo zypper --non-interactive install gamemoded
         sleep 5
     ;;
 
     "Gamescope")            #Allows for games to run in an isolated Xwayland instance
         sudo zypper --non-interactive install gamescope
+        sleep 5
+    ;;
+
+    "GOverlay")             #A Graphical UI to help manage Linux monitoring overlays
+        sudo zypper --non-interactive install goverlay
+        sleep 5
+    ;;
+
+    "Grapejuice")           #Grapejuice is a launcher for the popular Roblox platform
+        sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.4/ Wine
+        sudo zypper --non-interactive install wine wine-mono wine-gecko libvulkan1 libvulkan1-32bit gettext-runtime git python3-devel python3-pip cairo-devel gobject-introspection-devel make xdg-utils gtk3-devel python3-gobject-Gdk
+        sudo zypper --non-interactive install python310 python310-base python310-devel python310-curses python310-dbm python310-pip python310-tools python310-setuptools
+        sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 50
+        sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 50
+        sudo update-alternatives --set python3 /usr/bin/python3.10
+        git clone --depth=1 https://gitlab.com/brinkervii/grapejuice.git /tmp/grapejuice
+        cd /tmp/grapejuice && ./install.py
+        cd
         sleep 5
     ;;
 
@@ -795,18 +873,12 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "MangoHud")             #A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU...
-        sudo zypper --non-interactive install mangohud
+        sudo zypper --non-interactive install mangohud Mesa-demo
         sleep 5
     ;;
 
     "vkBasalt")             #Vulkan post processing layer to enhance the visual graphics of games
         sudo zypper --non-interactive install vkbasalt
-        sleep 5
-    ;;
-
-    "GOverlay")             #A Graphical UI to help manage Linux monitoring overlays
-        sudo zypper --non-interactive install vulkan-tools
-        sudo zypper --non-interactive install goverlay
         sleep 5
     ;;
 
@@ -828,6 +900,31 @@ Games=$( zenity --list --multiple --checklist\
     "Steam-Flatpack")        #Flatpak version of Steam, Recommended for Stream and BigPicture mode
         sudo flatpak install flathub com.valvesoftware.Steam -y
         sudo zypper --non-interactive install steam-devices
+        sleep 5
+    ;;
+
+    "Sunshine")              #Sunshine is a Gamestream host for Moonlight
+        curl -s https://api.github.com/repos/LizardByte/Sunshine/releases/latest | grep browser_download_url | grep 'sunshine_x86_64[.]flatpak' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/Sunshine.flatpak
+        sudo flatpak install --system /tmp/Sunshine.flatpak -y
+        flatpak run --command=additional-install.sh dev.lizardbyte.sunshine
+        sudo usermod -a -G input $USER
+        echo 'KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"' | \
+sudo tee /etc/udev/rules.d/85-sunshine-input.rules
+        mkdir -p ~/.config/systemd/user/
+        sudo touch ~/.config/systemd/user/sunshine.service
+        echo "[Unit]" | sudo tee --append  ~/.config/systemd/user/sunshine.service
+        echo "Description=Sunshine self-hosted game stream host for Moonlight." | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "StartLimitIntervalSec=500" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "StartLimitBurst=5" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "[Service]" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "ExecStart=flatpak run dev.lizardbyte.sunshine" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "Restart=on-failure" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "RestartSec=5s" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "ExecStop=flatpak kill dev.lizardbyte.sunshine" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "[Install]" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "WantedBy=graphical-session.target" | sudo tee --append ~/.config/systemd/user/sunshine.service
         sleep 5
     ;;
 
@@ -876,7 +973,7 @@ zenity --question --text="Would you like to install Itch.io, the best indie gami
     echo -e "$BLUE                                         Remove user from sudoers !!!                                         $COL_RESET"
     echo -e "$BLUE**************************************************************************************************************$COL_RESET"
     sleep 2
-    sudo usermod -rG wheel $(whoami)
+    sudo gpasswd -d $(whoami) wheel
 
     #++--------------------------- Cleaning temp --------------------------++#
     echo -e "$BLUE**************************************************************************************************************$COL_RESET"
@@ -916,8 +1013,12 @@ zenity --question --text="Would you like to install Itch.io, the best indie gami
     echo -e "$RED                                           Thanks for use my script!                                          $COL_RESET"
     echo -e "$RED                                              Good Work or Playing!                                           $COL_RESET"
     echo -e "$RED**************************************************************************************************************$COL_RESET"
-    sleep 10
+    sleep 3
     echo
-    sudo reboot
 
-
+zenity --question --text="Some apps and system components don't work properly until we restart!\nReboot system?" --height=120 --width=300
+    if [ $? = 1 ]; then
+        zenity --info --text="Exiting..."
+    else
+        sudo reboot
+    fi

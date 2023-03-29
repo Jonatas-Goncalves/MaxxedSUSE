@@ -45,14 +45,13 @@ What system modifications does the MaxxedSUSE Script perform?
 Opensuse 15.3 / 15.4:
 
     Added repositories:
-    https://download.nvidia.com/opensuse/leap/15.4/' NVIDIA
-    https://download.opensuse.org/repositories/home:Dead_Mozay/15.4/ Dead_Mozay
-    https://download.opensuse.org/repositories/home:/munix9/15.4/ munix9
-    https://download.opensuse.org/repositories/home:/munix9:/test/15.4/ munix9:test
-    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
-    https://download.opensuse.org/repositories/home:/jason-kurzik/15.4/ jason-kurzik
-    https://download.opensuse.org/repositories/home:darix:valve/openSUSE_Tumbleweed/home:darix:valve.repo
-    https://download.opensuse.org/repositories/Emulators:/Wine/15.4/
+
+    Exclusive MaxxedSUSE repository to bring some useful tools to Leap 15.4:
+    https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/ MaxxedSUSE
+
+    https://download.opensuse.org/repositories/Emulators:/Wine/15.4/ Wine
+    https://download.nvidia.com/opensuse/leap/$releasever' NVIDIA
+    https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/ packman
     
 Opensuse Tumbleweed:
