@@ -572,7 +572,7 @@ Applications=$( zenity --list --multiple --checklist\
 
     "Github")               #Open source Electron-based GitHub app
         sudo rpm --import https://mirror.mwt.me/ghd/gpgkey
-        sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://mirror.mwt.me/ghd/rpm\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://mirror.mwt.me/ghd/gpgkey" > /etc/zypp/repos.d/shiftkey-desktop.repo'
+        sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packagecloud.io/shiftkey/desktop/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://mirror.mwt.me/ghd/gpgkey" > /etc/zypp/repos.d/shiftkey-desktop.repo'
         sudo zypper ref && sudo zypper --non-interactive install github-desktop
         sleep 5
     ;;
