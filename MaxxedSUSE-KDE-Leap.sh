@@ -114,7 +114,10 @@ zenity --info --text="The default repositories has been kept!" --height=80 --wid
     echo
     echo
     sleep 2
-    sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/ MaxxedSUSE
+
+    sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/
+\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/repodata/repomd.xml.key
+" > /etc/zypp/repos.d/MaxxedSUSE.repo'
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.4/ Wine
     sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://download.nvidia.com/opensuse/leap/$releasever' NVIDIA
     sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
@@ -571,9 +574,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Github")               #Open source Electron-based GitHub app
-        sudo rpm --import https://mirror.mwt.me/ghd/gpgkey
-        sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packagecloud.io/shiftkey/desktop/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://mirror.mwt.me/ghd/gpgkey" > /etc/zypp/repos.d/shiftkey-desktop.repo'
-        sudo zypper ref && sudo zypper --non-interactive install github-desktop
+        flatpak install flathub io.github.shiftey.Desktop
         sleep 5
     ;;
 
