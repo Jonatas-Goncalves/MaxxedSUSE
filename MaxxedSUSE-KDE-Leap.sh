@@ -511,7 +511,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Authy")                #Two-factor authentication adds an additional layer of protection beyond passwords
-        sudo snap install authy -y
+        sudo snap install authy
         sleep 5
     ;;
 
