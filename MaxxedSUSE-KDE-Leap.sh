@@ -511,7 +511,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Authy")                #Two-factor authentication adds an additional layer of protection beyond passwords
-        sudo snap install authy -y
+        sudo snap install authy
         sleep 5
     ;;
 
@@ -574,7 +574,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Github")               #Open source Electron-based GitHub app
-        flatpak install flathub io.github.shiftey.Desktop
+        flatpak install flathub io.github.shiftey.Desktop -y
         sleep 5
     ;;
 
@@ -790,7 +790,6 @@ Games=$( zenity --list --multiple --checklist\
     FALSE          'Lutris-Flatpak'         "Flatpak version of Lutris (Better libs compatibility)"\
     FALSE          'MangoHud'               "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
     FALSE          'vkBasalt'               "Vulkan post processing layer to enhance the visual graphics of games"\
-    FALSE          'GOverlay'               "A Graphical UI to help manage Linux monitoring overlays"\
     FALSE          'HeroicLauncher'         "Open Source Game Launcher for Epic and GOG"\
     FALSE          'ProtonUP'               "Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
     FALSE          'Steam-Native'           "Is a digital game distribution platform for computers"\
