@@ -9,13 +9,13 @@ This project is a script for the main and most common day-to-day applications of
     Run directly from web with this command: 
 
     for KDE on Leap run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE-Leap.sh | bash
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE-Leap.sh | sudo -sE bash
     For KDE on Tumbleweed run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE-Tumbleweed.sh | bash
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE-Tumbleweed.sh | sudo -sE bash
     
     **Will be added soon**
     for GNOME run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-GNOME.sh | bash
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-GNOME.sh | sudo -sE bash
 
     or
     Download the zip, extract, and "sudo bash MaxxedSUSE-XXX-XXX.sh"

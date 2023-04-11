@@ -524,8 +524,8 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Bitwarden")			#Move fast and securely with the password manager trusted by millions
-        wget https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/
-        wget --user-agent=Linux https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/ && chmod +x /tmp/Bitwarden-*.appimage
+        sudo wget https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/
+        sudo wget --user-agent=Linux https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/ && chmod +x /tmp/Bitwarden-*.appimage
         /tmp/Bitwarden-*.appimage
         sleep 5
     ;;
@@ -595,7 +595,7 @@ Applications=$( zenity --list --multiple --checklist\
 
     "Chrome")               #Google Chrome web browser
         sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
-        wget https://dl.google.com/linux/linux_signing_key.pub -P /tmp/
+        sudo wget https://dl.google.com/linux/linux_signing_key.pub -P /tmp/
         sudo rpm --import /tmp/linux_signing_key.pub
         sudo zypper ref
         sudo zypper --non-interactive install google-chrome-stable
@@ -644,7 +644,7 @@ Applications=$( zenity --list --multiple --checklist\
 
     "OnlyOffice")              #An office suite that allows to create, view and edit local documents
         https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v7.3.0/onlyoffice-desktopeditors-x64.tar.gz
-        curl -s https://api.github.com/repos/ONLYOFFICE/DesktopEditors/releases/latest | grep browser_download_url | grep 'x64[.]tar.gz' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/OnlyOffice.tar.gz
+        curl -s https://api.github.com/repos/ONLYOFFICE/DesktopEditors/releases/latest | grep browser_download_url | grep 'x64[.]tar.gz' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/OnlyOffice.tar.gz
         cd /tmp && sudo tar -xvzf OnlyOffice.tar.gz
         sudo mv desktopeditors /opt
 
@@ -680,7 +680,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Stacer")               #Stacer Linux Optimizer & Monitoring
-        curl -s https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep 'amd64[.]rpm' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/Stacer.rpm
+        sudo curl -sE https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep 'amd64[.]rpm' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Stacer.rpm
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Stacer.rpm
         sleep 5
     ;;
@@ -702,7 +702,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "TeamViewer")			#Is without a doubt one of the best remote desktop software programs
-        wget https://download.teamviewer.com/download/linux/teamviewer-suse.x86_64.rpm -P /tmp/
+        sudo wget https://download.teamviewer.com/download/linux/teamviewer-suse.x86_64.rpm -P /tmp/
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/teamviewer-suse.x86_64.rpm
         sleep 5
     ;;
@@ -730,7 +730,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "VSCodium")             #VSCodium is a community-driven, freely-licensed binary distribution of Microsoft's editor VS Code
-        curl -s https://api.github.com/repos/VSCodium/vscodium/releases/latest | grep browser_download_url | grep 'x86_64[.]rpm' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/Vscodium.rpm
+        curl -s https://api.github.com/repos/VSCodium/vscodium/releases/latest | grep browser_download_url | grep 'x86_64[.]rpm' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Vscodium.rpm
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Vscodium.rpm
         sleep 5
     ;;
@@ -829,7 +829,7 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "GameHub")              #Supports non-native games as well as native games for Linux
-        curl -s https://api.github.com/repos/tkashkin/GameHub/releases/latest | grep browser_download_url | grep '[.]flatpak' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/GameHub.flatpak
+        curl -s https://api.github.com/repos/tkashkin/GameHub/releases/latest | grep browser_download_url | grep '[.]flatpak' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/GameHub.flatpak
         sudo flatpak install /tmp/GameHub.flatpak -y
         sleep 5
     ;;
@@ -904,7 +904,7 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "Sunshine")              #Sunshine is a Gamestream host for Moonlight
-        curl -s https://api.github.com/repos/LizardByte/Sunshine/releases/latest | grep browser_download_url | grep 'sunshine_x86_64[.]flatpak' | head -n 1 | cut -d '"' -f 4 | wget --base=http://github.com/ -i - -O /tmp/Sunshine.flatpak
+        curl -s https://api.github.com/repos/LizardByte/Sunshine/releases/latest | grep browser_download_url | grep 'sunshine_x86_64[.]flatpak' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Sunshine.flatpak
         sudo flatpak install --system /tmp/Sunshine.flatpak -y
         flatpak run --command=additional-install.sh dev.lizardbyte.sunshine
         sudo usermod -a -G input $USER
@@ -956,7 +956,7 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
 
 zenity --question --text="Would you like to install Itch.io, the best indie gaming platform?" --height=80 --width=300
     if [ $? = 0 ]; then
-        wget --user-agent=Linux --content-disposition -E -c https://itch.io/app/download -P /tmp/ && chmod +x /tmp/itch-setup
+        sudo wget --user-agent=Linux --content-disposition -E -c https://itch.io/app/download -P /tmp/ && chmod +x /tmp/itch-setup
         /tmp/./itch-setup
         sudo mv ~/.itch /opt/itch
         sudo mv ~/.local/share/applications/io.itch.itch.desktop /usr/share/applications/io.itch.itch.desktop
