@@ -1,6 +1,6 @@
 # MaxxedSUSE
 
-This project is a script for the main and most common day-to-day applications of a common Windows user and to facilitate the installation of games for those who are not familiar with Linux.
+This project is a script to install main and most common day-to-day applications of a common Windows user and to facilitate the installation of games for those who are not familiar with Linux.
 
     * --- This Script is to run on a clean install of OpenSUSE Leap 15.3, 15.4 or Tumbleweed --- *
 
