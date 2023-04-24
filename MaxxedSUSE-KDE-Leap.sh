@@ -39,10 +39,6 @@ CYAN=$ESC_SEQ"36;01m"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo
-    echo
-    sleep 3
-    echo
-    echo
     echo -e "$RED**************************************************************************************************************$COL_RESET"
     echo -e "$RED                                All changes of this script are described on github !!!                         $COL_RESET"
     echo -e "$RED**************************************************************************************************************$COL_RESET"
@@ -51,9 +47,10 @@ CYAN=$ESC_SEQ"36;01m"
     echo -e "$RED                              Check for updates at https://github.com/Jonatas-Goncalves                        $COL_RESET"
     echo -e "$RED**************************************************************************************************************$COL_RESET"
     echo
-    echo
     sleep 3
-
+    echo
+    echo
+    echo
     #++--------------------- Adding user to sudoers ---------------------++#
     echo -e "$MAGENTA**************************************************************************************************************$COL_RESET"
     echo -e "$MAGENTA**************************************************************************************************************$COL_RESET"
@@ -65,7 +62,7 @@ CYAN=$ESC_SEQ"36;01m"
     echo -e "$MAGENTA**************************************************************************************************************$COL_RESET"
     echo
     echo
-    sleep 4
+    sleep 3
 
 whoami=`whoami`
     sudo usermod -aG wheel $(whoami)
@@ -81,16 +78,9 @@ whoami=`whoami`
     echo -e "$YELLOW**************************************************************************************************************$COL_RESET"
     echo
     echo
-    echo
-    echo
-    echo
-    echo
-    echo
-    echo
     sudo zypper --non-interactive install zenity
     sudo zypper --non-interactive install at-spi2-core
 
-    sleep 2
 
     #++---------------------- BEGINING OF FIRST RUN OF SCRIPT -------------------++#
 
@@ -148,15 +138,15 @@ zenity --info --text="The default repositories has been kept!" --height=80 --wid
     sudo zypper --non-interactive dup --from snappy
     sudo zypper --non-interactive install snapd
     source /etc/profile && source /home/$USER/.bashrc
-    sleep 3
+    sleep 2
     sudo systemctl enable --now snapd
-    sleep 3
+    sleep 2
     sudo systemctl enable --now snapd.apparmor
-    sleep 3
+    sleep 2
     sudo systemctl start snapd.apparmor
-    sleep 3
+    sleep 2
     sudo systemctl start snapd
-    sleep 3
+    sleep 2
 
     #++---------------------- CONFIGURE FLATPAK SERVICE --------------------++#
     echo
@@ -507,12 +497,12 @@ Applications=$( zenity --list --multiple --checklist\
 
     "Atom")                 #A hackable text editor for the 21st Century
         sudo flatpak install flathub io.atom.Atom -y
-        sleep 5
+        sleep 3
     ;;
 
     "Authy")                #Two-factor authentication adds an additional layer of protection beyond passwords
         sudo snap install authy
-        sleep 5
+        sleep 3
     ;;
 
     "BalenaEtcher")			#Powerful utility for writing raw disk images & ISOs to USB keys
@@ -520,77 +510,77 @@ Applications=$( zenity --list --multiple --checklist\
         sudo zypper --non-interactive install balena-etcher-electron
         sleep 10
         sudo sed -i '3 c Exec=/opt/balenaEtcher/balena-etcher-electron --no-sandbox %U' /usr/share/applications/balena-etcher-electron.desktop
-        sleep 5
+        sleep 3
     ;;
 
     "Bitwarden")			#Move fast and securely with the password manager trusted by millions
         sudo wget https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/
         sudo wget --user-agent=Linux https://vault.bitwarden.com/download/?app=desktop&platform=linux -P /tmp/ && chmod +x /tmp/Bitwarden-*.appimage
         /tmp/Bitwarden-*.appimage
-        sleep 5
+        sleep 3
     ;;
 
 
     "Bottles")				#Uses environments to easily manage and run Windows apps on Linux
         sudo flatpak install flathub com.usebottles.bottles -y
-        sleep 5
+        sleep 3
     ;;
 
     "Blueman")              #Is a Bluetooth manager with a modern interface
         sudo zypper --non-interactive install blueman
-        sleep 5
+        sleep 3
     ;;
 
     "Brave")                #Brave Browser
         sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         sudo zypper addrepo --refresh https://brave-browser-rpm-release.s3.brave.com/x86_64/ brave-browser
         sudo zypper --non-interactive install brave-browser
-        sleep 5
+        sleep 3
     ;;
 
     "ClamTk")               #Is the graphical interface of the open source antivirus ClamAV
         sudo flatpak install flathub com.gitlab.davem.ClamTk -y
-        sleep 5
+        sleep 3
     ;;
 
     "Discord")              #Talk, chat, hang out, and stay close with your friends
         sudo flatpak install flathub com.discordapp.Discord -y
-        sleep 5
+        sleep 3
     ;;
 
     "DiscordTweks")			#Otimizations to Discord
         sudo sed -i 's_Exec=/usr/bin/discord_Exec=/usr/bin/discord --no-sandbox --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy_gI' /usr/share/applications/discord.desktop
-        sleep 5
+        sleep 3
     ;;
 
     "Flameshot")			#Cross-platform tool to take screenshots with many built-in features to save you time
         sudo flatpak install flathub org.flameshot.Flameshot -y
-        sleep 5
+        sleep 3
     ;;
 
     "git")                  #A fast, scalable, distributed free & open-source
         sudo sudo zypper --non-interactive install git
-        sleep 5
+        sleep 3
     ;;
 
     "Github")               #Open source Electron-based GitHub app
         flatpak install flathub io.github.shiftey.Desktop -y
-        sleep 5
+        sleep 3
     ;;
 
     "Gnome Disk")           #View, modify and configure disks and media
         sudo zypper --non-interactive install gnome-disk-utility
-        sleep 5
+        sleep 3
     ;;
 
     "Gparted")              #Is a free partition editor for graphically managing your disk partitions
         sudo zypper --non-interactive install gparted
-        sleep 5
+        sleep 3
     ;;
 
     "gThumb")               #A free and open-source image viewer and image organizer with options to edit images
         sudo zypper --non-interactive install gthumb
-        sleep 5
+        sleep 3
     ;;
 
     "Chrome")               #Google Chrome web browser
@@ -599,61 +589,57 @@ Applications=$( zenity --list --multiple --checklist\
         sudo rpm --import /tmp/linux_signing_key.pub
         sudo zypper ref
         sudo zypper --non-interactive install google-chrome-stable
-        sleep 5
+        sleep 3
     ;;
 
     "FDM")                  #FDM is a powerful modern download accelerator and organizer.
         sudo flatpak install flathub org.freedownloadmanager.Manager -y
-        sleep 5
+        sleep 3
     ;;
 
     "Kdenlive")             #Free, Open-source, Non-Linear Video Editor by KDE
         sudo zypper --non-interactive install kdenlive
-        sleep 5
+        sleep 3
     ;;
 
     "KeePassxc")			#Securely store passwords using industry standard encryption
         sudo snap install keepassxc
-        sleep 5
+        sleep 3
     ;;
 
     "Mailspring")			#Mailspring Mail Client
         sudo snap install mailspring
-        sleep 5
+        sleep 3
     ;;
 
     "Nemo")                 #It is a lightweight and functional file manager with many features
         sudo zypper --non-interactive install nemo
-        sleep 5
+        sleep 3
     ;;
 
     "Neofetch")             #Is a command-line system information tool
         sudo zypper --non-interactive install neofetch
-        sleep 5
+        sleep 3
     ;;
 
     "Notepadqq")			#A notepad++ clone for Linux loaded with functions and features
         sudo zypper --non-interactive install notepadqq
-        sleep 5
+        sleep 3
     ;;
 
     "OBS Studio")			#Designed for capturing, compositing, encoding, recording, and streaming video content
         sudo flatpak install flathub com.obsproject.Studio -y
-        sleep 5
+        sleep 3
     ;;
 
     "OnlyOffice")              #An office suite that allows to create, view and edit local documents
-        https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v7.3.0/onlyoffice-desktopeditors-x64.tar.gz
-        curl -s https://api.github.com/repos/ONLYOFFICE/DesktopEditors/releases/latest | grep browser_download_url | grep 'x64[.]tar.gz' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/OnlyOffice.tar.gz
-        cd /tmp && sudo tar -xvzf OnlyOffice.tar.gz
-        sudo mv desktopeditors /opt
-
-        sleep 5
+        sudo snap install onlyoffice-desktopeditors
+        sleep 3
     ;;
 
     "Peazip")               #Free file archiver utility, based on Open Source technologies of 7-Zip/p7zip
         sudo zypper --non-interactive install peazip
-        sleep 5
+        sleep 3
     ;;
 
     "Python 3.10.0")        #Python 3.10.0 is the newest major release of the Python programming language
@@ -661,88 +647,88 @@ Applications=$( zenity --list --multiple --checklist\
         sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 50
         sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 50
         sudo update-alternatives --set python3 /usr/bin/python3.10
-        sleep 5
+        sleep 3
     ;;
 
     "qBittorrent")             #An open-source Bittorrent client
         sudo flatpak install flathub org.qbittorrent.qBittorrent -y
-        sleep 5
+        sleep 3
     ;;
 
     "QDirStat")             #Graphical application to show where your disk space has gone, help you to clean it up
         sudo zypper --non-interactive install qdirstat
-        sleep 5
+        sleep 3
     ;;
 
     "Signal")               #Signal - Private Messenger: Say Hello to Privacy
         sudo snap install signal-desktop
-        sleep 5
+        sleep 3
     ;;
 
     "Stacer")               #Stacer Linux Optimizer & Monitoring
         sudo curl -sE https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep 'amd64[.]rpm' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Stacer.rpm
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Stacer.rpm
-        sleep 5
+        sleep 3
     ;;
 
     "Stremio")              #Watch videos, movies, TV series and TV channels instantly
         sudo flatpak install flathub com.stremio.Stremio -y
-        sleep 5
+        sleep 3
     ;;
 
 
     "Spotify")              #Spotify Music Player
         sudo snap install spotify
-        sleep 5
+        sleep 3
     ;;
 
     "Imagewriter")			#A powerful OS image that copies images to drives byte by byte
         sudo zypper --non-interactive install imagewriter
-        sleep 5
+        sleep 3
     ;;
 
     "TeamViewer")			#Is without a doubt one of the best remote desktop software programs
         sudo wget https://download.teamviewer.com/download/linux/teamviewer-suse.x86_64.rpm -P /tmp/
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/teamviewer-suse.x86_64.rpm
-        sleep 5
+        sleep 3
     ;;
 
     "Telegram")             #Official Desktop Client for the Telegram Messenger
         sudo zypper --non-interactive install telegram-desktop
-        sleep 5
+        sleep 3
     ;;
 
     "Timeshift")			#System snapshots backup and restore tool for Linux
         sudo zypper --non-interactive install timeshift
-        sleep 5
+        sleep 3
     ;;
 
     "Virtualbox")			#Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use
         sudo zypper --non-interactive install virtualbox
-        sleep 5
+        sleep 3
         sudo gpasswd -a $USER vboxusers
         sleep 2
     ;;
 
     "VLC")                  #VLC Media Player
         sudo zypper --non-interactive install vlc
-        sleep 5
+        sleep 3
     ;;
 
     "VSCodium")             #VSCodium is a community-driven, freely-licensed binary distribution of Microsoft's editor VS Code
         curl -s https://api.github.com/repos/VSCodium/vscodium/releases/latest | grep browser_download_url | grep 'x86_64[.]rpm' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Vscodium.rpm
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Vscodium.rpm
-        sleep 5
+        sleep 3
     ;;
 
     "Whatsapp")            #An unofficial WhatsApp desktop application for Linux
         sudo snap install whatsapp-for-linux
-        sleep 5
+        sleep 3
     ;;
 
     "WoeUSB-NG")            #Utility that enables you to create your own bootable Windows USB
         sudo zypper --non-interactive install woeusb-ng
-        sleep 5
+        sleep 3
     ;;
 
 
@@ -815,38 +801,38 @@ Games=$( zenity --list --multiple --checklist\
 
     "AntimicroX")           #Used to map gamepad keys to keyboard, mouse, scripts and macros
         sudo zypper --non-interactive install antimicrox
-        sleep 5
+        sleep 3
     ;;
 
     "BoilR")                #Synchronize games from other platforms into your Steam library
         sudo flatpak install flathub io.github.philipk.boilr -y
-        sleep 5
+        sleep 3
     ;;
 
     "Ludusavi")             #A tool for backing up your PC video game save data
         sudo flatpak install flathub com.github.mtkennerly.ludusavi -y
-        sleep 5
+        sleep 3
     ;;
 
     "GameHub")              #Supports non-native games as well as native games for Linux
         curl -s https://api.github.com/repos/tkashkin/GameHub/releases/latest | grep browser_download_url | grep '[.]flatpak' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/GameHub.flatpak
         sudo flatpak install /tmp/GameHub.flatpak -y
-        sleep 5
+        sleep 3
     ;;
 
     "Gamemode")             #Allows games to request a set of optimisations for a games process
         sudo zypper --non-interactive install gamemoded
-        sleep 5
+        sleep 3
     ;;
 
     "Gamescope")            #Allows for games to run in an isolated Xwayland instance
         sudo zypper --non-interactive install gamescope
-        sleep 5
+        sleep 3
     ;;
 
     "GOverlay")             #A Graphical UI to help manage Linux monitoring overlays
         sudo zypper --non-interactive install goverlay
-        sleep 5
+        sleep 3
     ;;
 
     "Grapejuice")           #Grapejuice is a launcher for the popular Roblox platform
@@ -859,27 +845,27 @@ Games=$( zenity --list --multiple --checklist\
         git clone --depth=1 https://gitlab.com/brinkervii/grapejuice.git /tmp/grapejuice
         cd /tmp/grapejuice && ./install.py
         cd
-        sleep 5
+        sleep 3
     ;;
 
     "Lutris")               #Play all your games on Linux
         sudo zypper --non-interactive install lutris
-        sleep 5
+        sleep 3
     ;;
 
     "Lutris-Flatpak")               #Play all your games on Linux
         sudo flatpak install flathub net.lutris.Lutris -y
-        sleep 5
+        sleep 3
     ;;
 
     "MangoHud")             #A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU...
         sudo zypper --non-interactive install mangohud Mesa-demo
-        sleep 5
+        sleep 3
     ;;
 
     "vkBasalt")             #Vulkan post processing layer to enhance the visual graphics of games
         sudo zypper --non-interactive install vkbasalt
-        sleep 5
+        sleep 3
     ;;
 
     "HeroicLauncher")       #Open Source Game Launcher for Epic and GOG
@@ -889,18 +875,18 @@ Games=$( zenity --list --multiple --checklist\
 
     "ProtonUP")             #Install and manage Custom Proton's for Steam and Wine-GE for Lutris
         sudo flatpak install flathub net.davidotek.pupgui2 -y
-        sleep 5
+        sleep 3
     ;;
 
     "Steam-Native")          #Is a digital game distribution platform for computers
         sudo zypper --non-interactive install steam
-        sleep 5
+        sleep 3
     ;;
 
     "Steam-Flatpack")        #Flatpak version of Steam, Recommended for Stream and BigPicture mode
         sudo flatpak install flathub com.valvesoftware.Steam -y
         sudo zypper --non-interactive install steam-devices
-        sleep 5
+        sleep 3
     ;;
 
     "Sunshine")              #Sunshine is a Gamestream host for Moonlight
@@ -925,7 +911,7 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
         echo "" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "[Install]" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "WantedBy=graphical-session.target" | sudo tee --append ~/.config/systemd/user/sunshine.service
-        sleep 5
+        sleep 3
     ;;
 
     esac
