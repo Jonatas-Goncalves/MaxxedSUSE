@@ -411,9 +411,8 @@ zenity --question --text="Swap Firefox for Brave, a more secure and private brow
     if [ $? = 1 ]; then
         zenity --info --text="The firefox has been kept!"
     else
-        sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/hardware/15.4/hardware.repo
         sudo zypper --gpg-auto-import-keys refresh
-        sudo zypper --non-interactive install android-udev-rules android-tools
+        sudo zypper --non-interactive install android-tools
     fi
 
     #++---------------------- ENDING OF FIRST RUN OF SCRIPT -------------------++#
