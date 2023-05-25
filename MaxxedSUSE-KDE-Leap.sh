@@ -33,24 +33,24 @@ CYAN=$ESC_SEQ"36;01m"
     echo
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
     echo -e "$GREEN                                        MaxxedSUSE Install Script v0.1                                        $COL_RESET"
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
     echo -e "$GREEN                                       Starting Maxxeding your SUSE !!!                                       $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                All changes of this script are described on github !!!                        $COL_RESET"
+    echo -e "$GREEN                                             Don't trust me, verify !!!                                       $COL_RESET"
+    echo -e "$GREEN                              Check for updates at https://github.com/Jonatas-Goncalves                       $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo
-    echo -e "$RED**************************************************************************************************************$COL_RESET"
-    echo -e "$RED                                All changes of this script are described on github !!!                         $COL_RESET"
-    echo -e "$RED**************************************************************************************************************$COL_RESET"
-    echo -e "$RED                                               Don't trust me, verify !!!                                      $COL_RESET"
-    echo -e "$RED**************************************************************************************************************$COL_RESET"
-    echo -e "$RED                              Check for updates at https://github.com/Jonatas-Goncalves                        $COL_RESET"
-    echo -e "$RED**************************************************************************************************************$COL_RESET"
     echo
-    sleep 3
-    echo
-    echo
-    echo
+    sleep 5
+    clear
+
     #++--------------------- Adding user to sudoers ---------------------++#
     echo -e "$MAGENTA**************************************************************************************************************$COL_RESET"
     echo -e "$MAGENTA**************************************************************************************************************$COL_RESET"
@@ -105,9 +105,7 @@ zenity --info --text="The default repositories has been kept!" --height=80 --wid
     echo
     sleep 2
 
-    sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/
-\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/repodata/repomd.xml.key
-" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+    sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.4/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
     sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.4/ Wine
     sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://download.nvidia.com/opensuse/leap/$releasever' NVIDIA
     sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.4/ snappy
@@ -140,13 +138,9 @@ zenity --info --text="The default repositories has been kept!" --height=80 --wid
     source /etc/profile && source /home/$USER/.bashrc
     sleep 2
     sudo systemctl enable --now snapd
-    sleep 2
     sudo systemctl enable --now snapd.apparmor
-    sleep 2
     sudo systemctl start snapd.apparmor
-    sleep 2
     sudo systemctl start snapd
-    sleep 2
 
     #++---------------------- CONFIGURE FLATPAK SERVICE --------------------++#
     echo
@@ -234,7 +228,7 @@ Graphics=$( zenity --list --multiple --checklist\
     --column "Pick" --column "Software(s)" --column "Description"\
     FALSE 		'AMD'               "AMD Radeon Open Source Drivers"\
     FALSE 		'INTEL'             "Intel iGPU Graphics Driver"\
-    FALSE 		'NVIDIA 515'        "Nvidia Graphics drivers 515+"\
+    FALSE 		'NVIDIA 525+'        "Nvidia Graphics drivers 525+"\
     FALSE 		'NVIDIA 470'        "Nvidia Graphics drivers 470"\
     FALSE 		'NVIDIA 390'        "Nvidia Graphics drivers 390"\
     FALSE 		'Vulkan-Libraries'  "Vulkan Libraries (RECOMENDED INSTALL)" );
@@ -263,7 +257,7 @@ Graphics=$( zenity --list --multiple --checklist\
     sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses --no-recommends kernel-firmware-intel libdrm_intel1 libdrm_intel1-32bit libvulkan1 libvulkan1-32bit libz1-32bit libvulkan_intel libvulkan_intel-32bit
     ;;
 
-    "NVIDIA 515")			#Nvidia Graphics drivers 515+
+    "NVIDIA 525")			#Nvidia Graphics drivers 525+
     sudo sh -c 'echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf'
     sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses ffnvcodec-devel kernel-firmware-nvidia nvidia-compute-G06 nvidia-compute-G06-32bit nvidia-compute-utils-G06 nvidia-driver-G06-kmp-default nvidia-drivers-G06 nvidia-gl-G06 nvidia-gl-G06-32bit nvidia-utils-G06 nvidia-video-G06 nvidia-video-G06-32bit
     ;;
@@ -440,6 +434,7 @@ Applications=$( zenity --list --multiple --checklist\
     FALSE          'Blueman'			    "Is a Bluetooth manager with a modern interface"\
     FALSE          'Brave'		    	    "Secure, Fast & Private Brave Browser with Adblocker"\
     FALSE          'ClamTk'		       	    "Is the graphical interface of the open source antivirus ClamAV"\
+    FALSE          'Deezer'			        "Deezer is a music streaming app"\
     FALSE          'Discord'			    "Talk, chat, hang out, and stay close with your friends"\
     FALSE          'Discord Tweks'		    "Otimizations to Discord"\
     FALSE          'Flameshot'			    "Cross-platform tool to take screenshots with many built-in features"\
@@ -539,6 +534,11 @@ Applications=$( zenity --list --multiple --checklist\
 
     "ClamTk")               #Is the graphical interface of the open source antivirus ClamAV
         sudo flatpak install flathub com.gitlab.davem.ClamTk -y
+        sleep 3
+    ;;
+
+    "Deezer")              #Deezer is a music streaming app
+        sudo zypper --non-interactive install deezer
         sleep 3
     ;;
 
@@ -882,7 +882,7 @@ Games=$( zenity --list --multiple --checklist\
         sleep 3
     ;;
 
-    "Steam-Flatpack")        #Flatpak version of Steam, Recommended for Stream and BigPicture mode
+    "Steam-Flatpak")        #Flatpak version of Steam, Recommended for Stream and BigPicture mode
         sudo flatpak install flathub com.valvesoftware.Steam -y
         sudo zypper --non-interactive install steam-devices
         sleep 3
@@ -964,32 +964,33 @@ zenity --question --text="Would you like to install Itch.io, the best indie gami
     echo -e "$BLUE**************************************************************************************************************$COL_RESET"
     echo -e "$BLUE                                         Cleaning temporary files !!!                                         $COL_RESET"
     echo -e "$BLUE**************************************************************************************************************$COL_RESET"
-    sleep 2
     sudo rm -rf /tmp/*.*
+    sleep 2
 
     #++--------------------------- SCRIPT END -----------------------------++#
-    echo
-    echo -e "$GREEN Done...$COL_RESET"
-    sleep 2
-    echo
-    echo
     clear
     echo
+    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
+    echo -e "$GREEN                                                     Done...                                                  $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo -e "$GREEN                                        MaxxedSUSE Install Script v0.1                                        $COL_RESET"
     echo -e "$GREEN                                                   Finish !!!                                                 $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo
-    echo
-    echo
-    echo -e "$CYAN**************************************************************************************************************$COL_RESET"
-    echo -e "$CYAN                                  All contributions to this project are welcome.                              $COL_RESET"
-    echo
-    echo -e "$CYAN                               Clone this repo, make your changes and pull request.                           $COL_RESET"
-    echo -e "$CYAN**************************************************************************************************************$COL_RESET"
-    echo
-    echo
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                   All contributions to this project are welcome.                             $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                               Clone this repo, make your changes and pull request.                           $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN                                                                                                              $COL_RESET"
+    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     clear
+
     echo
     echo -e "$RED**************************************************************************************************************$COL_RESET"
     echo -e "$RED                               WEE MUST REBOOT NOW  TO FINALIZE INSTALLATION !!!                              $COL_RESET"
