@@ -125,7 +125,7 @@ Added parameters to launch some applications:
 <img src="https://github-readme-stats.vercel.app/api?username=Jonatas-Goncalves&show_icons=true&theme=merko"><img src="https://github-readme-streak-stats.herokuapp.com?user=Jonatas-Goncalves&theme=merko&date_format=M%20j%5B%2C%20Y%5D">
 <!--📙LANGUAGES / 🌐WEBSITE: https://github.com/anuraghazra/github-readme-stats -->
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jonatas-Goncalves&layout=compact&theme=merko">
+<img src="[https://github-readme-stats.vercel.app/api/top-langs/?username=Jonatas-Goncalves&layout=compact&theme=merko](https://github-readme-stats.vercel.app/api/top-langs/?username=Jonatas-Goncalves&layout=compact&theme=merko)">
 <!--📛BADGES / 🌐WEBSITE: https://github.com/DenverCoder1/custom-icon-badges -->
 <p align="center">
   <a href="https://github.com/Jonatas-Goncalves?tab=repositories&sort=stargazers">
