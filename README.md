@@ -119,7 +119,6 @@ Added parameters to launch some applications:
 
 - All other modifications or installations are done at the user's discretion during the script.
 
-
 <!--🖼️OCTOCAT-->
 <!--📊STATSGRAPH / 🌐WEBSITE: https://github.com/anuraghazra/github-readme-stats -->
 <p align="center">
