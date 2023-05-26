@@ -119,6 +119,9 @@ Added parameters to launch some applications:
 
 - All other modifications or installations are done at the user's discretion during the script.
 
+<!--📊💬STATTITLE / 🌐WEBSITE: https://textanim.com/ -->
+<p align="center">
+<img src="https://i.imgur.com/YCw47Dm.gif">
 <!--🖼️OCTOCAT-->
 <!--📊STATSGRAPH / 🌐WEBSITE: https://github.com/anuraghazra/github-readme-stats -->
 <p align="center">
