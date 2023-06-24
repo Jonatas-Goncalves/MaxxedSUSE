@@ -866,7 +866,7 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "HeroicGamesLauncher")  #Open Source Game Launcher for Epic and GOG
-        sudo zypper --non-interactive HeroicGamesLauncher
+        sudo zypper --non-interactive install HeroicGamesLauncher
         sleep 2
     ;;
 
