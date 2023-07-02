@@ -501,7 +501,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "BalenaEtcher")			#Powerful utility for writing raw disk images & ISOs to USB keys
-        curl -1sLf 'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh' | codename="leap" sudo -E bash
+        curl -1sLf 'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh' | codename="tumbleweed" sudo -E bash
         sudo zypper --non-interactive install balena-etcher-electron
         sleep 10
         sudo sed -i '3 c Exec=/opt/balenaEtcher/balena-etcher-electron --no-sandbox %U' /usr/share/applications/balena-etcher-electron.desktop
