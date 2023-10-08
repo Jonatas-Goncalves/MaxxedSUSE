@@ -666,7 +666,7 @@ Applications=$( zenity --list --multiple --checklist\
     ;;
 
     "Stacer")               #Stacer Linux Optimizer & Monitoring
-        sudo curl -sE https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep 'amd64[.]rpm' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Stacer.rpm
+        sudo curl -sSfL https://api.github.com/repos/oguzhaninan/Stacer/releases/latest | grep browser_download_url | grep 'amd64[.]rpm' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Stacer.rpm
         sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --auto-agree-with-licenses /tmp/Stacer.rpm
         sleep 3
     ;;
