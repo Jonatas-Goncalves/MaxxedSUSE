@@ -939,14 +939,14 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
 
 zenity --question --text="Would you like to install Itch.io, the best indie gaming platform?" --height=80 --width=300
     if [ $? = 0 ]; then
-        sudo wget --user-agent=Linux --content-disposition -E -c https://itch.io/app/download -P /tmp/ && chmod +x /tmp/itch-setup
-        /tmp/./itch-setup
+        sudo wget --user-agent=Linux --content-disposition -E -c https://itch.io/app/download -P /tmp/
+        sudo chmod +x /tmp/itch-setup && /tmp/./itch-setup
         sudo mv ~/.itch /opt/itch
         sudo mv ~/.local/share/applications/io.itch.itch.desktop /usr/share/applications/io.itch.itch.desktop
         sudo sed -i '4 c TryExec=/opt/itch/itch' /usr/share/applications/io.itch.itch.desktop
         sudo sed -i '5 c Exec=/opt/itch/itch --no-sandbox %U' /usr/share/applications/io.itch.itch.desktop
         sudo sed -i '6 c Icon=/opt/itch/icon.png' /usr/share/applications/io.itch.itch.desktop
-        sudo sed -i '2 c /opt/itch/app-25.5.1/itch --no-sandbox --prefer-launch --appname itch -- "$@"' /opt/itch/itch
+        sudo sed -i '2 c /opt/itch/app-25.6.2/itch --no-sandbox --prefer-launch --appname itch -- "$@"' /opt/itch/itch
         sleep 10
     fi
 
