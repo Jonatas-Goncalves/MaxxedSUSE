@@ -887,9 +887,7 @@ Games=$( zenity --list --multiple --checklist\
     ;;
 
     "Sunshine")              #Sunshine is a Gamestream host for Moonlight
-        curl -s https://api.github.com/repos/LizardByte/Sunshine/releases/latest | grep browser_download_url | grep 'sunshine_x86_64[.]flatpak' | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Sunshine.flatpak
-        sudo flatpak install --system /tmp/Sunshine.flatpak -y
-        flatpak run --command=additional-install.sh dev.lizardbyte.sunshine
+        sudo zypper --non-interactive install sunshine
         sudo usermod -a -G input $USER
         echo 'KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"' | \
 sudo tee /etc/udev/rules.d/85-sunshine-input.rules
@@ -901,10 +899,9 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
         echo "StartLimitBurst=5" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "[Service]" | sudo tee --append ~/.config/systemd/user/sunshine.service
-        echo "ExecStart=flatpak run dev.lizardbyte.sunshine" | sudo tee --append ~/.config/systemd/user/sunshine.service
+        echo "ExecStart=/usr/bin/sunshine" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "Restart=on-failure" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "RestartSec=5s" | sudo tee --append ~/.config/systemd/user/sunshine.service
-        echo "ExecStop=flatpak kill dev.lizardbyte.sunshine" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "[Install]" | sudo tee --append ~/.config/systemd/user/sunshine.service
         echo "WantedBy=graphical-session.target" | sudo tee --append ~/.config/systemd/user/sunshine.service
