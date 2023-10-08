@@ -325,7 +325,7 @@ CPU=$(zenity --list --title "SELECT YOUR CPU." --text "Select your configuration
 
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     sudo mv /boot/initrd-$(uname -r) /boot/initrd-$(uname -r)-nouveau
-    sudo mkinitrd /boot/initrd-$(uname -r) $(uname -r)
+    sudo dracut -f --regenerate-all
 
     #++------------------------------ SSD/HDD SWAP OPTIMIZATION -------------------------------++#
     echo
