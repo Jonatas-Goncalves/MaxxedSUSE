@@ -53,7 +53,11 @@ CYAN=$ESC_SEQ"36;01m"
     clear
 
     # Instaling git to get MaxxedSUSE
+    echo
+    echo
     echo Root password is necessary to install Git
+    echo
+    echo
     sudo zypper --non-interactive in git
 
     # Clone the repository to MaxxedSUSE folder in the home directory
