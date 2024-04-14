@@ -53,7 +53,7 @@ CYAN=$ESC_SEQ"36;01m"
     clear
 
 # Clone the repository to MaxxedSUSE folder in the home directory
-sudo zypper in --non-interactive git
+sudo zypper --non-interactive in git
 git clone https://github.com/seu-usuario/seu-repositorio.git ~/MaxxedSUSE
 
 # Change directory to MaxxedSUSE
