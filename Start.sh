@@ -3,37 +3,6 @@
 source ./Scripts/Functions/Find.sh
 FIND /Scripts/Functions/ Functions.sh
 
-    echo
-    echo
-    echo
-    echo
-    echo
-    echo
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo -e "$GREEN                                                                                                              $COL_RESET"
-    echo -e "$GREEN                                           MaxxedSUSE Install Script                                          $COL_RESET"
-    echo -e "$GREEN                                                                                                              $COL_RESET"
-    echo -e "$GREEN                                       Starting Maxxeding your SUSE !!!                                       $COL_RESET"
-    echo -e "$GREEN                                                                                                              $COL_RESET"
-    echo -e "$GREEN                                                                                                              $COL_RESET"
-    echo -e "$GREEN                                All changes of this script are described on github !!!                        $COL_RESET"
-    echo -e "$GREEN                                             Don't trust me, verify !!!                                       $COL_RESET"
-    echo -e "$GREEN                              Check for updates at https://github.com/Jonatas-Goncalves                       $COL_RESET"
-    echo -e "$GREEN                                                                                                              $COL_RESET"
-    echo -e "$GREEN                                                                                                              $COL_RESET"
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo
-    echo
-    echo
-    echo
-    echo
-    echo
-    sleep 5
-    clear
-
-
 if [[ $EUID -ne 0 ]]; then
     echo "Run with sudo";
     exit 0
