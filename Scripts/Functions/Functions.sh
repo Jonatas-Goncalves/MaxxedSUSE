@@ -57,7 +57,7 @@ RUN_UPDATE_ONCE() {
         sleep 3 # Simulate an operation delay
             # Add repositories for openSUSE Leap 15.6
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
-            sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE Emulators\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo zypper --gpg-auto-import-keys addrepo https:/| grep '^VERSION_ID='/download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5 snappy
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
