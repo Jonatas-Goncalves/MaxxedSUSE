@@ -49,20 +49,20 @@ CYAN=$ESC_SEQ"36;01m"
     echo
     echo
     echo
-    sleep 5
+    #sleep 5
     clear
 
     # Instaling git to get MaxxedSUSE
-    sudo zypper --non-interactive in git
+    #sudo zypper --non-interactive in git
     
     # User variable to put MaxxedSUSE in user home
     USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
 	
     # Clone the repository to MaxxedSUSE folder in the home directory
-    su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE \"$HOME/MaxxedSUSE\""
+    su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE"
     
     # Change directory to MaxxedSUSE
-    su $USER -c "cd "$HOME/MaxxedSUSE""
+    su $USER -c "cd ~/MaxxedSUSE"
     
     # Starting MaxxedSUSE
     sudo bash -sE ./Start.sh
