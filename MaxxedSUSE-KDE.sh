@@ -61,9 +61,6 @@ CYAN=$ESC_SEQ"36;01m"
     # Clone the repository to MaxxedSUSE folder in the home directory
     su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE"
     
-    # Change directory to MaxxedSUSE
-    cd /home/$USER/MaxxedSUSE
-    
     # Starting MaxxedSUSE
-    su $USER -c "sudo bash -sE ./Start.sh"
+    su $USER -c "sudo bash -sE ~/MaxxedSUSE/Start.sh"
     
