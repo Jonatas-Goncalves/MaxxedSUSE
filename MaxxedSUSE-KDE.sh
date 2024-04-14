@@ -64,5 +64,5 @@ CYAN=$ESC_SEQ"36;01m"
     su $USER -c "cd /home/$USER/MaxxedSUSE"
     
     # Starting MaxxedSUSE
-    sudo -sE bash Start.sh
+    xdg-su -c -sE bash Start.sh
     
