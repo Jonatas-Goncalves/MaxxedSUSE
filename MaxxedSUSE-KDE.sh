@@ -54,10 +54,10 @@ CYAN=$ESC_SEQ"36;01m"
 
 # Clone the repository to MaxxedSUSE folder in the home directory
 sudo zypper --non-interactive in git
-git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
+su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
 
 # Change directory to MaxxedSUSE
-cd ~/MaxxedSUSE
+su $USER -c "cd "$HOME/MaxxedSUSE""
 
 # Execute o arquivo inicial do seu script
-sudo -sE bash ./Start.sh
+su $USER -c "sudo -sE bash ./Start.sh"
