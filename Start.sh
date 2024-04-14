@@ -57,6 +57,7 @@ else
 		FALSE 		'COMMUNICATION & BROWSERS'			"Navigation and communication"\
 		FALSE 		'UTILITIES' 		"Utility applications for the system"\
 		FALSE		'GAMES AND TOOLS'			"Tools to make gaming easier"\
+		FALSE		'GAMES STORES'			"Stores to install your games"\
 		FALSE		'EMULATORS'			"Most popular emulators"\
 		FALSE		'ADVANCED SYSTEM TOOLS'			"System tools for advanced users" );
 
@@ -97,7 +98,7 @@ else
 					FIND /Scripts/ GNT.sh
 				;;
 
-			"GAMES STORES")	#Tools to make gaming easier
+			"GAMES STORES")	#Stores to install your games
 					FIND /Scripts/ GST.sh
 				;;
 

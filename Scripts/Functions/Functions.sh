@@ -51,10 +51,10 @@ RUN_UPDATE_ONCE() {
         # Show progress dialog
         (
         echo "10" # Initial progress value
-        sleep 1 # Simulate an operation delay
+        sleep 2 # Simulate an operation delay
         echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
         echo "30" # Progress after adding repositories
-        sleep 1 # Simulate an operation delay
+        sleep 2 # Simulate an operation delay
             # Add repositories for openSUSE Leap 15.6
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
@@ -63,7 +63,7 @@ RUN_UPDATE_ONCE() {
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
         echo "# Installing necessary dependencies"
         echo "60" # Progress after installing dependencies
-        sleep 1 # Simulate an operation delay
+        sleep 2 # Simulate an operation delay
         sudo zypper --gpg-auto-import-keys refresh
         echo "# Updating the system"
         echo "100" # Progress upon finishing the update
@@ -75,10 +75,10 @@ RUN_UPDATE_ONCE() {
         # Show progress dialog
         (
         echo "10" # Initial progress value
-        sleep 1 # Simulate an operation delay
+        sleep 2 # Simulate an operation delay
         echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
         echo "30" # Progress after adding repositories
-        sleep 1 # Simulate an operation delay
+        sleep 2 # Simulate an operation delay
             # Add repositories for openSUSE Tumbleweed
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
@@ -87,7 +87,7 @@ RUN_UPDATE_ONCE() {
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
         echo "# Installing necessary dependencies"
         echo "60" # Progress after installing dependencies
-        sleep 1 # Simulate an operation delay
+        sleep 2 # Simulate an operation delay
         sudo zypper --gpg-auto-import-keys refresh
         echo "# Updating the system"
         echo "100" # Progress upon finishing the update
