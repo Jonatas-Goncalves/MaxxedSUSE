@@ -49,7 +49,7 @@ CYAN=$ESC_SEQ"36;01m"
     echo
     echo
     echo
-    sleep 5
+    #sleep 5
     clear
 
     # Instaling git to get MaxxedSUSE
