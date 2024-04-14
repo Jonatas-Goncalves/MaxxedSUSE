@@ -44,7 +44,7 @@ RUN_UPDATE_ONCE() {
         echo "DONE" > .flagfile.txt
 
         # Detect openSUSE version
-        OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^ID=')
+        OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^ID=' | cut -d '=' -f 2 | tr -d '"')
 
         # Show progress dialog
         (

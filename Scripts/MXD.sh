@@ -75,7 +75,7 @@ zenity --question --text "Hostname Changer! \n This script helps you set your ho
 Graphics=$( zenity --list --multiple --checklist\
     2>/dev/null --height=500 --width=600 \
     --title="Select items to Install"\
-    --text="The following Software(s) will be Installed"\
+    --text="SELECT YOUR GRAPHICS CARD"\
     --ok-label "Install" --cancel-label "Skip"\
     --column "Pick" --column "Software(s)" --column "Description"\
     FALSE 		'AMD'               "AMD Radeon Open Source Drivers"\
@@ -150,7 +150,7 @@ Graphics=$( zenity --list --multiple --checklist\
     OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^VERSION_ID=' | cut -d '"' -f 2)
 
 # Select CPU using Zenity
-CPU=$(zenity --list --title "SELECT YOUR CPU." --text "Select your configuration." \
+CPU=$(zenity --list --title "SELECT YOUR CPU." --text "IF YOU WANT GPU PASSTHROUGH SELECT YOUR HARDWARE, OR SKIP" \
     --radiolist \
     --column "Select" \
     --column "CPU Model" \
@@ -192,6 +192,7 @@ esac
 if [ -n "${sed_command}" ]; then
     sudo sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=\"[^\"]*/& ${sed_command}/" /etc/default/grub
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^ID=')
 
     # Check if NVIDIA drivers are used and execute appropriate commands
     if [ "${use_nvidia_drivers}" = true ]; then
@@ -199,9 +200,9 @@ if [ -n "${sed_command}" ]; then
     fi
 
     # Check openSUSE version and execute appropriate commands
-    if [[ "${OPEN_SUSE_VERSION}" == "15.6" ]]; then
+    if [[ "${OPEN_SUSE_VERSION}" == "opensuse-leap" ]]; then
         sudo mkinitrd /boot/initrd-$(uname -r) $(uname -r)
-    elif [[ "${OPEN_SUSE_VERSION}" == "tumbleweed" ]]; then
+    elif [[ "${OPEN_SUSE_VERSION}" == "opensuse-tumbleweed" ]]; then
         sudo dracut -f --regenerate-all
     else
         echo "Unsupported openSUSE version."
