@@ -68,7 +68,7 @@ CYAN=$ESC_SEQ"36;01m"
     # Starting MaxxedSUSE
     echo
     echo
-    echo Runing MaxxedSUSE
+    echo Enter the root password once again to run MaxxedSUSE
     echo
     echo
     xdg-su -c "sudo -sE bash Start.sh"
