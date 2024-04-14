@@ -57,7 +57,8 @@ sudo zypper --non-interactive in git
 su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
 
 # Change directory to MaxxedSUSE
-su $USER -c "cd "$HOME/MaxxedSUSE""
+su $USER -c "cd "'$HOME/MaxxedSUSE'"
 
 # Execute o arquivo inicial do seu script
-su $USER -c "sudo -sE bash ./Start.sh"
+su $USER -c 'sudo -sE bash ./Start.sh'
+
