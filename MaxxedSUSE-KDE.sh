@@ -55,15 +55,21 @@ CYAN=$ESC_SEQ"36;01m"
     echo
     echo Need root to install git to download MaxxedSUSE!!
     # Instaling git to get MaxxedSUSE
-    sudo zypper --non-interactive in git
+    if ! rpm -q git &>/dev/null; then
+		sudo zypper --non-interactive install git
+	fi
     echo
     echo
 
     echo
     echo Cloning MaxxedSUSE Script...
     # Clone the repository to MaxxedSUSE folder in the home directory
-    git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE
-
+    if [ ! -d "$HOME/MaxxedSUSE" ]; then
+    # The directory does not exist, so we clone the repository
+        git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE
+    else
+        echo "The MaxxedSUSE directory already exists, there is no need to clone it again."
+    fi
     cd /home/$USER/MaxxedSUSE
 
     echo

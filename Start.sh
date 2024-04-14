@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
     echo "Run with sudo";
     exit 0
 else
-    # Verifica se o zenity está instalado, caso contrário, instala
+    # Check if zenity is installed, if not, install it
     CHECK_DEPENDS_ELSE_INSTALL
 
     if [ -f .start.txt ]; then
@@ -19,7 +19,7 @@ else
         fi
     else
         echo "DONE" > .start.txt
-    # Exibe a caixa de diálogo
+    # Displays the dialog box
     zenity --question --text="On first use MaxxedSUSE will:
 
 Add the following repositories:
@@ -34,12 +34,12 @@ We will then update the system.
 
 This process should not be interrupted, would you like to start now?" --title="MaxxedSUSE Setup" 2>/dev/null
 
-    # Obtém a resposta do usuário
+    # Gets the user's response
     response=$?
 
-    # Verifica a resposta
+    # Check the answer
     if [ $response -eq 0 ]; then
-        # Se o usuário selecionar "Sim", execute o comando RUN_UPDATE_ONCE
+        # If the user selects "Yes", run the RUN_UPDATE_ONCE command
         RUN_UPDATE_ONCE
         CONFIGURE_SNAP_FLATPAK_ONCE
         CONFIGURE_CODECS_ONCE
@@ -50,14 +50,14 @@ This process should not be interrupted, would you like to start now?" --title="M
 	fi
 fi
 
-# run only if a superuser
+# Run only if a superuser
 if [[ $EUID -ne 0 ]]; then
 	IF_NOT_SUPERUSER $(basename "$0")
    	exit 1
 else
 	#Zenity Checklist for all the scripts
 	SEL=$( zenity --list --checklist \
-		2>/dev/null --height=450 --width=720\
+		2>/dev/null --height=500 --width=720\
 		--title "Do you want to Maxxedize your system or install Applications?"\
 		--text="<b>START MAXXEDING YOUR OPENSUSE!\n</b>"\
 		--ok-label "Start" --cancel-label "Exit"\

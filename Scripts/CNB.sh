@@ -20,7 +20,7 @@ else
 
 #--------- COMMUNICATION & BROWSERS ----------#
 	CNB=$( zenity --list --checklist\
-		2>/dev/null --height=480 --width=720 \
+		2>/dev/null --height=500 --width=720 \
 		--title="Select items to Install"\
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
