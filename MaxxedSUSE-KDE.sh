@@ -62,5 +62,5 @@ CYAN=$ESC_SEQ"36;01m"
     su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE"
     
     # Starting MaxxedSUSE
-    su $USER -c "sudo bash -sE ~/MaxxedSUSE/Start.sh"
+    sudo bash -sE ~/MaxxedSUSE/Start.sh
     
