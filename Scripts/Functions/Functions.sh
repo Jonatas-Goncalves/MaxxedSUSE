@@ -1,0 +1,183 @@
+#!/bin/bash
+
+export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin
+
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+RED=$ESC_SEQ"31;01m"
+GREEN=$ESC_SEQ"32;01m"
+YELLOW=$ESC_SEQ"33;01m"
+BLUE=$ESC_SEQ"34;01m"
+MAGENTA=$ESC_SEQ"35;01m"
+CYAN=$ESC_SEQ"36;01m"
+
+    output() {
+    printf "\E[0;33;40m"
+    echo $1
+    printf "\E[0m"ku
+    }
+
+    displayErr() {
+    echo
+    echo $1;
+    echo
+    exit 1;
+    }
+
+CHECK_ICON_PRESENT_ELSE_FETCH() {
+	Path=$1
+	Icon=$2
+	Url=$3
+
+	Fullpath="$(dirname \"${0}\")"$Path$Icon
+	Targetpath="$(dirname \"${0}\")"$Path
+
+	if find $Fullpath &>/dev/null; then
+		:
+	else
+		(cd $Targetpath && curl -s -o $Icon $Url > /dev/null)
+	fi
+}
+
+GET_SYSTEM_ARCH() {
+	Arch=$(arch)
+	echo "$Arch"
+}
+
+GET_OS_BITS_RETURN_CUSTOM() {
+	OS_Bits=$(getconf LONG_BIT)
+	
+	if [[ "$OS_Bits" -eq 64 ]]; then
+		echo "$1"
+	else
+		echo "$2"
+	fi
+}
+
+RUN_UPDATE_ONCE() {
+    if [ -f .flagfile.txt ]; then
+        if grep -q "DONE" ".flagfile.txt"; then
+            echo "Repos already configured."
+        else
+            rm .flagfile.txt
+            echo "DONE" > .flagfile.txt
+        fi
+    else
+        echo "DONE" > .flagfile.txt
+
+        # Detect openSUSE version
+        OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^VERSION_ID=' | cut -d '"' -f 2)
+
+        # Show progress dialog
+        (
+        echo "10" # Initial progress value
+        sleep 1 # Simulate an operation delay
+        echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
+        echo "30" # Progress after adding repositories
+        sleep 1 # Simulate an operation delay
+        echo "# Installing necessary dependencies"
+        echo "60" # Progress after installing dependencies
+        sleep 1 # Simulate an operation delay
+        echo "# Updating the system"
+        echo "100" # Progress upon finishing the update
+        ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
+
+        # Redirect standard output and standard error to /dev/null
+        exec > /dev/null 2>&1
+
+
+        # Add repositories based on openSUSE version
+        if [ "$OPEN_SUSE_VERSION" = "15.6" ]; then
+            # Add repositories for openSUSE Leap 15.6
+            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
+            sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5 snappy
+            sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
+        elif [ "$OPEN_SUSE_VERSION" = "Tumbleweed" ]; then
+            # Add repositories for openSUSE Tumbleweed
+            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
+            sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed/ snappy
+            sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+        fi
+
+         # Refresh repositories and update the system
+        sudo zypper --gpg-auto-import-keys refresh
+        sudo zypper --non-interactive dup --auto-agree-with-licenses --no-confirm --no-recommends
+    fi
+}
+
+CONFIGURE_SNAP_FLATPAK_ONCE() {
+    if [ -f .snapflat.txt ]; then
+        if grep -q "DONE" ".snapflat.txt"; then
+            echo "Repos already configured."
+        else
+            rm .snapflat.txt
+            echo "DONE" > .snapflat.txt
+        fi
+    else
+        echo "DONE" > .snapflat.txt
+            echo -e "$YELLOW    Configuring Snap Services !!!    $COL_RESET"
+            sudo zypper --non-interactive dup --from snappy
+            sudo zypper --non-interactive install snapd
+            USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
+	        su $USER -c "source /etc/profile && source ~/.bashrc"
+            sleep 2
+            sudo systemctl enable --now snapd
+            sudo systemctl enable --now snapd.apparmor
+            sudo systemctl start snapd.apparmor
+            sudo systemctl start snapd
+
+            echo -e "$YELLOW    Configuring Flatpak Services !!!    $COL_RESET"
+            sudo zypper --non-interactive install dbus-1
+            flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+            USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
+	        su $USER -c "source /etc/profile && source ~/.bashrc"
+			su $USER -c "export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS""
+	fi
+}
+
+CONFIGURE_CODECS_ONCE() {
+    if [ -f .codecs.txt ]; then
+        if grep -q "DONE" ".codecs.txt"; then
+            echo "Repos already configured."
+        else
+            rm .codecs.txt
+            echo "DONE" > .codecs.txt
+        fi
+    else
+        echo "DONE" > .codecs.txt
+            echo -e "$YELLOW    Installing media codecs !!!    $COL_RESET"
+            sudo zypper --non-interactive install --allow-vendor-change --from packman \
+            ffmpeg gstreamer-plugins-bad lame gstreamer-plugins-libav gstreamer-plugins-ugly\
+            gstreamer-plugins-ugly-orig-addon libavresample4 libavdevice57 vlc-codecs
+	fi
+}
+
+CHECK_DEPENDS_ELSE_INSTALL() {
+	# Check if zenity and dpkg is installed, if not, install it
+	if ! rpm -q zenity dpkg &>/dev/null; then
+		sudo zypper --non-interactive install zenity dpkg
+	fi
+}
+
+
+IF_NOT_SUPERUSER() {
+	ScriptName=$1
+	#every zenity command will have height=480 and width=720 for the sake of uniformity
+	zenity --error --icon-name=error --title="ROOT permission required!" --text="\nThis script requires ROOT permission. Run with sudo!" --no-wrap 2>/dev/null
+	notify-send -u normal "ERROR" "Re-run $1"
+}
+
+COMPLETION_NOTIFICATION() {
+	Title=$1
+	Text=$2
+	
+	#notify-send cannot work as root
+	USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
+	su $USER -c "/usr/bin/notify-send -u normal '$Title' '$Text'"
+}
+
+

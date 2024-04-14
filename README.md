@@ -2,23 +2,17 @@
 
 This project is a script to install main and most common day-to-day applications of a common Windows user and  too to facilitate the installation of games for those who are not familiar with Linux.
 
-    * --- This Script is to run on a clean install of OpenSUSE Leap 15.5 or Tumbleweed --- *
+    * --- This Script is to run on a clean install of OpenSUSE Leap 15.6 or Tumbleweed (Possibly works in 15.5)--- *
 
 # Installation
 
-    Run directly from web with this command: 
+    Run directly from web with this command:
 
-    for KDE on Leap run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE-Leap.sh | sudo -sE bash
-    For KDE on Tumbleweed run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE-Tumbleweed.sh | sudo -sE bash
-    
-    **Will be added soon**
-    for GNOME run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-GNOME.sh | sudo -sE bash
+    For KDE run:
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE.sh | sudo -sE bash
 
     or
-    Download the zip, extract, and "sudo bash MaxxedSUSE-XXX-XXX.sh"
+    Download the zip, extract, and "sudo -sE bash MaxxedSUSE-XXX.sh"
 
 
 
@@ -31,7 +25,7 @@ If you don't want games, nothing will be installed over games, which is complete
 
 It is a one-page script to be of simple conference to the user, not needing to consult an immensity of source code to trust or not in the execution, just checking the changes that will be carried out in just one page of easy conference and understanding, obviously that there's still a lot to simplify in this script.
 
-OpenSUSE Leap 15.5 / Tumbleweed:
+OpenSUSE Leap 15.6 / Tumbleweed:
 The choice of OpenSUSE was based on several tests that I performed on many distributions, and Opensuse in my opinion (I know it's completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance for open applications and perform daily tasks.
 In particular, I noticed that in Wine the performance is much superior to other distributions, due to Opensuse always delivering the latest updates, it makes the system fluids impeccable, With better results on Tumbleweed for being Rolling Release!
 In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, modifications that for the most part, Opensuse dispenses with these fixes already applied in the most recent updates.
@@ -46,26 +40,23 @@ I am fully aware that this script needs to be improved, reduced and simplified, 
 
 What system modifications does the MaxxedSUSE Script perform?
 
-Opensuse 15.5:
+Opensuse 15.6:
 
     Added repositories:
 
-    Exclusive MaxxedSUSE repository to bring some useful tools to Leap 15.4:
-    https://download.opensuse.org/repositories/home:/MaxxedSUSE/15.5/ MaxxedSUSE
-
-    https://download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
-    https://download.nvidia.com/opensuse/leap/$releasever' NVIDIA
-    https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5/ snappy
-    http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.5/ packman
+    Exclusive MaxxedSUSE repository to bring some useful tools to Leap 15.6:
     
+    https://download.opensuse.org/repositories/home:/MaxxedSUSE:15.6/ MaxxedSUSE
+    https://download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
+    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5/ snappy
+    http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
+
 Opensuse Tumbleweed:
 
     Added repositories:
 
     Exclusive MaxxedSUSE repository to bring some useful tools to Tumbleweed:
-    https://download.opensuse.org/repositories/home:/MaxxedSUSE/openSUSE_Tumbleweed
-
-    https://download.nvidia.com/opensuse/tumbleweed NVIDIA
+        https://download.opensuse.org/repositories/home:/MaxxedSUSE/openSUSE_Tumbleweed
     https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy
     https://mirrorcache-us.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
     http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
@@ -74,7 +65,7 @@ Opensuse Tumbleweed:
 
 Some kernel modules loaded for better Nvidia driver operation and to enable PCI Passthrough.
 added depending on the processor options selected during script execution:
-    
+
     nvidia-drm.modeset=1
     intel_iommu=on
     amd_iommu=on
@@ -91,7 +82,7 @@ Snap daemon configuration to allow installation of Snaps.
 
 Initial flathub setup to allow flatpak installations:
 
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 
 Added parameters to launch some applications:
@@ -107,8 +98,8 @@ Added parameters to launch some applications:
     Itch.io:
 
     --no-sandbox
-    
-    atom:
+
+    Atom-ng:
     --in-process-gpu
 
 
