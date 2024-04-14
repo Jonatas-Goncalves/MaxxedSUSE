@@ -46,6 +46,8 @@ RUN_UPDATE_ONCE() {
         # Detect openSUSE version
         OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^ID=' | cut -d '=' -f 2 | tr -d '"')
 
+        # Add repositories based on openSUSE version
+        if [ "$OPEN_SUSE_VERSION" = "opensuse-leap" ]; then
         # Show progress dialog
         (
         echo "10" # Initial progress value
@@ -53,34 +55,45 @@ RUN_UPDATE_ONCE() {
         echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
         echo "30" # Progress after adding repositories
         sleep 1 # Simulate an operation delay
-        echo "# Installing necessary dependencies"
-        echo "60" # Progress after installing dependencies
-        sleep 1 # Simulate an operation delay
-        echo "# Updating the system"
-        echo "100" # Progress upon finishing the update
-        sleep 2 # Wait for 2 seconds before closing the progress dialog
-        ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
-
-        # Add repositories based on openSUSE version
-        if [ "$OPEN_SUSE_VERSION" = "opensuse-leap" ]; then
             # Add repositories for openSUSE Leap 15.6
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo zypper --gpg-auto-import-keys addrepo https:/| grep '^VERSION_ID='/download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5 snappy
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
+        echo "# Installing necessary dependencies"
+        echo "60" # Progress after installing dependencies
+        sleep 1 # Simulate an operation delay
+        sudo zypper --gpg-auto-import-keys refresh
+        echo "# Updating the system"
+        echo "100" # Progress upon finishing the update
+        sleep 2 # Wait for 2 seconds before closing the progress dialog
+        sudo zypper --non-interactive dup --auto-agree-with-licenses --no-confirm --no-recommends
+        ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
+
         elif [ "$OPEN_SUSE_VERSION" = "opensuse-tumbleweed" ]; then
+        echo "10" # Initial progress value
+        sleep 1 # Simulate an operation delay
+        echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
+        echo "30" # Progress after adding repositories
+        sleep 1 # Simulate an operation delay
             # Add repositories for openSUSE Tumbleweed
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed/ snappy
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
-        fi
-
-         # Refresh repositories and update the system
+        echo "# Installing necessary dependencies"
+        echo "60" # Progress after installing dependencies
+        sleep 1 # Simulate an operation delay
         sudo zypper --gpg-auto-import-keys refresh
+        echo "# Updating the system"
+        echo "100" # Progress upon finishing the update
+        sleep 2 # Wait for 2 seconds before closing the progress dialog
         sudo zypper --non-interactive dup --auto-agree-with-licenses --no-confirm --no-recommends
+        ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
+
+        fi
     fi
 }
 
