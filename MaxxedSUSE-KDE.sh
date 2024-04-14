@@ -52,12 +52,18 @@ CYAN=$ESC_SEQ"36;01m"
     sleep 5
     clear
 
-# Clone the repository to MaxxedSUSE folder in the home directory
-sudo zypper --non-interactive in git
-su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE \"$HOME/MaxxedSUSE\""
-
-# Change directory to MaxxedSUSE
-su $USER -c "cd "$HOME/MaxxedSUSE""
-
-# Execute o arquivo inicial do seu script
-su $USER -c "bash -sE ./Start.sh"
+    # Instaling git to get MaxxedSUSE
+    sudo zypper --non-interactive in git
+    
+    # User variable to put MaxxedSUSE in user home
+    USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
+	
+    # Clone the repository to MaxxedSUSE folder in the home directory
+    su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE \"$HOME/MaxxedSUSE\""
+    
+    # Change directory to MaxxedSUSE
+    su $USER -c "cd "$HOME/MaxxedSUSE""
+    
+    # Starting MaxxedSUSE
+    sudo bash -sE ./Start.sh
+    
