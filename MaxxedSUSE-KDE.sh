@@ -52,13 +52,21 @@ CYAN=$ESC_SEQ"36;01m"
     #sleep 5
     clear
 
+    echo
+    echo Need root to install git to download MaxxedSUSE!!
     # Instaling git to get MaxxedSUSE
     sudo zypper --non-interactive in git
+    echo
+    echo
 
+    echo
+    echo Cloning MaxxedSUSE Script...
     # Clone the repository to MaxxedSUSE folder in the home directory
     git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE
 
     cd /home/$USER/MaxxedSUSE
 
+    echo
+    echo
     # Starting MaxxedSUSE
-    xdg-su -c "sudo -sE bash Start.sh"
+    xdg-su -c "sudo -sE bash Start.sh" 2>/dev/null
