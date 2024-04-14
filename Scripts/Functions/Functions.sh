@@ -82,10 +82,6 @@ RUN_UPDATE_ONCE() {
         echo "100" # Progress upon finishing the update
         ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
 
-        # Redirect standard output and standard error to /dev/null
-        exec > /dev/null 2>&1
-
-
         # Add repositories based on openSUSE version
         if [ "$OPEN_SUSE_VERSION" = "15.6" ]; then
             # Add repositories for openSUSE Leap 15.6
