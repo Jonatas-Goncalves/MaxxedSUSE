@@ -54,7 +54,7 @@ CYAN=$ESC_SEQ"36;01m"
 
 # Clone the repository to MaxxedSUSE folder in the home directory
 sudo zypper --non-interactive in git
-git clone https://github.com/seu-usuario/seu-repositorio.git ~/MaxxedSUSE
+git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
 
 # Change directory to MaxxedSUSE
 cd ~/MaxxedSUSE
