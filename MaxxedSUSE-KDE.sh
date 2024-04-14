@@ -59,7 +59,7 @@ CYAN=$ESC_SEQ"36;01m"
     USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
 	
     # Clone the repository to MaxxedSUSE folder in the home directory
-    su $USER -c "git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE/Staging ~/MaxxedSUSE"
+    su $USER -c "git clone -b Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE/ ~/MaxxedSUSE"
     
     # Starting MaxxedSUSE
     sudo bash -sE ~/MaxxedSUSE/Start.sh
