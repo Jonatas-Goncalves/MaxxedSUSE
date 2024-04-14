@@ -53,8 +53,8 @@ CYAN=$ESC_SEQ"36;01m"
     clear
 
     # Instaling git to get MaxxedSUSE
-    sudo zypper --non-interactive in git
-	
+    xdg-su -c "sudo zypper --non-interactive in git"
+    	
     # Clone the repository to MaxxedSUSE folder in the home directory
     git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE
     
