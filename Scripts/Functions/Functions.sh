@@ -2,28 +2,6 @@
 
 export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin
 
-ESC_SEQ="\x1b["
-COL_RESET=$ESC_SEQ"39;49;00m"
-RED=$ESC_SEQ"31;01m"
-GREEN=$ESC_SEQ"32;01m"
-YELLOW=$ESC_SEQ"33;01m"
-BLUE=$ESC_SEQ"34;01m"
-MAGENTA=$ESC_SEQ"35;01m"
-CYAN=$ESC_SEQ"36;01m"
-
-    output() {
-    printf "\E[0;33;40m"
-    echo $1
-    printf "\E[0m"ku
-    }
-
-    displayErr() {
-    echo
-    echo $1;
-    echo
-    exit 1;
-    }
-
 CHECK_ICON_PRESENT_ELSE_FETCH() {
 	Path=$1
 	Icon=$2
@@ -66,7 +44,7 @@ RUN_UPDATE_ONCE() {
         echo "DONE" > .flagfile.txt
 
         # Detect openSUSE version
-        OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^VERSION_ID=' | cut -d '"' -f 2)
+        OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^ID=')
 
         # Show progress dialog
         (
@@ -80,24 +58,21 @@ RUN_UPDATE_ONCE() {
         sleep 1 # Simulate an operation delay
         echo "# Updating the system"
         echo "100" # Progress upon finishing the update
+        sleep 2 # Wait for 2 seconds before closing the progress dialog
         ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
 
-        # Redirect standard output and standard error to /dev/null
-        exec > /dev/null 2>&1
-
-
         # Add repositories based on openSUSE version
-        if [ "$OPEN_SUSE_VERSION" = "15.6" ]; then
+        if [ "$OPEN_SUSE_VERSION" = "opensuse-leap" ]; then
             # Add repositories for openSUSE Leap 15.6
-            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
-            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
-            sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
+            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:15.6/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo zypper --gpg-auto-import-keys addrepo https:/| grep '^VERSION_ID='/download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5 snappy
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
-        elif [ "$OPEN_SUSE_VERSION" = "Tumbleweed" ]; then
+        elif [ "$OPEN_SUSE_VERSION" = "opensuse-tumbleweed" ]; then
             # Add repositories for openSUSE Tumbleweed
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
-            sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed/ snappy
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman

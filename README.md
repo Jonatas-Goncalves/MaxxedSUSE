@@ -9,7 +9,7 @@ This project is a script to install main and most common day-to-day applications
     Run directly from web with this command:
 
     For KDE run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/Staging/MaxxedSUSE-KDE.sh | sudo -sE bash
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE.sh | sudo -sE bash
 
     or
     Download the zip, extract, and "sudo -sE bash MaxxedSUSE-XXX.sh"

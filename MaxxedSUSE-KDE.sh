@@ -52,12 +52,13 @@ CYAN=$ESC_SEQ"36;01m"
     sleep 5
     clear
 
-# Clone the repository to MaxxedSUSE folder in the home directory
-sudo zypper in --non-interactive git
-git clone https://github.com/seu-usuario/seu-repositorio.git ~/MaxxedSUSE
+    # Instaling git to get MaxxedSUSE
+    sudo zypper --non-interactive in git
 
-# Change directory to MaxxedSUSE
-cd ~/MaxxedSUSE
+    # Clone the repository to MaxxedSUSE folder in the home directory
+    git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE
 
-# Execute o arquivo inicial do seu script
-sudo -sE bash./Start.sh
+    cd /home/$USER/MaxxedSUSE
+
+    # Starting MaxxedSUSE
+    xdg-su -c "sudo -sE bash Start.sh"
