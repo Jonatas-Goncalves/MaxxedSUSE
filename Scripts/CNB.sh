@@ -118,6 +118,8 @@ else
 				;;
 			esac
 		done
+
+		source ./Start.sh
 	fi
 	unset IFS
 #------------ COMMUNICATION & BROWSERS end ------------#

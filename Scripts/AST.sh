@@ -113,6 +113,8 @@ else
 				;;
 			esac
 		done
+
+		source ./Start.sh
 	fi
 	unset IFS
 #------------ ADVANCED SYSTEM TOOLS end ------------#

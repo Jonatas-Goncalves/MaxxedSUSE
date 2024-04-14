@@ -126,6 +126,8 @@ else
 
 			esac
 		done
+
+		source ./Start.sh
 	fi
 	unset IFS
 #----------------- EMULATORS end ------------------#

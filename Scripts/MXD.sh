@@ -236,3 +236,5 @@ zenity --question --text="Optimize swap and swapness to reduze disk usage and im
     #++---------------------- ENDING OF FIRST RUN OF SCRIPT -------------------++#
 
 fi
+
+source ./Start.sh

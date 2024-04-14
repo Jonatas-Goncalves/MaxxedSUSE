@@ -144,6 +144,8 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
 
 			esac
 		done
+
+		source ./Start.sh
 	fi
 	unset IFS
 #----------------- GAMES AND TOOLS end ------------------#

@@ -10,6 +10,15 @@ else
     # Verifica se o zenity está instalado, caso contrário, instala
     CHECK_DEPENDS_ELSE_INSTALL
 
+    if [ -f .start.txt ]; then
+        if grep -q "DONE" ".start.txt"; then
+            echo "Repos already configured."
+        else
+            rm .start.txt
+            echo "DONE" > .start.txt
+        fi
+    else
+        echo "DONE" > .start.txt
     # Exibe a caixa de diálogo
     zenity --question --text="On first use MaxxedSUSE will:
 
@@ -38,6 +47,7 @@ This process should not be interrupted, would you like to start now?" --title="M
         echo "Update process cancelled by the user."
         exit 0
     fi
+	fi
 fi
 
 # run only if a superuser
