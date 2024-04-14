@@ -2,7 +2,7 @@
 
 This project is a script to install main and most common day-to-day applications of a common Windows user and  too to facilitate the installation of games for those who are not familiar with Linux.
 
-    * --- This Script is to run on a clean install of OpenSUSE Leap 15.6 or Tumbleweed (Possibly works in 15.5)--- *
+    * --- This Script is to run on a clean install of OpenSUSE Tumbleweed and Leap 15.6 (Possibly works in 15.5) --- *
 
 # Installation
 
@@ -12,7 +12,7 @@ This project is a script to install main and most common day-to-day applications
     curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE.sh | bash
 
     or
-    Download the zip, extract, and "sudo -sE bash MaxxedSUSE-XXX.sh"
+    Download the zip, extract, and run "sudo -sE bash Start.sh"
 
 
 
