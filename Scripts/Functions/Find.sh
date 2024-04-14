@@ -8,7 +8,7 @@ FIND() {
 
     Fullpath="$(dirname "${0}")/${Path}/${Sh}"
 
-    # Remova barras extras no caminho
+    # Remove extra slashes in the path
     Fullpath=$(echo "$Fullpath" | sed 's#//*#/#g')
 
     if [ -f "$Fullpath" ]; then

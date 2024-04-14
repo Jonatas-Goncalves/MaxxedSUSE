@@ -57,7 +57,7 @@ if [[ $EUID -ne 0 ]]; then
 else
 	#Zenity Checklist for all the scripts
 	SEL=$( zenity --list --checklist \
-		2>/dev/null --height=500 --width=720\
+		2>/dev/null --height=550 --width=720\
 		--title "Do you want to Maxxedize your system or install Applications?"\
 		--text="<b>START MAXXEDING YOUR OPENSUSE!\n</b>"\
 		--ok-label "Start" --cancel-label "Exit"\
