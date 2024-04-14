@@ -60,4 +60,4 @@ git clone https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
 cd ~/MaxxedSUSE
 
 # Execute o arquivo inicial do seu script
-sudo -sE bash./Start.sh
+sudo -sE bash ./Start.sh
