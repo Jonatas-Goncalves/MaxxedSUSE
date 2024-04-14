@@ -72,6 +72,8 @@ RUN_UPDATE_ONCE() {
         ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
 
         elif [ "$OPEN_SUSE_VERSION" = "opensuse-tumbleweed" ]; then
+        # Show progress dialog
+        (
         echo "10" # Initial progress value
         sleep 1 # Simulate an operation delay
         echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
