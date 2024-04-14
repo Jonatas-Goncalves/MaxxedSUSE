@@ -19,7 +19,7 @@ else
 #if all permissions granted	
 
 #------------- GAMES STORES -------------#
-	GMT=$( zenity --list --checklist\
+	GST=$( zenity --list --checklist\
 		2>/dev/null --height=480 --width=720 \
 		--title="Select items to Install"\
 		--text="The following Software(s) will be Installed"\
@@ -34,7 +34,7 @@ else
 		FALSE 		Steam-Flatpack 		"Flatpak version of Steam" );
 
 	#column="2" is sent to output by default
-	if [[ $? -eq 0 && -z "$GMT"  ]]; then
+	if [[ $? -eq 0 && -z "$GST"  ]]; then
 		zenity --warning \
 		--text "\nNo Option Selected. Nothing will be installed!"\
 		2>/dev/null --no-wrap
@@ -42,7 +42,7 @@ else
 		#this is mandatory for the space in the names in "Software(s)" column, also IFS unset later
 		IFS=$'\n'
 
-		for option in $(echo $GMT | tr "|" "\n"); do
+		for option in $(echo $GST | tr "|" "\n"); do
 
 			case $option in
 
@@ -64,6 +64,7 @@ else
 
 			"Lutris")		#Play all your games on Linux
 					ZYPPER_INSTALL "lutris" "Lutris" "lutris"
+					sudo sed -i 's/Categories=Network;FileTransfer;/Categories=Network;FileTransfer;Game;/' /usr/share/applications/net.lutris.Lutris
 				;;
 
 			"PlayOnLinux")		#Install and use non-native applications on your favorite operating system
@@ -91,7 +92,7 @@ else
 	unset IFS
 #----------------- GAMES STORES end ------------------#
 
-	if [[ ! -z $GMT ]]; then
+	if [[ ! -z $GST ]]; then
 		COMPLETION_NOTIFICATION 'Complete' 'Softwares Installed'
 	fi
 fi

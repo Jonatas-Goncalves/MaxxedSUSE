@@ -19,7 +19,7 @@ else
 #if all permissions granted	
 
 #------------- EMULATORS -------------#
-	GMT=$( zenity --list --checklist\
+	EML=$( zenity --list --checklist\
 		2>/dev/null --height=480 --width=720 \
 		--title="Select items to Install"\
 		--text="The following Software(s) will be Installed"\
@@ -44,7 +44,7 @@ else
 		FALSE 		Xenia 		"Xbox 360 emulator" );
 
 	#column="2" is sent to output by default
-	if [[ $? -eq 0 && -z "$GMT"  ]]; then
+	if [[ $? -eq 0 && -z "$EML"  ]]; then
 		zenity --warning \
 		--text "\nNo Option Selected. Nothing will be installed!"\
 		2>/dev/null --no-wrap
@@ -52,7 +52,7 @@ else
 		#this is mandatory for the space in the names in "Software(s)" column, also IFS unset later
 		IFS=$'\n'
 
-		for option in $(echo $GMT | tr "|" "\n"); do
+		for option in $(echo $EML | tr "|" "\n"); do
 
 			case $option in
 
@@ -132,7 +132,7 @@ else
 	unset IFS
 #----------------- EMULATORS end ------------------#
 
-	if [[ ! -z $GMT ]]; then
+	if [[ ! -z $EML ]]; then
 		COMPLETION_NOTIFICATION 'Complete' 'Softwares Installed'
 	fi
 fi

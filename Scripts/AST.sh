@@ -19,7 +19,7 @@ else
 #if all permissions granted
 
 #--------- ADVANCED SYSTEM TOOLS ----------#
-	CNB=$( zenity --list --checklist\
+	AST=$( zenity --list --checklist\
 		2>/dev/null --height=480 --width=720 \
 		--title="Select items to Install"\
 		--text="The following Software(s) will be Installed"\
@@ -45,7 +45,7 @@ else
 
 
 	#column="2" is sent to output by default
-	if [[ $? -eq 0 && -z "$CNB"  ]]; then
+	if [[ $? -eq 0 && -z "$AST"  ]]; then
 		zenity --warning \
 		--text "\nNo Option Selected. Nothing will be installed!"\
 		2>/dev/null --no-wrap
@@ -53,7 +53,7 @@ else
 		#this is mandatory for the space in the "Software(s)" column, e.g. 'Android Studio', also IFS unset later
 		IFS=$'\n'
 
-		for option in $(echo $CNB | tr "|" "\n"); do
+		for option in $(echo $AST | tr "|" "\n"); do
 
 			case $option in
 
@@ -120,7 +120,7 @@ else
 #------------ ADVANCED SYSTEM TOOLS end ------------#
 
 
-	if [[ ! -z $CNB ]]; then
+	if [[ ! -z $AST ]]; then
 		COMPLETION_NOTIFICATION 'Complete' 'Softwares Installed'
 	fi
 fi

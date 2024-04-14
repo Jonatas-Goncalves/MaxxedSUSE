@@ -19,7 +19,7 @@ else
 #if all permissions granted	
 
 #------------- GAMES AND TOOLS -------------#
-	GMT=$( zenity --list --checklist\
+	GNT=$( zenity --list --checklist\
 		2>/dev/null --height=480 --width=720 \
 		--title="Select items to Install"\
 		--text="The following Software(s) will be Installed"\
@@ -44,7 +44,7 @@ else
 		FALSE 		Xone 		"Linux kernel driver for Xbox One and Xbox Series X|S accessories" );
 
 	#column="2" is sent to output by default
-	if [[ $? -eq 0 && -z "$GMT"  ]]; then
+	if [[ $? -eq 0 && -z "$GNT"  ]]; then
 		zenity --warning \
 		--text "\nNo Option Selected. Nothing will be installed!"\
 		2>/dev/null --no-wrap
@@ -52,7 +52,7 @@ else
 		#this is mandatory for the space in the names in "Software(s)" column, also IFS unset later
 		IFS=$'\n'
 
-		for option in $(echo $GMT | tr "|" "\n"); do
+		for option in $(echo $GNT | tr "|" "\n"); do
 
 			case $option in
 
@@ -150,7 +150,7 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
 	unset IFS
 #----------------- GAMES AND TOOLS end ------------------#
 
-	if [[ ! -z $GMT ]]; then
+	if [[ ! -z $GNT ]]; then
 		COMPLETION_NOTIFICATION 'Complete' 'Softwares Installed'
 	fi
 fi
