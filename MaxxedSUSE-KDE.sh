@@ -71,6 +71,7 @@ CYAN=$ESC_SEQ"36;01m"
         echo "The MaxxedSUSE directory already exists, there is no need to clone it again."
     fi
     cd /home/$USER/MaxxedSUSE
+    clear
 
     echo
     echo
