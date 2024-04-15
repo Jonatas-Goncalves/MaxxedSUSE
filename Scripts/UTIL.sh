@@ -32,6 +32,7 @@ else
 		FALSE 		'CPU-X' 		"Gathers information on CPU, motherboard and more"\
 		FALSE 		'FDM'			"FDM is a powerful modern download accelerator and organizer"\
 		FALSE 		'Flameshot' 		"Cross-platform tool to take screenshots with many built-in features"\
+		FALSE 		'Flatseal' 		"Manage Flatpak permissions"\
 		FALSE		'Git'			"A Fast, Scalable, Distributed Free & Open-Source VCS"\
 		FALSE		'Github' 		"GUI Open source Electron-based GitHub app"\
 		FALSE		'gThumb' 		"Is an open-source software image viewer, image organizer"\
@@ -92,6 +93,10 @@ else
 
 			"Flameshot")		#DM is a powerful modern download accelerator and organizer
 					ZYPPER_INSTALL "flameshot" "Flameshot" "flameshot"
+				;;
+
+			"Flatseal ")		#Manage Flatpak permissions
+					FLATPAK_INSTALL "com.github.tchx84.Flatseal" "Flatseal" "com.github.tchx84.Flatseal"
 				;;
 
 			"Git")				#A fast, scalable, distributed free & open-source VCS

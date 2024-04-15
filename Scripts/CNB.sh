@@ -35,6 +35,7 @@ else
 		FALSE		'SyncThingTray'		"Tray application and Dolphin/Plasma integration for Syncthing"\
 		FALSE		'Tangram'		"Browser designed to organize and run your Web applications"\
 		FALSE		'Telegram Desktop'	"Official Desktop Client for the Telegram Messenger"\
+		FALSE		'Tor Browser Launcher'	"A program to help you download, keep updated, and run the Tor Browser Bundle"\
 		FALSE		'Warp'	"Fast and secure file transfer"\
 		FALSE		'Whatsapp'			"An unofficial WhatsApp desktop application for Linux"\
 		FALSE		'Valent'	"Connect, control and sync devices"\
@@ -99,6 +100,10 @@ else
 
 			"Telegram Desktop")		#Official Desktop Client for the Telegram Messenger
 					ZYPPER_INSTALL "telegram-desktop" "Telegram Desktop" "telegram-desktop"
+				;;
+
+			"Tor Browser Launcher")		#A program to help you download, keep updated, and run the Tor Browser Bundle
+					ZYPPER_INSTALL "torbrowser-launcher" "Tor Browser Launcher" "torbrowser-launcher"
 				;;
 
 			"Warp")			#Fast and secure file transfer

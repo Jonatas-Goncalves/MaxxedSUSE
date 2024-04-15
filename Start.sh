@@ -93,7 +93,7 @@ else
 				;;
 
 			"AUDIO & VIDEO")	#Audio and video softwares
-					FIND /Scripts/ AAV.sh
+					FIND /Scripts/ ANV.sh
 				;;
 
 			"COMMUNICATION & BROWSERS")		#Navigation and communication

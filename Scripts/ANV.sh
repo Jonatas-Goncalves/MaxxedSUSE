@@ -19,13 +19,12 @@ else
 #if all permissions granted	
 
 #------------- AUDIO & VIDEO -------------#
-	AAV=$( zenity --list --checklist\
+	ANV=$( zenity --list --checklist\
 		2>/dev/null --height=500 --width=720 \
 		--title="Select items to Install"\
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
-		FALSE 		'DaVinci Resolve'			"Professional video editing, color correction, visual effects and audio post production"\
 		FALSE 		'Deezer'			"Deezer is a music streaming app"\
 		FALSE		'Kdenlive'		"Free, Open-source, Non-Linear Video Editor by KDE"\
 		FALSE		'gThumb'		    "Is an open-source software image viewer, image organizer"\
@@ -36,7 +35,7 @@ else
 		FALSE 		'VLC' 			"VLC Media Player" );
 	
 	#column="2" is sent to output by default
-	if [[ $? -eq 0 && -z "$AAV"  ]]; then
+	if [[ $? -eq 0 && -z "$ANV"  ]]; then
 		zenity --warning \
 		--text "\nNo Option Selected. Nothing will be installed!"\
 		2>/dev/null --no-wrap
@@ -44,13 +43,9 @@ else
 		#this is mandatory for the space in the names in "Software(s)" column, also IFS unset later
 		IFS=$'\n'
 
-		for option in $(echo $AAV | tr "|" "\n"); do
+		for option in $(echo $ANV | tr "|" "\n"); do
 
 			case $option in
-
-			"DaVinci Resolve")			#Professional video editing, color correction, visual effects and audio post production
-					ZYPPER_INSTALL "davinci-resolve-updater" "DaVinci Resolve" "davinci-resolve-updater"
-				;;
 
 			"Deezer")			#Deezer is a music streaming app
 					ZYPPER_INSTALL "deezer" "Deezer" "deezer"
@@ -92,7 +87,7 @@ else
 #----------------- AUDIO & VIDEO end ------------------#
 
 
-	if [[ ! -z $AAV ]]; then
+	if [[ ! -z $ANV ]]; then
 		COMPLETION_NOTIFICATION 'Complete' 'Softwares Installed'
 	fi
 fi
