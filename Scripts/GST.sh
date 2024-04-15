@@ -64,7 +64,6 @@ else
 
 			"Lutris")		#Play all your games on Linux
 					ZYPPER_INSTALL "lutris" "Lutris" "lutris"
-					sudo sed -i 's/Categories=Network;FileTransfer;/Categories=Network;FileTransfer;Game;/' /usr/share/applications/net.lutris.Lutris.desktop
 				;;
 
 			"PlayOnLinux")		#Install and use non-native applications on your favorite operating system

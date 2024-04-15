@@ -81,7 +81,7 @@ RUN_UPDATE_ONCE() {
         sleep 3 # Simulate an operation delay
             # Add repositories for openSUSE Tumbleweed
             sudo sh -c 'echo -e "[MaxxedSUSE]\nname=MaxxedSUSE\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
-            sudo sh -c 'echo -e "[MaxxedSUSE Emulators]\nname=MaxxedSUSE Emulators\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE.repo'
+            sudo sh -c 'echo -e "[MaxxedSUSE-Emulators]\nname=MaxxedSUSE-Emulators\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE-Emulators.repo'
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed/ snappy
             sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
@@ -166,7 +166,7 @@ COMPLETION_NOTIFICATION() {
 	Text=$2
 	
 	#notify-send cannot work as root
-	#USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
+	USER=$(cat /etc/passwd|grep 1000|sed "s/:.*$//g");
 	su $USER -c "/usr/bin/notify-send -u normal '$Title' '$Text'"
 }
 
