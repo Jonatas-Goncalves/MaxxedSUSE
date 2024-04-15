@@ -25,7 +25,7 @@ ZYPPER_INSTALL() {
 
 
 ZYPPER_REFRESH() {
-	(sudo zypper --gpg-auto-import-keys refresh >/dev/null | \
+	(sudo zypper --gpg-auto-import-keys refresh 2>/dev/null | \
 	tee >(xargs -I % echo "#%")) | \
 	zenity --progress --width=720 --pulsate --title="Refreshing Zypper repos" \
 	--no-cancel --auto-kill --auto-close 2>/dev/null

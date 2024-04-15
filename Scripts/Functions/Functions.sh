@@ -2,46 +2,21 @@
 
 export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin
 
-CHECK_ICON_PRESENT_ELSE_FETCH() {
-	Path=$1
-	Icon=$2
-	Url=$3
-
-	Fullpath="$(dirname \"${0}\")"$Path$Icon
-	Targetpath="$(dirname \"${0}\")"$Path
-
-	if find $Fullpath &>/dev/null; then
-		:
-	else
-		(cd $Targetpath && curl -s -o $Icon $Url > /dev/null)
-	fi
-}
-
 GET_SYSTEM_ARCH() {
 	Arch=$(arch)
 	echo "$Arch"
 }
 
-GET_OS_BITS_RETURN_CUSTOM() {
-	OS_Bits=$(getconf LONG_BIT)
-	
-	if [[ "$OS_Bits" -eq 64 ]]; then
-		echo "$1"
-	else
-		echo "$2"
-	fi
-}
-
 RUN_UPDATE_ONCE() {
-    if [ -f .flagfile.txt ]; then
-        if grep -q "DONE" ".flagfile.txt"; then
+    if [ -f .update.txt ]; then
+        if grep -q "DONE" ".update.txt"; then
             echo "Repos already configured."
         else
-            rm .flagfile.txt
-            echo "DONE" > .flagfile.txt
+            rm .update.txt
+            echo "DONE" > .update.txt
         fi
     else
-        echo "DONE" > .flagfile.txt
+        echo "DONE" > .update.txt
 
         # Detect openSUSE version
         OPEN_SUSE_VERSION=$(cat /etc/os-release | grep '^ID=' | cut -d '=' -f 2 | tr -d '"')
