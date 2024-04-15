@@ -55,6 +55,7 @@
 - perl-macros
 - PlayOnLinux
 - prismlauncher-qt5
+- protonupplus
 - protonup-qt
 - python-Cython
 - python-dataclasses

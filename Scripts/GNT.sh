@@ -37,6 +37,7 @@ else
 		FALSE 		Moonlight-QT 		"GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"\
 		FALSE 		vkBasalt 		"Vulkan post processing layer to enhance the visual graphics of games"\
 		FALSE 		PrismLauncher 		"Custom launcher for Minecraft that allows you to easily manage multiple installations"\
+		FALSE 		ProtonPlus 		"A simple Wine and Proton-based compatiblity tools manager"\
 		FALSE 		ProtonUP 		"Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
 		FALSE 		Sunshine 		"Sunshine is a Gamestream host for Moonlight"\
 		FALSE 		XWiimote-ng 		"Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes"\
@@ -102,6 +103,10 @@ else
 
 			"PrismLauncher")		#Custom launcher for Minecraft that allows you to easily manage multiple installations
 					ZYPPER_INSTALL "prismlauncher-qt5" "PrismLauncher" "prismlauncher-qt5"
+				;;
+
+			"ProtonPlus")		#A simple Wine and Proton-based compatiblity tools manager
+					FLATPAK_INSTALL "com.vysp3r.ProtonPlus" "ProtonPlus" "com.vysp3r.ProtonPlus"
 				;;
 
 			"ProtonUP")		#Install and manage Custom Proton's for Steam and Wine-GE for Lutris
