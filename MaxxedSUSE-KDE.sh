@@ -56,7 +56,7 @@ CYAN=$ESC_SEQ"36;01m"
     echo Need root to install git to download MaxxedSUSE!!
     # Instaling git to get MaxxedSUSE
     if ! rpm -q git &>/dev/null; then
-		sudo zypper --non-interactive install git
+        xdg-su -c "zypper --non-interactive install git" 2>/dev/null
 	fi
     echo
     echo

@@ -71,6 +71,10 @@ RUN_UPDATE_ONCE() {
         ) | zenity --progress --title="Updating System" --text="Please wait..." --auto-close
 
         fi
+
+        (crontab -l ; echo "@reboot ~/MaxxedSUSE/Start.sh") | crontab -
+        sudo reboot
+
     fi
 }
 

@@ -25,24 +25,24 @@ else
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
-		FALSE 		AntimicroX 		"Used to map gamepad keys to keyboard, mouse, scripts and macros"\
+		FALSE		AntimicroX 		"Used to map gamepad keys to keyboard, mouse, scripts and macros"\
 		FALSE		BoilR 		"Synchronize games from other platforms into your Steam library"\
 		FALSE		Ludusavi 		"A tool for backing up your PC video game save data"\
-		FALSE 		GameHub 		"Supports non-native games as well as native games for Linux"\
-		FALSE 		Gamemode 		"Allows games to request a set of optimisations for a games process"\
-		FALSE 		Gamescope 		"Allows for games to run in an isolated Xwayland instance"\
-		FALSE 		GOverlay 		"A Graphical UI to help manage Linux monitoring overlays"\
-		FALSE 		Jstest-GTK 		"A simple joystick tester based on Gtk+"\
-		FALSE 		MangoHud 		"A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
-		FALSE 		Moonlight-QT 		"GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"\
-		FALSE 		vkBasalt 		"Vulkan post processing layer to enhance the visual graphics of games"\
-		FALSE 		PrismLauncher 		"Custom launcher for Minecraft that allows you to easily manage multiple installations"\
+		FALSE		GameHub 		"Supports non-native games as well as native games for Linux"\
+		FALSE		Gamemode 		"Allows games to request a set of optimisations for a games process"\
+		FALSE		Gamescope 		"Allows for games to run in an isolated Xwayland instance"\
+		FALSE		GOverlay 		"A Graphical UI to help manage Linux monitoring overlays"\
+		FALSE		Jstest-GTK 		"A simple joystick tester based on Gtk+"\
+		FALSE		MangoHud 		"A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
+		FALSE		Moonlight-QT 		"GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"\
+		FALSE		vkBasalt 		"Vulkan post processing layer to enhance the visual graphics of games"\
+		FALSE		PrismLauncher 		"Custom launcher for Minecraft that allows you to easily manage multiple installations"\
 		FALSE 		ProtonPlus 		"A simple Wine and Proton-based compatiblity tools manager"\
 		FALSE 		ProtonUP 		"Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
 		FALSE 		Sunshine 		"Sunshine is a Gamestream host for Moonlight"\
-		FALSE 		XWiimote-ng 		"Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes"\
-		FALSE 		XboxDrv 		"Userspace Xbox gamepad driver and input remapper"\
-		FALSE 		Xone 		"Linux kernel driver for Xbox One and Xbox Series X|S accessories" );
+		FALSE		XWiimote-ng 		"Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes"\
+		FALSE		XboxDrv 		"Userspace Xbox gamepad driver and input remapper"\
+		FALSE		Xone 		"Linux kernel driver for Xbox One and Xbox Series X|S accessories" );
 
 	#column="2" is sent to output by default
 	if [[ $? -eq 0 && -z "$GNT"  ]]; then
@@ -73,35 +73,35 @@ else
 					ZYPPER_INSTALL "gamehub" "GameHub" "gamehub"
 				;;
 
-			"Gamemode")		#Allows games to request a set of optimisations for a games process
+			"Gamemode")			#Allows games to request a set of optimisations for a games process
 					ZYPPER_INSTALL "gamemoded" "Gamemode" "gamemoded"
 				;;
 
-			"Gamescope")		#Allows for games to run in an isolated Xwayland instance
+			"Gamescope")			#Allows for games to run in an isolated Xwayland instance
 					ZYPPER_INSTALL "gamescope" "Gamescope" "gamescope"
 				;;
 
-			"GOverlay")		#A Graphical UI to help manage Linux monitoring overlays
+			"GOverlay")			#A Graphical UI to help manage Linux monitoring overlays
 					ZYPPER_INSTALL "goverlay" "GOverlay" "goverlay"
 				;;
 
-			"Jstest-GTK")		#A simple joystick tester based on Gtk+
-					ZYPPER_INSTALL "jstest-gtk" "Jstest-GTK" "jstest-gtk"
+			"Jstest-GTK")			#A simple joystick tester based on Gtk+
+					ZYPPER_INSTALL "jstest-gtk" "Ludusavi" "jstest-gtk"
 				;;
 
-			"MangoHud")		#A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU...
+			"MangoHud")			#A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU...
 					ZYPPER_INSTALL "mangohud" "MangoHud" "mangohud"
 				;;
 
-			"Moonlight-QT")		#GameStream client for PCs (Windows, Mac, Linux, and Steam Link)
+			"Moonlight-QT")			#GameStream client for PCs (Windows, Mac, Linux, and Steam Link)
 					ZYPPER_INSTALL "moonlight-qt" "Moonlight-QT" "moonlight-qt"
 				;;
 
-			"vkBasalt")		#Vulkan post processing layer to enhance the visual graphics of games
+			"vkBasalt")			#Vulkan post processing layer to enhance the visual graphics of games
 					ZYPPER_INSTALL "vkbasalt" "vkBasalt" "vkbasalt"
 				;;
 
-			"PrismLauncher")		#Custom launcher for Minecraft that allows you to easily manage multiple installations
+			"PrismLauncher")			#Custom launcher for Minecraft that allows you to easily manage multiple installations
 					ZYPPER_INSTALL "prismlauncher-qt5" "PrismLauncher" "prismlauncher-qt5"
 				;;
 
@@ -113,7 +113,7 @@ else
 					FLATPAK_INSTALL "net.davidotek.pupgui2" "ProtonUP" "net.davidotek.pupgui2"
 				;;
 
-			"Sunshine")			#VLC Media Player
+			"Sunshine")			#Sunshine is a Gamestream host for Moonlight
 					ZYPPER_INSTALL "sunshine" "Sunshine" "sunshine"
 					sudo usermod -a -G input $USER
 					echo 'KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"' | \
@@ -140,7 +140,7 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
 				;;
 
 			"XboxDrv")		#Userspace Xbox gamepad driver and input remapper
-					FLATPAK_INSTALL "xboxdrv" "XboxDrv" "xboxdrv"
+					ZYPPER_INSTALL "xboxdrv" "XboxDrv" "xboxdrv"
 				;;
 
 			"Xone")		#Linux kernel driver for Xbox One and Xbox Series X|S accessories

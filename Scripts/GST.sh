@@ -51,7 +51,7 @@ else
 				;;
 
 			"Itch.io")		#Is a simple way to find, download and distribute indie games online
-					sudo wget --user-agent=Linux --content-disposition -E -c https://itch.io/app/download -P /tmp/
+					sudo wget --user-agent=Linux -E -c -t 3 -O /tmp/itch-setup https://itch.io/app/download
 					sudo chmod +x /tmp/itch-setup && /tmp/./itch-setup
 					sudo mv ~/.itch /opt/itch
 					sudo mv ~/.local/share/applications/io.itch.itch.desktop /usr/share/applications/io.itch.itch.desktop
