@@ -144,7 +144,7 @@ sudo tee /etc/udev/rules.d/85-sunshine-input.rules
 				;;
 
 			"Xone")		#Linux kernel driver for Xbox One and Xbox Series X|S accessories
-					ZYPPER_INSTALL "xone" "Xone" "xone"
+					ZYPPER_INSTALL "xone-kmp-default" "Xone" "xone-kmp-default"
 				;;
 
 			esac
