@@ -73,6 +73,7 @@ RUN_UPDATE_ONCE() {
         fi
 
         (crontab -l ; echo "@reboot ~/MaxxedSUSE/Start.sh") | crontab -
+
         sudo reboot
 
     fi

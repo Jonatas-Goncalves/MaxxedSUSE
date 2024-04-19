@@ -7,6 +7,7 @@ if [[ $EUID -ne 0 ]]; then
     echo "Run with sudo";
     exit 0
 else
+    crontab -l | grep -v "@reboot ~/MaxxedSUSE/Start.sh" | crontab -
     # Check if zenity is installed, if not, install it
     CHECK_DEPENDS_ELSE_INSTALL
 
