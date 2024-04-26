@@ -25,9 +25,9 @@ else
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
-		FALSE 		'Android Studio'	"Android Studio IDE for Android"\
 		FALSE		'Bottles'			"Easily manage wineprefix using environments"\
-		FALSE		'Dockur'			"Windows in a Docker container."\
+		FALSE 		'Caffeine-ng' 		"Temporarily inhibit both the screensaver and the sleep power saving mode"\
+		FALSE		'ClamTk'			"Easily manage wineprefix using environments"\
 		FALSE 		'EnvyControl' 		"Easy way to switch between GPU modes on Nvidia Optimus systems"\
 		FALSE		'Gnome Disk' 		"View, modify and configure disks and media"\
 		FALSE		'Gparted' 		"Free partition editor for graphically managing your disk partitions"\
@@ -38,7 +38,6 @@ else
 		FALSE		'SyncThingTray'		"Tray application and Dolphin/Plasma integration for Syncthing"\
 		FALSE		'Telegram Desktop'	"Official Desktop Client for the Telegram Messenger"\
 		FALSE		'Timeshift' 		"System snapshots backup and restore tool for Linux"\
-		FALSE		'VSCodium' 		"VSCodium is a community-driven, freely distribution of Microsoft's editor VS Code"\
 		FALSE		'WoeUSB-NG' 		"Utility that enables you to create your own bootable Windows USB"\
 		FALSE		'Wake On Lan ' 		"The Wake On Lan client wakes up magic packet "\
 		FALSE		'xsensors'			"GUI program that allows you to read useful data from the lm_sensors" );
@@ -50,19 +49,23 @@ else
 		--text "\nNo Option Selected. Nothing will be installed!"\
 		2>/dev/null --no-wrap
 	else
-		#this is mandatory for the space in the "Software(s)" column, e.g. 'Android Studio', also IFS unset later
+		#this is mandatory for the space in the "Software(s)" column, e.g. 'Bottles', also IFS unset later
 		IFS=$'\n'
 
 		for option in $(echo $AST | tr "|" "\n"); do
 
 			case $option in
 
-			"Android Studio")		#Android Studio IDE
-					ZYPPER_INSTALL "android-studio" "Android Studio" "android-studio"
-				;;
-
 			"Bottles")				#Easily manage wineprefix using environments
 					ZYPPER_INSTALL "Bottles" "Bottles" "Bottles"
+				;;
+
+			"Caffeine-ng")		#Temporarily inhibit both the screensaver and the sleep power saving mode
+					ZYPPER_INSTALL "caffeine-ng" "Caffeine-ng" "caffeine-ng"
+				;;
+
+			"ClamTk")				#Easy to use graphical user interface for Clam Antivirus (ClamAV)
+					ZYPPER_INSTALL "clamtk" "ClamTk" "clamtk"
 				;;
 
 			"EnvyControl")		#Easy way to switch between GPU modes on Nvidia Optimus systems
@@ -93,13 +96,6 @@ else
 					ZYPPER_INSTALL "timeshift" "Timeshift" "timeshift"
 				;;
 
-			"VSCodium")			#VSCodium is a community-driven, freely-licensed binary distribution of Microsoft's editor VS Code
-					Arch=$(GET_SYSTEM_ARCH)
-					RPM_VSCODIUM=/tmp/Vscodium.rpm
-					curl -s https://api.github.com/repos/VSCodium/vscodium/releases/latest | grep browser_download_url | grep $Arch[.]rpm | head -n 1 | cut -d '"' -f 4 | sudo wget --base=http://github.com/ -i - -O /tmp/Vscodium.rpm
-                    sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --allow-unsigned-rpm --auto-agree-with-licenses /tmp/Vscodium.rpm
-				;;
-
 			"WoeUSB-NG")		#Utility that enables you to create your own bootable Windows USB
 					ZYPPER_INSTALL "WoeUSB" "WoeUSB" "WoeUSB"
 				;;
@@ -111,6 +107,7 @@ else
 			"xsensors")		#GUI program that allows you to read useful data from the lm_sensors
 					ZYPPER_INSTALL "xsensors" "xsensors" "xsensors"
 				;;
+
 			esac
 		done
 

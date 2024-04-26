@@ -38,6 +38,7 @@ else
 		FALSE 		Pegasus-Frontend 		"Graphical frontend for launching emulators and managing your game collection"\
 		FALSE 		PPSSPP 		"PlayStation Portable Emulator"\
 		FALSE 		RetroArch 		"Frontend for emulators, game engines and media players"\
+		FALSE 		RetroPlus 		"A simple ROM downloader"\
 		FALSE 		RPCS3 		"PlayStation 3 emulator/debugger"\
 		FALSE 		SNES9X 		"Portable, freeware Super Nintendo Entertainment System (TM) emulator"\
 		FALSE 		Xemu 		"Xbox Classic EMUlator"\
@@ -101,11 +102,15 @@ else
 				;;
 
 			"PPSSPP")		#PlayStation Portable Emulator
-					FLATPAK_INSTALL "ppsspp" "PPSSPP" "ppsspp"
+					ZYPPER_INSTALL "ppsspp" "PPSSPP" "ppsspp"
 				;;
 
 			"RetroArch")		#Frontend for emulators, game engines and media players
 					ZYPPER_INSTALL "retroarch" "RetroArch" "retroarch"
+				;;
+
+			"RetroPlus")		#A simple ROM downloader
+					FLATPAK_INSTALL "com.vysp3r.RetroPlus" "RetroPlus" "com.vysp3r.RetroPlus"
 				;;
 
 			"RPCS3")		#GPlayStation 3 emulator/debugger

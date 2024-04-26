@@ -33,7 +33,7 @@ Add the following repositories:
 Will install the necessary dependencies to configure them.
 We will then update the system.
 
-This process should not be interrupted, would you like to start now?" --title="MaxxedSUSE Setup" 2>/dev/null
+This process should not be interrupted and will restart inadvertently, would you like to start now?" --title="MaxxedSUSE Setup" 2>/dev/null
 
     # Gets the user's response
     response=$?
@@ -64,9 +64,11 @@ else
 		--ok-label "Start" --cancel-label "Exit"\
 		--column "Pick" --column "Operation" 	--column "Description"\
 		FALSE		'MAXXEDIZE YOUR SYSTEM'		"Maxxed Advanced System Settings"\
-		FALSE		'AUDIO & VIDEO'		"Audio and video software"\
+		FALSE		'AUDIO AND VIDEO'		"Audio and video software"\
 		FALSE 		'COMMUNICATION & BROWSERS'			"Navigation and communication"\
-		FALSE 		'UTILITIES' 		"Utility applications for the system"\
+		FALSE 		'WORK AND SCHOOL'			"Tools for working or studying"\
+		FALSE 		'DEVELOPMENT'			"Tools for programming and development"\
+		FALSE 		'UTILITIES' 		"Utilities and tools for the system"\
 		FALSE		'GAMES AND TOOLS'			"Tools to make gaming easier"\
 		FALSE		'GAMES STORES'			"Stores to install your games"\
 		FALSE		'EMULATORS'			"Most popular emulators"\
@@ -99,6 +101,14 @@ else
 
 			"COMMUNICATION & BROWSERS")		#Navigation and communication
 					FIND /Scripts/ CNB.sh
+				;;
+
+			"WORK AND SCHOOL")		#Tools for working or studying
+					FIND /Scripts/ WNS.sh
+				;;
+
+			"DEVELOPMENT")		#Tools for programming and development
+					FIND /Scripts/ DEV.sh
 				;;
 
 			"UTILITIES")	#Utility applications for the system

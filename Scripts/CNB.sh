@@ -26,12 +26,16 @@ else
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
 		FALSE		'Brave'			"Secure, Fast & Private Brave Browser with Adblocker"\
+		FALSE		'Chromium'			"Open-source browser project that aims to build a safer, faster, and more stable"\
 		FALSE		'Cloudflare Warp'			"Connect to the Internet faster and in a more secure way"\
 		FALSE 		'Discord'			"All-in-one voice and text chat for Gamers"\
-		FALSE 		'Epiphany'			"A simple, clean, beautiful view of the Web."\
+		FALSE 		'Epiphany'			"A simple, clean, beautiful view of the Web"\
+		FALSE 		'Fragments'			"An easy to use BitTorrent client"\
 		FALSE 		'Google Chrome' 	"A cross-platform web browser by Google"\
 		FALSE 		'Mailspring'			"Mailspring is a new version of Nylas Mail"\
 		FALSE		'Signal'		"Signal - Private Messenger: Say Hello to Privacy"\
+		FALSE		'Skype'		"Call and message skype users, with video chat support"\
+		FALSE		'Slack'		"Slack is a cloud-based team communication platform"\
 		FALSE		'SyncThingTray'		"Tray application and Dolphin/Plasma integration for Syncthing"\
 		FALSE		'Tangram'		"Browser designed to organize and run your Web applications"\
 		FALSE		'Telegram Desktop'	"Official Desktop Client for the Telegram Messenger"\
@@ -39,6 +43,7 @@ else
 		FALSE		'Warp'	"Fast and secure file transfer"\
 		FALSE		'Whatsapp'			"An unofficial WhatsApp desktop application for Linux"\
 		FALSE		'Valent'	"Connect, control and sync devices"\
+		FALSE		'ZapZap'	"All features of the Whatpp Web are available and several others"\
 		FALSE		'ZeroTier One'			"A Smart Ethernet Switch for Earth" );
 	
 	
@@ -62,6 +67,10 @@ else
 					ZYPPER_INSTALL "brave-browser" "Brave" "brave-browser"
 				;;
 
+			"Chromium")				#Open-source browser project that aims to build a safer, faster, and more stable
+					ZYPPER_INSTALL "chromium" "Chromium" "chromium"
+				;;
+
 			"Cloudflare Warp")				#Connect to the Internet faster and in a more secure way
 					ZYPPER_INSTALL "cloudflare_warp" "Cloudflare Warp" "cloudflare_warp"
 				;;
@@ -70,8 +79,12 @@ else
 					ZYPPER_INSTALL "discord" "Discord" "discord"
 				;;
 
-			"Epiphany")				#A simple, clean, beautiful view of the Web.
+			"Epiphany")				#A simple, clean, beautiful view of the Web
 					ZYPPER_INSTALL "epiphany" "Epiphany" "epiphany"
+				;;
+
+			"Fragments")				#An easy to use BitTorrent client
+					FLATPAK_INSTALL "de.haeckerfelix.Fragments" "Fragments" "de.haeckerfelix.Fragments"
 				;;
 
 			"Google Chrome")			#Google Chrome web browser
@@ -88,6 +101,14 @@ else
 
 			"Signal")			#Signal - Private Messenger: Say Hello to Privacy
 					ZYPPER_INSTALL "signal-desktop" "Signal" "signal-desktop"
+				;;
+
+			"Skype")			#Call and message skype users, with video chat support
+					FLATPAK_INSTALL "com.skype.Client" "Skype" "com.skype.Client"
+				;;
+
+			"Slack")			#Slack is a cloud-based team communication platform
+					FLATPAK_INSTALL "com.slack.Slack" "Slack" "com.slack.Slack"
 				;;
 
 			"SyncThingTray")			#Tray application and Dolphin/Plasma integration for Syncthing
@@ -118,9 +139,14 @@ else
 					ZYPPER_INSTALL "valent" "Valent" "valent"
 				;;
 
+			"ZapZap")			#All features of the Whatpp Web are available and several others
+					FLATPAK_INSTALL "com.rtosta.zapzap" "ZapZap" "com.rtosta.zapzap"
+				;;
+
 			"ZeroTier One")		#An unofficial WhatsApp desktop application for Linux
 					ZYPPER_INSTALL "zerotier-one" "ZeroTier One" "zerotier-one"
 				;;
+
 			esac
 		done
 
