@@ -52,7 +52,7 @@ GREEN=$ESC_SEQ"32;01m"
     clear
 
     echo
-    echo Need root to install git to download MaxxedSUSE!!
+    echo Installing git to download MaxxedSUSE!!
     # Instaling git to get MaxxedSUSE
     if ! rpm -q git &>/dev/null; then
         xdg-su -c "zypper --non-interactive install git" 2>/dev/null
@@ -60,21 +60,37 @@ GREEN=$ESC_SEQ"32;01m"
     echo
     echo
 
-    echo
-    echo Cloning MaxxedSUSE Script...
-    # Clone the repository to MaxxedSUSE folder in the home directory
-    if [ ! -d "$HOME/MaxxedSUSE" ]; then
-    # The directory does not exist, so we clone the repository
-        git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE ~/MaxxedSUSE
+    echo Checking for updates in MaxxedSUSE Script...
+    # Check if MaxxedSUSE directory exists
+    if [ -d "$HOME/MaxxedSUSE" ]; then
+    echo "MaxxedSUSE directory found. Checking for updates..."
+
+    # Change directory to MaxxedSUSE
+    cd "$HOME/MaxxedSUSE"
+
+    # Fetch updates from the remote repository
+    git fetch origin
+
+    # Check if there are changes in the remote branch
+    if git rev-parse --quiet --verify Staging@{upstream} >/dev/null; then
+        # There are changes, pull the latest changes
+        echo "Updating MaxxedSUSE repository..."
+        git pull origin Staging
     else
-        echo "The MaxxedSUSE directory already exists, there is no need to clone it again."
+        # No changes, repository is up to date
+        echo "MaxxedSUSE repository is already up to date."
+    fi
+    else
+    # The directory does not exist, so we clone the repository
+    echo "MaxxedSUSE directory not found. Cloning repository..."
+    git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
     fi
     cd /home/$USER/MaxxedSUSE
     clear
 
     echo
     echo
-    echo Enter root password once again to start MaxxedSUSE !!
+    echo Need root password once again to start MaxxedSUSE !!
     echo
     echo
     # Starting MaxxedSUSE
