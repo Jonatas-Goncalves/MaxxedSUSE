@@ -63,7 +63,7 @@ else
 		--text="<b>START MAXXEDING YOUR OPENSUSE!\n</b>"\
 		--ok-label "Start" --cancel-label "Exit"\
 		--column "Pick" --column "Operation" 	--column "Description"\
-		FALSE		'MAXXEDIZE YOUR SYSTEM'		"Maxxed Advanced System Settings"\
+		FALSE		'MAXXEDIZE YOUR SYSTEM'		"** FIRST RUN THIS ONCE **"\
 		FALSE		'AUDIO AND VIDEO'		"Audio and video software"\
 		FALSE 		'COMMUNICATION & BROWSERS'			"Navigation and communication"\
 		FALSE 		'WORK AND SCHOOL'			"Tools for working or studying"\

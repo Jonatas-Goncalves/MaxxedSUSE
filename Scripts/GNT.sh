@@ -35,6 +35,7 @@ else
 		FALSE		Jstest-GTK 		"A simple joystick tester based on Gtk+"\
 		FALSE		MangoHud 		"A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."\
 		FALSE		Moonlight-QT 		"GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"\
+		FALSE		Oversteer 		"Steering Wheel Manager for GNU/Linux"\
 		FALSE		vkBasalt 		"Vulkan post processing layer to enhance the visual graphics of games"\
 		FALSE		PrismLauncher 		"Custom launcher for Minecraft that allows you to easily manage multiple installations"\
 		FALSE 		ProtonPlus 		"A simple Wine and Proton-based compatiblity tools manager"\
@@ -96,6 +97,10 @@ else
 
 			"Moonlight-QT")			#GameStream client for PCs (Windows, Mac, Linux, and Steam Link)
 					ZYPPER_INSTALL "moonlight-qt" "Moonlight-QT" "moonlight-qt"
+				;;
+
+			"Oversteer")			#Steering Wheel Manager for GNU/Linux
+					ZYPPER_INSTALL "oversteer" "Oversteer" "oversteer"
 				;;
 
 			"vkBasalt")			#Vulkan post processing layer to enhance the visual graphics of games
