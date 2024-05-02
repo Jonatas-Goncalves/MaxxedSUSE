@@ -41,6 +41,7 @@ else
 		FALSE 		RetroPlus 		"A simple ROM downloader"\
 		FALSE 		RPCS3 		"PlayStation 3 emulator/debugger"\
 		FALSE 		SNES9X 		"Portable, freeware Super Nintendo Entertainment System (TM) emulator"\
+		FALSE 		Steam ROM Manager 		"An app for managing ROMs in Steam"\
 		FALSE 		Xemu 		"Xbox Classic EMUlator"\
 		FALSE 		Xenia 		"Xbox 360 emulator" );
 
@@ -119,6 +120,10 @@ else
 
 			"SNES9X")		#Portable, freeware Super Nintendo Entertainment System (TM) emulator
 					ZYPPER_INSTALL "snes9x" "SNES9X" "snes9x"
+				;;
+
+			"Steam ROM Manager")		#An app for managing ROMs in Steam
+					FLATPAK_INSTALL "com.steamgriddb.steam-rom-manager" "Steam ROM Manager" "com.steamgriddb.steam-rom-manager"
 				;;
 
 			"Xemu")		#Xbox Classic EMUlator

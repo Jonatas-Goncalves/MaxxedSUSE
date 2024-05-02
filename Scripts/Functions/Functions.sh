@@ -128,8 +128,14 @@ CONFIGURE_CODECS_ONCE() {
 
 CHECK_DEPENDS_ELSE_INSTALL() {
 	# Check if zenity and dpkg is installed, if not, install it
-	if ! rpm -q zenity dpkg &>/dev/null; then
-		sudo zypper --non-interactive install zenity dpkg
+	if ! rpm -q zenity &>/dev/null; then
+		sudo zypper --non-interactive install zenity
+	fi
+	if ! rpm -q dpkg &>/dev/null; then
+		sudo zypper --non-interactive install dpkg
+	fi
+	if ! rpm -q curl &>/dev/null; then
+		sudo zypper --non-interactive install curl
 	fi
 }
 

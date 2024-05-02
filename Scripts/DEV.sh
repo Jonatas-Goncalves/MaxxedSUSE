@@ -34,6 +34,7 @@ else
 		FALSE		'Github' 		"GUI Open source Electron-based GitHub app"\
 		FALSE		'GoLand' 		"Capable and Ergonomic Go IDE"\
 		FALSE		'IntelliJ IDEA Community' 		"Capable and Ergonomic Java IDE"\
+		FALSE		'NVM'			"NVM is a version manager for node.js"\
 		FALSE		'Obsidian'			"Markdown-based knowledge base"\
 		FALSE		'PhpStorm'		"PHP IDE for Professional Development"\
 		FALSE		'Pods'		"Keep track of your podman containers"\
@@ -115,6 +116,12 @@ else
 
 			"IntelliJ IDEA Community")			#Capable and Ergonomic Java IDE
 					FLATPAK_INSTALL "com.jetbrains.IntelliJ-IDEA-Community" "IntelliJ IDEA Community" "com.jetbrains.IntelliJ-IDEA-Community"
+				;;
+
+			"NVM")				#NVM is a version manager for node.js
+					curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+					export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 				;;
 
 			"Obsidian")				#Markdown-based knowledge base

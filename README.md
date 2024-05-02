@@ -6,13 +6,12 @@ This project is a script to install main and most common day-to-day applications
 
 # Installation
 
-    Run directly from web with this command:
+    Run directly from terminal with this command:
 
-    For KDE run:
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE-KDE.sh | sudo -sE bash
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE.sh | sudo -sE bash
 
     or
-    Download the zip, extract, and "sudo -sE bash MaxxedSUSE-XXX.sh"
+    Download the zip, extract, and "sudo -sE bash Start.sh"
 
 
 
@@ -106,15 +105,13 @@ Added parameters to launch some applications:
 
 ### ****** End of system changes. ****
 
-**GNOME SCRIPT WILL BE ADDED SOON**
-
-
 - All other modifications or installations are done at the user's discretion during the script.
 
 
 Best regards, Jonatas Gonçalves
 
 Linkedin: https://www.linkedin.com/in/jonatasgonçalves/
+
 Twitter: https://twitter.com/jsougoncalves
 
 

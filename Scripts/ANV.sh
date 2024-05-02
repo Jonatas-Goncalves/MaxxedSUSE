@@ -25,6 +25,7 @@ else
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
+		FALSE 		'Audacious'			"Lightweight open source audio player descendant of XMMS"\
 		FALSE 		'Audacity'			"World's most popular audio editing and recording app"\
 		FALSE 		'Boxy SVG'			"Scalable Vector Graphics editor"\
 		FALSE 		'Deezer'			"Deezer is a music streaming app"\
@@ -59,6 +60,10 @@ else
 		for option in $(echo $ANV | tr "|" "\n"); do
 
 			case $option in
+
+			"Audacious")			#Lightweight open source audio player descendant of XMMS
+					ZYPPER_INSTALL "audacious" "Audacious" "audacious"
+				;;
 
 			"Audacity")			#World's most popular audio editing and recording app
 					ZYPPER_INSTALL "audacity" "Audacity" "audacity"

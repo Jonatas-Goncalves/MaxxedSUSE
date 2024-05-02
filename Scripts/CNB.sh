@@ -32,6 +32,7 @@ else
 		FALSE 		'Epiphany'			"A simple, clean, beautiful view of the Web"\
 		FALSE 		'Fragments'			"An easy to use BitTorrent client"\
 		FALSE 		'Google Chrome' 	"A cross-platform web browser by Google"\
+		FALSE 		'LibreWolf' 	"A privacy and security-focused browser"\
 		FALSE 		'Mailspring'			"Mailspring is a new version of Nylas Mail"\
 		FALSE		'Signal'		"Signal - Private Messenger: Say Hello to Privacy"\
 		FALSE		'Skype'		"Call and message skype users, with video chat support"\
@@ -95,6 +96,10 @@ else
 					ZYPPER_INSTALL "google-chrome-stable" "Google Chrome" "google-chrome-stable"
 				;;
 				
+			"LibreWolf")				#A privacy and security-focused browser
+					ZYPPER_INSTALL "librewolf" "LibreWolf" "librewolf"
+				;;
+
 			"Mailspring")			#Mailspring Mail Client
 					SNAP_INSTALL "mailspring" "Mailspring" "mailspring"
 				;;

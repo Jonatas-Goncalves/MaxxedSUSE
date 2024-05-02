@@ -18,7 +18,7 @@ if [[ $EUID -ne 0 ]]; then
 else
 #if all permissions granted	
 
-#--------- WORK AND SCHOOL ----------#
+#--------- WORK AND STUDIES ----------#
 	WNS=$( zenity --list --checklist\
 		2>/dev/null --height=500 --width=720 \
 		--title="Select items to Install"\
@@ -28,11 +28,13 @@ else
 		FALSE		'Dialect'			"A translation app for GNOME"\
 		FALSE		'Foliate'			"A simple and modern GTK eBook reader"\
 		FALSE		'JPEG2PDF'			"Convert Images Into PDF File"\
+		FALSE		'Normcap'			"Capture text from any screen area"\
 		FALSE		'Obsidian'			"Markdown-based knowledge base"\
 		FALSE		'OnlyOffice'		"Create, view and edit text documents, spreadsheets and presentations of any size and complexity"\
 		FALSE		'PDF4QT'		"Free Open Source PDF Editor"\
 		FALSE		'Planify'		"Forget about forgetting things"\
 		FALSE		'Pomodoro'		"Pomodoro is a timer utility with rules, ideal for better productivity"\
+		FALSE		'SpeechNote'		"Reading and translating with offline Speech to Text, Text to Speech and Machine Translation"\
 		FALSE		'Teams-For-Linux'		"Unofficial Microsoft Teams client for Linux using Electron"\
 		FALSE		'Thunderbird'		"Free and open source email, newsfeed, chat, and calendaring client"\
 		FALSE		'WPS-OFFICE'			"Is a powerful office suite including Writer, Presentation and Spreadsheets" );
@@ -62,6 +64,10 @@ else
 					FLATPAK_INSTALL "com.warlordsoftwares.jpeg2pdf" "JPEG2PDF" "com.warlordsoftwares.jpeg2pdf"
 				;;
 
+			"Normcap")				#Capture text from any screen area
+					ZYPPER_INSTALL "normcap" "Normcap" "normcap"
+				;;
+
 			"Obsidian")				#Markdown-based knowledge base
 					FLATPAK_INSTALL "md.obsidian.Obsidian" "Obsidian" "md.obsidian.Obsidian"
 				;;
@@ -82,6 +88,10 @@ else
 					FLATPAK_INSTALL "io.gitlab.idevecore.Pomodoro" "Pomodoro" "io.gitlab.idevecore.Pomodoro"
 				;;
 
+			"SpeechNote")			#Reading and translating with offline Speech to Text, Text to Speech and Machine Translation
+					FLATPAK_INSTALL "flathub net.mkiol.SpeechNote" "SpeechNote" "flathub net.mkiol.SpeechNote"
+				;;
+
 			"Teams-For-Linux")			#Unofficial Microsoft Teams client for Linux using Electron
 					FLATPAK_INSTALL "com.github.IsmaelMartinez.teams_for_linux" "Teams-For-Linux" "com.github.IsmaelMartinez.teams_for_linux"
 				;;
@@ -100,7 +110,7 @@ else
 		source ./Start.sh
 	fi
 	unset IFS
-#------------ WORK AND SCHOOL end ------------#
+#------------ WORK AND STUDIES end ------------#
 
 
 	if [[ ! -z $WNS ]]; then

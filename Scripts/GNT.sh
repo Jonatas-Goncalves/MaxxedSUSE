@@ -40,7 +40,6 @@ else
 		FALSE		PrismLauncher 		"Custom launcher for Minecraft that allows you to easily manage multiple installations"\
 		FALSE 		ProtonPlus 		"A simple Wine and Proton-based compatiblity tools manager"\
 		FALSE 		ProtonUP 		"Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
-		FALSE 		Steam ROM Manager 		"An app for managing ROMs in Steam"\
 		FALSE 		Sunshine 		"Sunshine is a Gamestream host for Moonlight"\
 		FALSE		XWiimote-ng 		"Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes"\
 		FALSE		XboxDrv 		"Userspace Xbox gamepad driver and input remapper"\
@@ -117,10 +116,6 @@ else
 
 			"ProtonUP")		#Install and manage Custom Proton's for Steam and Wine-GE for Lutris
 					FLATPAK_INSTALL "net.davidotek.pupgui2" "ProtonUP" "net.davidotek.pupgui2"
-				;;
-
-			"Steam ROM Manager")		#An app for managing ROMs in Steam
-					FLATPAK_INSTALL "com.steamgriddb.steam-rom-manager" "Steam ROM Manager" "com.steamgriddb.steam-rom-manager"
 				;;
 
 			"Sunshine")			#Sunshine is a Gamestream host for Moonlight

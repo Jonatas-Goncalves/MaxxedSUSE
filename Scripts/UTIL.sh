@@ -33,6 +33,7 @@ else
 		FALSE 		'Flameshot' 		"Cross-platform tool to take screenshots with many built-in features"\
 		FALSE 		'Flatseal' 		"Manage Flatpak permissions"\
 		FALSE 		'Flatsweep' 		"Helps you easily get rid of the residue of uninstall Flatpak package"\
+		FALSE 		'K3B' 		"Created to be a feature-rich and easy to handle CD burning application"\
 		FALSE 		'Hidamari' 		"Video wallpaper for Linux written in Python"\
 		FALSE		'KeePassxc' 		"Securely store passwords using industry standard encryption"\
 		FALSE		'KDE Connect' 		"Provides various features to integrate your phone and your computer"\
@@ -42,8 +43,11 @@ else
 		FALSE		'OpenRGB' 		"Open source RGB lighting control that doesn't depend on manufacturer software"\
 		FALSE		'Peazip' 		"Free file archiver utility, based on Open Source 7-Zip/p7zip"\
 		FALSE		'PowerISO' 		"Open, extract, burn, create, edit, compress, encrypt, split and convert ISO files"\
+		FALSE		'Q4Wine' 		"It will help you to manage wine prefixes and installed applications"\
 		FALSE		'qBittorrent' 		"An open-source Bittorrent client"\
 		FALSE		'QDirStat' 		"Graphical application to show where your disk space has gone"\
+		FALSE		'RustDesk' 		"An open-source remote desktop, and alternative to TeamViewer"\
+		FALSE		'RustDesk Server' 		"Self-host your own RustDesk server, it is free and open source"\
 		FALSE		'Stacer' 		"Linux System Optimizer & Monitoring"\
 		FALSE		'TeamViewer' 		"TeamViewer: The Remote Desktop Software"\
 		FALSE		'Virtualbox' 		"Powerful virtualization product for enterprise as well as home use"\
@@ -99,6 +103,10 @@ else
 					FLATPAK_INSTALL "io.github.giantpinkrobots.flatsweep" "Flatsweep" "io.github.giantpinkrobots.flatsweep"
 				;;
 
+			"K3B")		#Created to be a feature-rich and easy to handle CD burning application
+					ZYPPER_INSTALL "k3b" "K3B" "k3b"
+				;;
+
 			"Hidamari ")		#Video wallpaper for Linux written in Python
 					FLATPAK_INSTALL "io.github.jeffshee.Hidamari" "Hidamari" "io.github.jeffshee.Hidamari"
 				;;
@@ -136,12 +144,24 @@ else
 					FLATPAK_INSTALL "com.poweriso.PowerISO" "PowerISO" "com.poweriso.PowerISO"
 				;;
 
+			"Q4Wine")			#It will help you to manage wine prefixes and installed applications
+					ZYPPER_INSTALL "q4wine" "Q4Wine" "q4wine"
+				;;
+
 			"qBittorrent")			#An open-source Bittorrent client
 					ZYPPER_INSTALL "notepadqq" "Notepadqq" "notepadqq"
 				;;
 
 			"QDirStat")			#Graphical application to show where your disk space has gone, help you to clean it up
 					ZYPPER_INSTALL "qdirstat" "QDirStat" "qdirstat"
+				;;
+
+			"RustDesk Client")			#An open-source remote desktop, and alternative to TeamViewer
+					ZYPPER_INSTALL "rustdesk" "RustDesk Client" "rustdesk"
+				;;
+
+			"RustDesk Server")			#Self-host your own RustDesk server, it is free and open source
+					ZYPPER_INSTALL "rustdesk-server" "RustDesk Server" "rustdesk-server"
 				;;
 
 			"Stacer")			#Stacer Linux Optimizer & Monitoring
