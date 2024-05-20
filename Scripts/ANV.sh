@@ -16,7 +16,7 @@ if [[ $EUID -ne 0 ]]; then
 	IF_NOT_SUPERUSER $(basename "$0")
    	exit 1
 else
-#if all permissions granted	
+#if all permissions granted
 
 #------------- AUDIO AND VIDEO -------------#
 	ANV=$( zenity --list --checklist\
@@ -25,29 +25,29 @@ else
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
-		FALSE 		'Audacious'			"Lightweight open source audio player descendant of XMMS"\
-		FALSE 		'Audacity'			"World's most popular audio editing and recording app"\
-		FALSE 		'Boxy SVG'			"Scalable Vector Graphics editor"\
-		FALSE 		'Deezer'			"Deezer is a music streaming app"\
-		FALSE		'Kdenlive'		"Free, Open-source, Non-Linear Video Editor by KDE"\
-		FALSE		'GIMP'		    "Create images and edit photographs"\
-		FALSE		'gThumb'		    "Is an open-source software image viewer, image organizer"\
-		FALSE		'HandBrake'		    "Tool for converting video from nearly any format to a selection of modern"\
-		FALSE		'Jellyfin'		    "Desktop client using jellyfin-web with embedded MPV player"\
-		FALSE		'Jellyfin Server'		    "Free Software Media System that puts you in control of managing and streaming your media."\
-		FALSE		'Kodi'		    "Ultimate entertainment center"\
-		FALSE		'Kooha'		    "Elegantly record your screen"\
-		FALSE		'Krita'		    "Full-featured digital art studio"\
-		FALSE		'Megacubo'		    "A intuitive, multi-language and cross-platform IPTV player"\
-		FALSE		'Nomacs'		    "Free, open source image viewer"\
-		FALSE 		'OBS Studio'		"Capturing, compositing, recording, and streaming video content"\
-		FALSE 		'Plex'			"Plex client for desktop computers"\
-		FALSE 		'Spotify'			"Spotify Music Player"\
-		FALSE 		'Stremio'			"Watch videos, movies, TV series and TV channels instantly"\
-		FALSE 		'Upscayl'			"Free and Open Source AI Image Upscaler"\
-		FALSE 		'VLC' 			"VLC Media Player"\
-		FALSE 		'Youtube Downloader Plus' 			"Download videos and audios from hundreds of sites" );
-	
+		FALSE 		'Audacious' 		"Lightweight open source audio player descendant of XMMS"\
+		FALSE 		'Audacity' 		"World's most popular audio editing and recording app"\
+		FALSE 		'Boxy SVG' 		"Scalable Vector Graphics editor"\
+		FALSE 		'Deezer' 		"Deezer is a music streaming app"\
+		FALSE		'Kdenlive' 		"Free, Open-source, Non-Linear Video Editor by KDE"\
+		FALSE		'GIMP' 		"Create images and edit photographs"\
+		FALSE		'gThumb' 		"Is an open-source software image viewer, image organizer"\
+		FALSE		'HandBrake' 		"Tool for converting video from nearly any format to a selection of modern"\
+		FALSE		'Jellyfin' 		"Desktop client using jellyfin-web with embedded MPV player"\
+		FALSE		'Jellyfin Server' 		"Media System Manager that puts you in control of managing and streaming your media."\
+		FALSE		'Kodi' 		"Ultimate entertainment center"\
+		FALSE		'Kooha' 		"Elegantly record your screen"\
+		FALSE		'Krita' 		"Full-featured digital art studio"\
+		FALSE		'Megacubo' 		"A intuitive, multi-language and cross-platform IPTV player"\
+		FALSE		'Nomacs' 		"Free, open source image viewer"\
+		FALSE 		'OBS Studio' 		"Capturing, compositing, recording, and streaming video content"\
+		FALSE 		'Plex' 		"Plex client for desktop computers"\
+		FALSE 		'Spotify' 		"Spotify Music Player"\
+		FALSE 		'Stremio' 		"Watch videos, movies, TV series and TV channels instantly"\
+		FALSE 		'Upscayl' 		"Free and Open Source AI Image Upscaler"\
+		FALSE 		'VLC' 		"VLC Media Player"\
+		FALSE 		'Youtube Downloader Plus' 		"Download videos and audios from hundreds of sites" );
+
 	#column="2" is sent to output by default
 	if [[ $? -eq 0 && -z "$ANV"  ]]; then
 		zenity --warning \

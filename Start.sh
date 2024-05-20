@@ -7,7 +7,6 @@ if [[ $EUID -ne 0 ]]; then
     echo "Run with sudo";
     exit 0
 else
-    crontab -l | grep -v "@reboot ~/MaxxedSUSE/Start.sh" | crontab -
     # Check if zenity is installed, if not, install it
     CHECK_DEPENDS_ELSE_INSTALL
 
@@ -33,7 +32,7 @@ Add the following repositories:
 Will install the necessary dependencies to configure them.
 We will then update the system.
 
-This process should not be interrupted and will restart inadvertently, would you like to start now?" --title="MaxxedSUSE Setup" 2>/dev/null
+This process should not be interrupted and will restart inadvertently, would you like to start now?" --title="MaxxedSUSE Setup"
 
     # Gets the user's response
     response=$?
@@ -63,13 +62,13 @@ else
 		--text="<b>START MAXXEDING YOUR OPENSUSE!\n</b>"\
 		--ok-label "Start" --cancel-label "Exit"\
 		--column "Pick" --column "Operation" 	--column "Description"\
-		FALSE		'MAXXEDIZE YOUR SYSTEM'		"** FIRST RUN THIS ONCE **"\
-		FALSE		'AUDIO AND VIDEO'		"Audio and video software"\
+		FALSE		'MAXXEDSUSE'		"Configure your system, drivers and otimizations"\
+		FALSE		'AUDIO & VIDEO'		"Audio and video software"\
 		FALSE 		'COMMUNICATION & BROWSERS'			"Navigation and communication"\
-		FALSE 		'WORK AND SCHOOL'			"Tools for working or studying"\
+		FALSE 		'WORK & SCHOOL'			"Tools for working or studying"\
 		FALSE 		'DEVELOPMENT'			"Tools for programming and development"\
 		FALSE 		'UTILITIES' 		"Utilities and tools for the system"\
-		FALSE		'GAMES AND TOOLS'			"Tools to make gaming easier"\
+		FALSE		'GAMES & TOOLS'			"Tools to make gaming easier"\
 		FALSE		'GAMES STORES'			"Stores to install your games"\
 		FALSE		'EMULATORS'			"Most popular emulators"\
 		FALSE		'ADVANCED SYSTEM TOOLS'			"System tools for advanced users" );
@@ -91,7 +90,7 @@ else
 
 			case $option in
 
-			"MAXXEDIZE YOUR SYSTEM")	#Maxxed Advanced System Settings
+			"MAXXEDSUSE")	#Configure your system, drivers and otimizations
 					FIND /Scripts/ MXD.sh
 				;;
 
@@ -103,7 +102,7 @@ else
 					FIND /Scripts/ CNB.sh
 				;;
 
-			"WORK AND SCHOOL")		#Tools for working or studying
+			"WORK & SCHOOL")		#Tools for working or studying
 					FIND /Scripts/ WNS.sh
 				;;
 
@@ -115,7 +114,7 @@ else
 					FIND /Scripts/ UTIL.sh
 				;;
 
-			"GAMES AND TOOLS")	#Tools to make gaming easier
+			"GAMES & TOOLS")	#Tools to make gaming easier
 					FIND /Scripts/ GNT.sh
 				;;
 
