@@ -13,7 +13,7 @@ ZYPPER_INSTALL() {
 		--title "Installed" --no-wrap 2>/dev/null
 	else
 		#Installing
-		(sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --allow-unsigned-rpm --auto-agree-with-licenses $Software 2>/dev/null | \
+		(sudo zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --allow-unsigned-rpm --auto-agree-with-licenses $Software | \
 		tee >(xargs -I % echo "#%")) | \
 		zenity --progress --width=720 --pulsate --title="$Name" \
 		--no-cancel --auto-kill --auto-close 2>/dev/null
@@ -25,7 +25,7 @@ ZYPPER_INSTALL() {
 
 
 ZYPPER_REFRESH() {
-	(sudo zypper --gpg-auto-import-keys refresh 2>/dev/null | \
+	(sudo zypper --gpg-auto-import-keys refresh | \
 	tee >(xargs -I % echo "#%")) | \
 	zenity --progress --width=720 --pulsate --title="Refreshing Zypper repos" \
 	--no-cancel --auto-kill --auto-close 2>/dev/null

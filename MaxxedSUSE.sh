@@ -28,14 +28,14 @@ GREEN=$ESC_SEQ"32;01m"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo -e "$GREEN**************************************************************************************************************$COL_RESET"
     echo
-    echo -e "$GREEN                                           MaxxedSUSE Install Script                                          $COL_RESET"
+    echo -e "$GREEN                                               MaxxedSUSE Install Script                                          $COL_RESET"
     echo
-    echo -e "$GREEN                                       Starting Maxxeding your SUSE !!!                                       $COL_RESET"
+    echo -e "$GREEN                                            Starting Maxxeding your SUSE !!!                                       $COL_RESET"
     echo
     echo
     echo -e "$GREEN                                All changes of this script are described on github !!!                        $COL_RESET"
     echo
-    echo -e "$RED                                                DON'T TRUST ME, VERIFY !!!                                      $COL_RESET"
+    echo -e "$RED                                              DON'T TRUST ME, VERIFY !!!                                      $COL_RESET"
     echo
     echo -e "$GREEN                       Check for updates at https://github.com/Jonatas-Goncalves/MaxxedSUSE                   $COL_RESET"
     echo
@@ -48,7 +48,7 @@ GREEN=$ESC_SEQ"32;01m"
     echo
     echo
     echo
-    #sleep 5
+    sleep 5
     clear
 
     echo

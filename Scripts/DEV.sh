@@ -32,6 +32,7 @@ else
 		FALSE 		'Eclipse IDE JAVA'	"Java IDE, a Git client, XML Editor, Maven and Gradle integration"\
 		FALSE		'Git'			"A Fast, Scalable, Distributed Free & Open-Source VCS"\
 		FALSE		'Github' 		"GUI Open source Electron-based GitHub app"\
+		FALSE		'Gittyup' 		"Graphical Git client designed to help you understand and manage your source code history"\
 		FALSE		'GoLand' 		"Capable and Ergonomic Go IDE"\
 		FALSE		'IntelliJ IDEA Community' 		"Capable and Ergonomic Java IDE"\
 		FALSE		'NVM'			"NVM is a version manager for node.js"\
@@ -108,6 +109,10 @@ else
 
 			"Github")			#Open source Electron-based GitHub app
 					FLATPAK_INSTALL "io.github.shiftey.Desktop" "Github" "io.github.shiftey.Desktop"
+				;;
+
+			"Gittyup")			#Graphical Git client designed to help you understand and manage your source code history
+					ZYPPER_INSTALL "Gittyup" "Gittyup" "Gittyup"
 				;;
 
 			"GoLand")			#Capable and Ergonomic Go IDE

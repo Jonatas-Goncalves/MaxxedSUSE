@@ -72,8 +72,6 @@ RUN_UPDATE_ONCE() {
 
         fi
 
-        (crontab -l ; echo "@reboot ~/MaxxedSUSE/Start.sh") | crontab -
-
         sudo reboot
 
     fi
@@ -128,14 +126,8 @@ CONFIGURE_CODECS_ONCE() {
 
 CHECK_DEPENDS_ELSE_INSTALL() {
 	# Check if zenity and dpkg is installed, if not, install it
-	if ! rpm -q zenity &>/dev/null; then
-		sudo zypper --non-interactive install zenity
-	fi
-	if ! rpm -q dpkg &>/dev/null; then
-		sudo zypper --non-interactive install dpkg
-	fi
-	if ! rpm -q curl &>/dev/null; then
-		sudo zypper --non-interactive install curl
+	if ! rpm -q zenity dpkg curl libnotify-tools &>/dev/null; then
+		sudo zypper --non-interactive install zenity dpkg curl libnotify-tools
 	fi
 }
 

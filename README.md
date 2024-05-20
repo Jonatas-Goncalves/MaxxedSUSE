@@ -8,7 +8,7 @@ This project is a script to install main and most common day-to-day applications
 
     Run directly from terminal with this command:
 
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE.sh | sudo -sE bash
+    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE.sh | bash
 
     or
     Download the zip, extract, and "sudo -sE bash Start.sh"

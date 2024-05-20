@@ -51,6 +51,7 @@ else
 		FALSE		'Stacer' 		"Linux System Optimizer & Monitoring"\
 		FALSE		'TeamViewer' 		"TeamViewer: The Remote Desktop Software"\
 		FALSE		'Virtualbox' 		"Powerful virtualization product for enterprise as well as home use"\
+		FALSE		'VMware Workstation 17 Player' 		"Utility for running a single virtual machine on a Windows or Linux PC"\
 		FALSE		'Waydroid' 		"Waydroid uses Linux namespaces to run a full Android system in a container"\
 		FALSE		'Waydroid-Magisk' 		"Install Magisk Manager in Waydroid" );
 
@@ -180,6 +181,10 @@ else
 					sudo gpasswd -a $USER vboxusers
 					ZYPPER_INSTALL "virtualbox-guest-tools-iso" "virtualbox-guest-tools-iso" "virtualbox-guest-tools-iso"
 					echo To use virtualbox needs restart system!
+				;;
+
+			"VMware Workstation 17 Player")			#Utility for running a single virtual machine on a Windows or Linux PC
+					ZYPPER_INSTALL "vmware-player-updater" "VMware Workstation 17 Player" "vmware-player-updater"
 				;;
 
 			"Waydroid")			#Waydroid uses Linux namespaces to run a full Android system in a container
