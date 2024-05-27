@@ -29,7 +29,6 @@ else
 		FALSE 		Itch.io 		"Is a simple way to find, download and distribute indie games online"\
 		FALSE 		Lutris 		"Play all your games on Linux"\
 		FALSE 		PlayOnLinux 		"Install and use non-native applications on your favorite operating system"\
-		FALSE 		RetroPlus 		"A simple ROM downloader"\
 		FALSE 		Steam 		"Is a digital game distribution platform for computers"\
 		FALSE 		Lutris-Flatpak 		"Flatpak version of Lutris"\
 		FALSE 		Steam-Flatpack 		"Flatpak version of Steam" );
@@ -69,10 +68,6 @@ else
 
 			"PlayOnLinux")		#Install and use non-native applications on your favorite operating system
 					ZYPPER_INSTALL "PlayOnLinux" "PlayOnLinux" "PlayOnLinux"
-				;;
-
-			"RetroPlus")		#A simple ROM downloader
-					FLATPAK_INSTALL "com.vysp3r.RetroPlus" "RetroPlus" "com.vysp3r.RetroPlus"
 				;;
 
 			"Steam")		#Is a digital game distribution platform for computers

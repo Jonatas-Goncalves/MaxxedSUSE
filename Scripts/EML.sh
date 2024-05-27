@@ -111,7 +111,7 @@ else
 				;;
 
 			"RetroPlus")		#A simple ROM downloader
-					FLATPAK_INSTALL "com.vysp3r.RetroPlus" "RetroPlus" "com.vysp3r.RetroPlus"
+					ZYPPER_INSTALL "RetroPlus" "RetroPlus" "RetroPlus"
 				;;
 
 			"RPCS3")		#GPlayStation 3 emulator/debugger
