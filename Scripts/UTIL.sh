@@ -25,7 +25,7 @@ else
 		--text="The following Software(s) will be Installed"\
 		--ok-label "Install" --cancel-label "Skip"\
 		--column "Pick" --column "Software(s)" 	--column "Description"\
-		FALSE 		'BalenaEtcher' 		"Powerful utility for writing raw disk images & ISOs to USB keys"\
+		FALSE 		'Balena Etcher' 		"Powerful utility for writing raw disk images & ISOs to USB keys"\
 		FALSE 		'Conky Manager 2' 		"Light-weight system monitor for X and Wayland"\
 		FALSE 		'CPU-X' 		"Gathers information on CPU, motherboard and more"\
 		FALSE 		'Distrobox' 		"Use any Linux distribution inside your terminal"\
@@ -41,12 +41,13 @@ else
 		FALSE		'Nemo' 		"It is a lightweight and functional file manager with many features"\
 		FALSE		'Neofetch' 		"Is a command-line system information tool"\
 		FALSE		'OpenRGB' 		"Open source RGB lighting control that doesn't depend on manufacturer software"\
+		FALSE		'Parsec' 		"Connect to work, games, or projects wherever you are, whenever you want"\
 		FALSE		'Peazip' 		"Free file archiver utility, based on Open Source 7-Zip/p7zip"\
 		FALSE		'PowerISO' 		"Open, extract, burn, create, edit, compress, encrypt, split and convert ISO files"\
 		FALSE		'Q4Wine' 		"It will help you to manage wine prefixes and installed applications"\
 		FALSE		'qBittorrent' 		"An open-source Bittorrent client"\
 		FALSE		'QDirStat' 		"Graphical application to show where your disk space has gone"\
-		FALSE		'RustDesk' 		"An open-source remote desktop, and alternative to TeamViewer"\
+		FALSE		'RustDesk Client' 		"An open-source remote desktop, and alternative to TeamViewer"\
 		FALSE		'RustDesk Server' 		"Self-host your own RustDesk server, it is free and open source"\
 		FALSE		'Stacer' 		"Linux System Optimizer & Monitoring"\
 		FALSE		'TeamViewer' 		"TeamViewer: The Remote Desktop Software"\
@@ -135,6 +136,10 @@ else
 
 			"OpenRGB")			#Open source RGB lighting control that doesn't depend on manufacturer software
 					ZYPPER_INSTALL "OpenRGB" "OpenRGB" "OpenRGB"
+				;;
+
+			"Parsec")			#Connect to work, games, or projects wherever you are, whenever you want
+					ZYPPER_INSTALL "parsec-linux" "Parsec" "parsec-linux"
 				;;
 
 			"Peazip")			#Free file archiver utility, based on Open Source 7-Zip/p7zip

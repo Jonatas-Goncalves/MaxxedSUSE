@@ -42,6 +42,7 @@ else
 		FALSE		'Tangram'		"Browser designed to organize and run your Web applications"\
 		FALSE		'Telegram Desktop'	"Official Desktop Client for the Telegram Messenger"\
 		FALSE		'Tor Browser Launcher'	"A program to help you download, keep updated, and run the Tor Browser Bundle"\
+		FALSE		'Ungoogled-Chromium'	"Google Chromium, sans integration with Google"\
 		FALSE		'Warp'	"Fast and secure file transfer"\
 		FALSE		'Webapp Manager'	"Run websites as if they were apps"\
 		FALSE		'Whatsapp'			"An unofficial WhatsApp desktop application for Linux"\
@@ -136,6 +137,10 @@ else
 
 			"Tor Browser Launcher")		#A program to help you download, keep updated, and run the Tor Browser Bundle
 					ZYPPER_INSTALL "torbrowser-launcher" "Tor Browser Launcher" "torbrowser-launcher"
+				;;
+
+			"Ungoogled-Chromium")			#Google Chromium, sans integration with Google
+					ZYPPER_INSTALL "ungoogled-chromium" "Ungoogled-Chromium" "ungoogled-chromium"
 				;;
 
 			"Warp")			#Fast and secure file transfer

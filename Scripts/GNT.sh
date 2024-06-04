@@ -37,6 +37,7 @@ else
 		FALSE		Moonlight-QT 		"GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"\
 		FALSE		Oversteer 		"Steering Wheel Manager for GNU/Linux"\
 		FALSE		vkBasalt 		"Vulkan post processing layer to enhance the visual graphics of games"\
+		FALSE		Parsec 		"Connect to work, games, or projects wherever you are, whenever you want"\
 		FALSE		PrismLauncher 		"Custom launcher for Minecraft that allows you to easily manage multiple installations"\
 		FALSE 		ProtonPlus 		"A simple Wine and Proton-based compatiblity tools manager"\
 		FALSE 		ProtonUP 		"Install and manage Custom Proton's for Steam and Wine-GE for Lutris"\
@@ -105,6 +106,10 @@ else
 
 			"vkBasalt")			#Vulkan post processing layer to enhance the visual graphics of games
 					ZYPPER_INSTALL "vkbasalt" "vkBasalt" "vkbasalt"
+				;;
+
+			"Parsec")			#Connect to work, games, or projects wherever you are, whenever you want
+					ZYPPER_INSTALL "parsec-linux" "Parsec" "parsec-linux"
 				;;
 
 			"PrismLauncher")			#Custom launcher for Minecraft that allows you to easily manage multiple installations
