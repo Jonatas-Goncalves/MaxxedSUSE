@@ -83,7 +83,7 @@ GREEN=$ESC_SEQ"32;01m"
     else
     # The directory does not exist, so we clone the repository
     echo "MaxxedSUSE directory not found. Cloning repository..."
-    git clone --single-branch --branch Staging https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
+    git clone --single-branch --branch main https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
     fi
     cd /home/$USER/MaxxedSUSE
     clear
