@@ -38,7 +38,7 @@ else
 		FALSE		'Signal'		"Signal - Private Messenger: Say Hello to Privacy"\
 		FALSE		'Skype'		"Call and message skype users, with video chat support"\
 		FALSE		'Slack'		"Slack is a cloud-based team communication platform"\
-		FALSE		'SyncThingTray'		"Tray application and Dolphin/Plasma integration for Syncthing"\
+		FALSE		'SyncThing'		"Peer-to-peer file synchronization application"\
 		FALSE		'Tangram'		"Browser designed to organize and run your Web applications"\
 		FALSE		'Telegram Desktop'	"Official Desktop Client for the Telegram Messenger"\
 		FALSE		'Tor Browser Launcher'	"A program to help you download, keep updated, and run the Tor Browser Bundle"\
@@ -123,7 +123,8 @@ else
 					FLATPAK_INSTALL "com.slack.Slack" "Slack" "com.slack.Slack"
 				;;
 
-			"SyncThingTray")			#Tray application and Dolphin/Plasma integration for Syncthing
+			"SyncThing")			#Peer-to-peer file synchronization application
+					ZYPPER_INSTALL "syncthing" "SyncThing" "syncthing"
 					ZYPPER_INSTALL "syncthingtray" "SyncThingTray" "syncthingtray"
 				;;
 

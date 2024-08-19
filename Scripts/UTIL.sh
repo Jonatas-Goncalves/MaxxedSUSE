@@ -143,7 +143,7 @@ else
 				;;
 
 			"Peazip")			#Free file archiver utility, based on Open Source 7-Zip/p7zip
-					ZYPPER_INSTALL "notepadqq" "Notepadqq" "notepadqq"
+					ZYPPER_INSTALL "peazip" "Peazip" "peazip"
 				;;
 
 			"PowerISO")			#Open, extract, burn, create, edit, compress, encrypt, split and convert ISO files
@@ -155,7 +155,7 @@ else
 				;;
 
 			"qBittorrent")			#An open-source Bittorrent client
-					ZYPPER_INSTALL "notepadqq" "Notepadqq" "notepadqq"
+					ZYPPER_INSTALL "qbittorrent" "qBittorrent" "qbittorrent"
 				;;
 
 			"QDirStat")			#Graphical application to show where your disk space has gone, help you to clean it up

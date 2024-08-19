@@ -94,7 +94,7 @@ else
 				;;
 
 			"Jellyfin")			#Desktop client using jellyfin-web with embedded MPV player
-					ZYPPER_INSTALL "jellyfin-media-playe" "Jellyfin" "jellyfin-media-playe"
+					ZYPPER_INSTALL "jellyfin-media-player" "Jellyfin" "jellyfin-media-player"
 				;;
 
 			"Jellyfin Server")			#Free Software Media System that puts you in control of managing and streaming your media.

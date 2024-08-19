@@ -41,9 +41,6 @@ else
 		FALSE		'NVTOP' 		"A (h)top like task monitor for AMD and NVIDIA GPUs"\
 		FALSE		'OPI' 		"OBS Package Installer is a tool that finds and installs packages for openSUSE in OBS or Packman"\
 		FALSE		'Optimus Manager QT' 		"Allows to configure and switch GPUs on Optimus laptops using the tray menu"\
-		FALSE		'Signal'		"Signal - Private Messenger: Say Hello to Privacy"\
-		FALSE		'SyncThingTray'		"Tray application and Dolphin/Plasma integration for Syncthing"\
-		FALSE		'Telegram Desktop'	"Official Desktop Client for the Telegram Messenger"\
 		FALSE		'Timeshift' 		"System snapshots backup and restore tool for Linux"\
 		FALSE		'WoeUSB-NG' 		"Utility that enables you to create your own bootable Windows USB"\
 		FALSE		'Wake On Lan ' 		"The Wake On Lan client wakes up magic packet "\
@@ -132,7 +129,7 @@ else
 				;;
 
 			"WoeUSB-NG")		#Utility that enables you to create your own bootable Windows USB
-					ZYPPER_INSTALL "WoeUSB" "WoeUSB" "WoeUSB"
+					ZYPPER_INSTALL "WoeUSB-ng" "WoeUSB-NG" "WoeUSB-ng"
 				;;
 
 			"Wake On Lan")		#The Wake On Lan client wakes up magic packet
