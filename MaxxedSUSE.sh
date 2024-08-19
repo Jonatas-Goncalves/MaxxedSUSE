@@ -72,10 +72,10 @@ GREEN=$ESC_SEQ"32;01m"
     git fetch origin
 
     # Check if there are changes in the remote branch
-    if git rev-parse --quiet --verify Staging@{upstream} >/dev/null; then
+    if git rev-parse --quiet --verify main@{upstream} >/dev/null; then
         # There are changes, pull the latest changes
         echo "Updating MaxxedSUSE repository..."
-        git pull origin Staging
+        git pull origin main
     else
         # No changes, repository is up to date
         echo "MaxxedSUSE repository is already up to date."
