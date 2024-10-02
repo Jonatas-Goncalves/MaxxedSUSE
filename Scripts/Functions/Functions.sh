@@ -27,7 +27,7 @@ RUN_UPDATE_ONCE() {
         (
         echo "10" # Initial progress value
         sleep 3 # Simulate an operation delay
-        echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
+        echo "# Adding MaxxedSUSE, Flatpak, Snap, and Wine repositories"
         echo "30" # Progress after adding repositories
         sleep 3 # Simulate an operation delay
             # Add repositories for openSUSE Leap 15.6
@@ -35,7 +35,6 @@ RUN_UPDATE_ONCE() {
             sudo sh -c 'echo -e "[MaxxedSUSE-Emulators]\nname=MaxxedSUSE-Emulators\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/15.6/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE-Emulators.repo'
             sudo zypper --gpg-auto-import-keys addrepo https:/| grep '^VERSION_ID='/download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5 snappy
-            sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
         echo "# Installing necessary dependencies"
         echo "60" # Progress after installing dependencies
         sleep 3 # Simulate an operation delay
@@ -51,7 +50,7 @@ RUN_UPDATE_ONCE() {
         (
         echo "10" # Initial progress value
         sleep 3 # Simulate an operation delay
-        echo "# Adding MaxxedSUSE, Flatpak, Packman, Snap, and Wine repositories"
+        echo "# Adding MaxxedSUSE, Flatpak, Snap, and Wine repositories"
         echo "30" # Progress after adding repositories
         sleep 3 # Simulate an operation delay
             # Add repositories for openSUSE Tumbleweed
@@ -59,7 +58,6 @@ RUN_UPDATE_ONCE() {
             sudo sh -c 'echo -e "[MaxxedSUSE-Emulators]\nname=MaxxedSUSE-Emulators\nbaseurl=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/openSUSE_Tumbleweed/\nenabled=1\ngpgcheck=0\nautorefresh=1\nrepo_gpgcheck=1\ngpgkey=https://download.opensuse.org/repositories/home:MaxxedSUSE:Emulators/repodata/repomd.xml.key" > /etc/zypp/repos.d/MaxxedSUSE-Emulators.repo'
             sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
             sudo zypper --gpg-auto-import-keys addrepo https://mirrorcache-us.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed/ snappy
-            sudo zypper --gpg-auto-import-keys addrepo -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
         echo "# Installing necessary dependencies"
         echo "60" # Progress after installing dependencies
         sleep 3 # Simulate an operation delay
@@ -118,9 +116,9 @@ CONFIGURE_CODECS_ONCE() {
     else
         echo "DONE" > .codecs.txt
             echo -e "$YELLOW    Installing media codecs !!!    $COL_RESET"
-            sudo zypper --non-interactive install --allow-vendor-change --from packman \
-            ffmpeg gstreamer-plugins-bad lame gstreamer-plugins-libav gstreamer-plugins-ugly\
-            gstreamer-plugins-ugly-orig-addon libavresample4 libavdevice57 vlc-codecs
+            sudo zypper --non-interactive install --allow-vendor-change ffmpeg-7 \
+            gstreamer-plugins-bad lame gstreamer-plugins-libav gstreamer-plugins-ugly\
+            libavresample4_0 libavdevice60 vlc-codec-gstreamer
 	fi
 }
 

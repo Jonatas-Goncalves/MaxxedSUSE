@@ -25,7 +25,6 @@ else
 Add the following repositories:
 - MaxxedSUSE
 - Flatpak
-- Packman
 - Snap
 - Wine
 
