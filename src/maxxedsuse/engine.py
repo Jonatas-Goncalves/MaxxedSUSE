@@ -31,12 +31,48 @@ def remove_user_launcher():
     return not LAUNCHER_PATH.exists()
 
 
-def helper_command(*args):
+def uses_pkexec():
+    return (INSTALLED_HELPER.exists() and
+            Path("/usr/share/polkit-1/actions/io.github.JonatasGoncalves.MaxxedSUSE.policy").exists())
+
+
+def password_required():
+    """Check whether a source checkout needs a password for sudo."""
+    if uses_pkexec():
+        return False
+    return subprocess.run(["sudo", "-n", "-v"], capture_output=True).returncode != 0
+
+
+def helper_command(*args, password=None):
     """Use pkexec with the installed helper, or sudo for a source checkout."""
-    if INSTALLED_HELPER.exists() and Path("/usr/share/polkit-1/actions/io.github.JonatasGoncalves.MaxxedSUSE.policy").exists():
+    if uses_pkexec():
         return ["pkexec", str(INSTALLED_HELPER), *args]
     local = Path(__file__).resolve().parent.parent / "maxxedsuse-helper.py"
-    return ["sudo", "-E", "python3", str(local), *args]
+    command = ["sudo"]
+    if password is not None:
+        command.extend(["-S", "-p", ""])
+    else:
+        command.append("-n")
+    command.extend(["-E", "python3", str(local), *args])
+    return command
+
+
+def privileged_process(args, password=None):
+    """Start a privileged command, feeding the password through stdin."""
+    stdin = subprocess.PIPE if password is not None else None
+    process = subprocess.Popen(
+        helper_command(*args, password=password),
+        stdin=stdin,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+    )
+    if password is not None:
+        process.stdin.write(password + "\n")
+        process.stdin.flush()
+        process.stdin.close()
+    return process
 
 
 def is_installed(app):
@@ -56,17 +92,13 @@ def is_installed(app):
     return None
 
 
-def install(app_ids):
-    command = helper_command("install", *app_ids)
-    return subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            text=True, bufsize=1)
+def install(app_ids, password=None):
+    return privileged_process(["install", *app_ids], password)
 
 
-def run_setup():
+def run_setup(password=None):
     """Run the initial repository setup through the privileged helper."""
-    command = helper_command("setup")
-    return subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            text=True, bufsize=1)
+    return privileged_process(["setup"], password)
 
 
 def setup_needed():

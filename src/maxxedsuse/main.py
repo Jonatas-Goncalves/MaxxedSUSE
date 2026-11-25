@@ -17,6 +17,7 @@ from .catalog import load_apps  # noqa: E402
 from .engine import (  # noqa: E402
     install,
     is_installed,
+    password_required,
     remove_user_launcher,
     run_setup,
     setup_needed,
@@ -172,7 +173,35 @@ class MaxxedSUSEApp(Adw.Application):
             self.welcome_page = self.build_welcome()
             self.view.replace([self.welcome_page])
 
+    def ask_password(self, callback):
+        dialog = Adw.MessageDialog(
+            transient_for=self.window,
+            modal=True,
+            heading=_("Administrator password"),
+            body=_("Enter your password to continue."),
+        )
+        entry = Gtk.PasswordEntry(show_peek_icon=True)
+        dialog.set_child(entry)
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("unlock", _("Unlock"))
+        dialog.set_response_appearance("unlock", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_default_response("unlock")
+        dialog.set_close_response("cancel")
+
+        def on_response(_dialog, response):
+            if response == "unlock":
+                callback(entry.get_text())
+
+        dialog.connect("response", on_response)
+        dialog.present()
+
     def run_initial_setup(self, button):
+        if password_required():
+            self.ask_password(lambda password: self.start_initial_setup(button, password))
+        else:
+            self.start_initial_setup(button, None)
+
+    def start_initial_setup(self, button, password):
         button.set_sensitive(False)
         _dialog, buffer = self.output_dialog(_("Initial setup"))
 
@@ -180,7 +209,7 @@ class MaxxedSUSEApp(Adw.Application):
             buffer.insert(buffer.get_end_iter(), text)
 
         def worker():
-            process = run_setup()
+            process = run_setup(password)
             if not process:
                 GLib.idle_add(append, _("Could not start the setup."))
                 return
@@ -337,13 +366,19 @@ class MaxxedSUSEApp(Adw.Application):
             self.show_message(_("No applications selected"))
             return
 
+        if password_required():
+            self.ask_password(lambda password: self.start_install(ids, password))
+        else:
+            self.start_install(ids, None)
+
+    def start_install(self, ids, password):
         _dialog, buffer = self.output_dialog(_("Installing applications"))
 
         def append(text):
             buffer.insert(buffer.get_end_iter(), text)
 
         def worker():
-            process = install(ids)
+            process = install(ids, password)
             if not process:
                 GLib.idle_add(append, _("Could not start the installer."))
                 return

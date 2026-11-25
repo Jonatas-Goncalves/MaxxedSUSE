@@ -933,3 +933,15 @@ msgstr "Xwiimote-ng es un controlador de código abierto para mandos de Nintendo
 
 msgid "drmcru is a Linux DRM/KMS custom resolution utility."
 msgstr "drmcru es una utilidad de resolución personalizada para DRM/KMS en Linux."
+
+msgid "Administrator password"
+msgstr "Contraseña de administrador"
+
+msgid "Enter your password to continue."
+msgstr "Introduce tu contraseña para continuar."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Unlock"
+msgstr "Desbloquear"

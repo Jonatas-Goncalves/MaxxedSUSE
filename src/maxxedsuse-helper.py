@@ -10,6 +10,7 @@ import os
 import shlex
 import subprocess
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 if os.environ.get("MXX_DATADIR"):
@@ -55,10 +56,27 @@ def install(app):
     return False
 
 
+REPO_ALIAS = "MaxxedSUSE"
+REPO_URL = "https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/"
+
+
+def add_repository():
+    result = subprocess.run(["zypper", "--xmlout", "lr"], capture_output=True, text=True, check=False)
+    if result.returncode == 0:
+        try:
+            repos = ET.fromstring(result.stdout)
+        except ET.ParseError:
+            repos = None
+        if repos is not None and any(repo.get("alias") == REPO_ALIAS for repo in repos.iter("repo")):
+            print("==> Adding the MaxxedSUSE repository", flush=True)
+            print(f"Repository '{REPO_ALIAS}' is already configured.", flush=True)
+            return True
+    return run(f"zypper --gpg-auto-import-keys addrepo --refresh {REPO_URL} {REPO_ALIAS}",
+               "Adding the MaxxedSUSE repository")
+
+
 SETUP_STEPS = [
-    ("Adding the MaxxedSUSE repository",
-     "zypper --gpg-auto-import-keys addrepo --refresh "
-     "https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/ MaxxedSUSE"),
+    ("Adding the MaxxedSUSE repository", add_repository),
     ("Refreshing repositories", "zypper --gpg-auto-import-keys refresh"),
     ("Updating the system", "zypper --non-interactive dup --auto-agree-with-licenses --no-recommends"),
     ("Installing Flatpak", "zypper --non-interactive install flatpak"),
@@ -73,7 +91,13 @@ SETUP_STEPS = [
 
 def setup_system():
     for description, command in SETUP_STEPS:
-        if not run(command, description):
+        if callable(command):
+            ok = command()
+            if not ok:
+                print(f"Step failed: {description}", file=sys.stderr, flush=True)
+        else:
+            ok = run(command, description)
+        if not ok:
             return False
     state = Path("/var/lib/maxxedsuse/state")
     state.mkdir(parents=True, exist_ok=True)

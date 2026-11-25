@@ -1056,3 +1056,15 @@ msgstr ""
 
 msgid "drmcru is a Linux DRM/KMS custom resolution utility."
 msgstr ""
+
+msgid "Administrator password"
+msgstr ""
+
+msgid "Enter your password to continue."
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Unlock"
+msgstr ""

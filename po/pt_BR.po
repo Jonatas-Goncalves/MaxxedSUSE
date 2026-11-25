@@ -933,3 +933,15 @@ msgstr "Xwiimote-ng é um driver de código aberto para controles do Nintendo Wi
 
 msgid "drmcru is a Linux DRM/KMS custom resolution utility."
 msgstr "drmcru é um utilitário Linux DRM/KMS para resoluções personalizadas."
+
+msgid "Administrator password"
+msgstr "Senha de administrador"
+
+msgid "Enter your password to continue."
+msgstr "Digite sua senha para continuar."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Unlock"
+msgstr "Desbloquear"

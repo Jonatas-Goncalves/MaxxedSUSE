@@ -933,3 +933,15 @@ msgstr "Xwiimote-ng è un driver di dispositivo open-source per i telecomandi Ni
 
 msgid "drmcru is a Linux DRM/KMS custom resolution utility."
 msgstr "drmcru è un'utilità Linux DRM/KMS per risoluzioni personalizzate."
+
+msgid "Administrator password"
+msgstr "Password dell'amministratore"
+
+msgid "Enter your password to continue."
+msgstr "Inserisci la password per continuare."
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Unlock"
+msgstr "Sblocca"
