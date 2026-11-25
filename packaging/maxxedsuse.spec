@@ -41,6 +41,7 @@ cp -r catalog %{buildroot}%{_datadir}/%{name}/
 install -Dm644 src/maxxedsuseapp.py %{buildroot}%{_bindir}/%{name}
 install -Dm755 src/maxxedsuse-helper.py %{buildroot}%{_libexecdir}/%{name}/%{name}-helper
 
+install -dm0755 %{buildroot}%{python3_sitelib}
 cp -r src/maxxedsuse %{buildroot}%{python3_sitelib}/maxxedsuse
 for lang in pt_BR en_US es it fr; do
     install -Dm644 po/locale/$lang/LC_MESSAGES/%{name}.mo \
