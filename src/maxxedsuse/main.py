@@ -174,26 +174,36 @@ class MaxxedSUSEApp(Adw.Application):
             self.view.replace([self.welcome_page])
 
     def ask_password(self, callback):
-        dialog = Adw.MessageDialog(
+        dialog = Gtk.Dialog(
             transient_for=self.window,
+            title=_("Administrator password"),
             modal=True,
-            heading=_("Administrator password"),
-            body=_("Enter your password to continue."),
         )
+        dialog.set_default_size(380, -1)
+        content = dialog.get_content_area()
+        content.set_spacing(8)
+        content.set_margin_top(12)
+        content.set_margin_bottom(12)
+        content.set_margin_start(12)
+        content.set_margin_end(12)
+        content.append(Gtk.Label(label=_("Enter your password to continue."), wrap=True))
         entry = Gtk.PasswordEntry(show_peek_icon=True)
-        dialog.set_child(entry)
-        dialog.add_response("cancel", _("Cancel"))
-        dialog.add_response("unlock", _("Unlock"))
-        dialog.set_response_appearance("unlock", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_default_response("unlock")
-        dialog.set_close_response("cancel")
+        content.append(entry)
+        dialog.add_button(_("Cancel"), Gtk.ResponseType.CANCEL)
+        dialog.add_button(_("Unlock"), Gtk.ResponseType.OK)
+        dialog.set_default_response(Gtk.ResponseType.OK)
 
-        def on_response(_dialog, response):
-            if response == "unlock":
-                callback(entry.get_text())
+        def on_response(current, response):
+            self._password_dialog = None
+            password = entry.get_text() if response == Gtk.ResponseType.OK else None
+            current.destroy()
+            if password is not None:
+                callback(password)
 
         dialog.connect("response", on_response)
+        self._password_dialog = dialog
         dialog.present()
+        entry.grab_focus()
 
     def run_initial_setup(self, button):
         if password_required():
