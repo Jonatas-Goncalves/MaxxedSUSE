@@ -46,6 +46,7 @@ cp "$ROOT/data/maxxedsuse.svg" "$APPDIR/maxxedsuse.svg"
 
 # --- Python runtime ---------------------------------------------------------
 cp -L "$(command -v python3)" "$APPDIR/usr/bin/python3"
+mkdir -p "$APPDIR$(dirname "$STDLIB")" "$APPDIR$(dirname "$SITEPACKAGES")"
 cp -r "$STDLIB" "$APPDIR$STDLIB"
 rm -rf "$APPDIR$STDLIB/site-packages"
 mkdir -p "$APPDIR$SITEPACKAGES"
