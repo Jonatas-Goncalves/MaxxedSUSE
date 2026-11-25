@@ -1,0 +1,81 @@
+name: Package check
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.opensuse.org/opensuse/tumbleweed:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: zypper --non-interactive install python3 curl
+
+      - name: Check catalog packages
+        id: check
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p artifacts
+          : > artifacts/failures.txt
+          failures=0
+          while IFS=$'\t' read -r id backend check; do
+            [[ -z "$check" ]] && continue
+            if [[ "$backend" == "zypper" ]]; then
+              if ! rpm -q "$check" >/dev/null 2>&1; then
+                if ! zypper --non-interactive info --exact "$check" >/dev/null 2>&1; then
+                  printf '%s\t%s\t%s\n' "$id" "$backend" "$check" >> artifacts/failures.txt
+                  failures=$((failures + 1))
+                fi
+              fi
+            elif [[ "$backend" == "flatpak" ]]; then
+              if ! curl --fail --silent --show-error \
+                  "https://flathub.org/api/v2/apps/$check" >/dev/null 2>&1; then
+                printf '%s\t%s\t%s\n' "$id" "$backend" "$check" >> artifacts/failures.txt
+                failures=$((failures + 1))
+              fi
+            fi
+          done < <(python3 - <<'PY'
+          import json
+          for app in json.load(open('catalog/apps.json')):
+              print(app['id'], app['backend'], app.get('check',''), sep='\t')
+          PY
+          )
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+          if (( failures > 0 )); then
+            echo "::error::$failures catalog entries failed validation"
+          fi
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-check-results
+          path: artifacts/
+
+      - name: Notify Telegram
+        if: failure() || steps.check.outputs.failures != '0'
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          failures=$(cat artifacts/failures.txt 2>/dev/null || true)
+          text="MaxxedSUSE package check failed"
+          text+=$'\n'"Failed entries:"
+          text+=$'\n'"$failures"
+          text+=$'\n'"Run: $RUN_URL"
+          curl --fail-with-body --silent --show-error \
+            -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "text=${text}" >/dev/null

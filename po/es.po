@@ -1,0 +1,935 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MaxxedSUSE\n"
+"Report-Msgid-Bugs-To: https://github.com/Jonatas-Goncalves/MaxxedSUSE/issues\n"
+"PO-Revision-Date: 2026-11-22 00:00+0000\n"
+"Last-Translator: MaxxedSUSE contributors\n"
+"Language-Team: MaxxedSUSE\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "\n$name is already installed"
+msgstr "\n$name ya está instalado"
+
+msgid "\nInstallation complete"
+msgstr "\nInstalación completada"
+
+msgid "# Adding Flathub"
+msgstr "# Añadiendo Flathub"
+
+msgid "# Adding the MaxxedSUSE repository"
+msgstr "# Añadiendo el repositorio MaxxedSUSE"
+
+msgid "# Installing Flatpak"
+msgstr "# Instalando Flatpak"
+
+msgid "# Installing media codecs"
+msgstr "# Instalando códecs de medios"
+
+msgid "# Refreshing repositories"
+msgstr "# Actualizando repositorios"
+
+msgid "# Updating the system"
+msgstr "# Actualizando el sistema"
+
+msgid "<b>START MAXXEDING YOUR openSUSE!</b>"
+msgstr "<b>¡EMPIEZA A POTENCIAR TU openSUSE!</b>"
+
+msgid "ADVANCED SYSTEM TOOLS"
+msgstr "HERRAMIENTAS AVANZADAS DEL SISTEMA"
+
+msgid "AMD Radeon open-source drivers"
+msgstr "Controladores de código abierto AMD Radeon"
+
+msgid "AUDIO & VIDEO"
+msgstr "AUDIO Y VÍDEO"
+
+msgid "Additional kernel parameters (space-separated)"
+msgstr "Parámetros adicionales del kernel (separados por espacios)"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Audio and video software"
+msgstr "Software de audio y vídeo"
+
+msgid "Browsers and communication"
+msgstr "Navegadores y comunicación"
+
+msgid "COMMUNICATION & BROWSERS"
+msgstr "COMUNICACIÓN Y NAVEGADORES"
+
+msgid "Cancelled"
+msgstr "Cancelado"
+
+msgid "Change"
+msgstr "Cambiar"
+
+msgid "Change the device hostname?"
+msgstr "¿Cambiar el nombre de host del dispositivo?"
+
+msgid "Change the interface language"
+msgstr "Cambiar el idioma de la interfaz"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Codecs are already configured."
+msgstr "Los códecs ya están configurados."
+
+msgid "Complete"
+msgstr "Completado"
+
+msgid "Component"
+msgstr "Componente"
+
+msgid "Configuring Flatpak"
+msgstr "Configurando Flatpak"
+
+msgid "Continue"
+msgstr "Continuar"
+
+msgid "DEVELOPMENT"
+msgstr "DESARROLLO"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Detected bootloader: $loader"
+msgstr "Bootloader detectado: $loader"
+
+msgid "Downloading $name..."
+msgstr "Descargando $name..."
+
+msgid "EMULATORS"
+msgstr "EMULADORES"
+
+msgid "Enjoy your system!"
+msgstr "¡Disfruta tu sistema!"
+
+msgid "Enter a hostname (letters, digits and hyphens; up to 63 characters):"
+msgstr "Introduzca un nombre de host (letras, dígitos y guiones; hasta 63 caracteres):"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Exit"
+msgstr "Salir"
+
+msgid "Flatpak is already configured."
+msgstr "Flatpak ya está configurado."
+
+msgid "GAME STORES"
+msgstr "TIENDAS DE JUEGOS"
+
+msgid "GAMES & TOOLS"
+msgstr "JUEGOS Y HERRAMIENTAS"
+
+msgid "Game launchers and stores"
+msgstr "Lanzadores y tiendas de juegos"
+
+msgid "Graphics drivers"
+msgstr "Controladores gráficos"
+
+msgid "Hostname"
+msgstr "Nombre de host"
+
+msgid "Hostname, drivers and optimizations"
+msgstr "Nombre de host, controladores y optimizaciones"
+
+msgid "Initial setup finished."
+msgstr "Configuración inicial finalizada."
+
+msgid "Install"
+msgstr "Instalar"
+
+msgid "Installed"
+msgstr "Instalado"
+
+msgid "Installing codecs"
+msgstr "Instalando códecs"
+
+msgid "Installing drivers"
+msgstr "Instalando controladores"
+
+msgid "Intel integrated graphics drivers"
+msgstr "Controladores gráficos integrados Intel"
+
+msgid "Invalid hostname"
+msgstr "Nombre de host no válido"
+
+msgid "Kernel parameters"
+msgstr "Parámetros del kernel"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Manage kernel parameters for GPU optimization and PCI passthrough."
+msgstr "Gestione los parámetros del kernel para optimización de GPU y PCI passthrough."
+
+msgid "MaxxedSUSE"
+msgstr "MaxxedSUSE"
+
+msgid "MaxxedSUSE setup"
+msgstr "Configuración de MaxxedSUSE"
+
+msgid "MaxxedSUSE-managed parameters: ${params:-none}"
+msgstr "Parámetros gestionados por MaxxedSUSE: ${params:-none}"
+
+msgid "NVIDIA drivers (390 series)"
+msgstr "Controladores NVIDIA (serie 390)"
+
+msgid "NVIDIA drivers (470 series)"
+msgstr "Controladores NVIDIA (serie 470)"
+
+msgid "NVIDIA drivers (620 series, open kernel modules)"
+msgstr "Controladores NVIDIA (serie 620, módulos de kernel abiertos)"
+
+msgid "No kernel changes to revert."
+msgstr "No hay cambios en el kernel para revertir."
+
+msgid "No option selected. Nothing will be done."
+msgstr "No se seleccionó ninguna opción. No se hará nada."
+
+msgid "On first use, MaxxedSUSE will:\n\n- Add the MaxxedSUSE repository\n- Add Flathub\n- Install required dependencies\n- Update the system\n\nThis process should not be interrupted. Continue?"
+msgstr "En el primer uso, MaxxedSUSE:\n\n- Añadirá el repositorio MaxxedSUSE\n- Añadirá Flathub\n- Instalará las dependencias necesarias\n- Actualizará el sistema\n\nEste proceso no debe interrumpirse. ¿Continuar?"
+
+msgid "Operation"
+msgstr "Operación"
+
+msgid "Operation cancelled. Nothing was changed."
+msgstr "Operación cancelada. No se cambió nada."
+
+msgid "Original parameters restored."
+msgstr "Parámetros originales restaurados."
+
+msgid "Parameters applied. Reboot to activate them.\nIf the system fails to boot, select an earlier snapshot or run the revert option."
+msgstr "Parámetros aplicados. Reinicie para activarlos.\nSi el sistema no arranca, seleccione una instantánea anterior o use la opción de revertir."
+
+msgid "Please wait..."
+msgstr "Espere..."
+
+msgid "Popular emulators"
+msgstr "Emuladores populares"
+
+msgid "Programming and development tools"
+msgstr "Herramientas de programación y desarrollo"
+
+msgid "ROOT permission required"
+msgstr "Se requieren permisos ROOT"
+
+msgid "Reduce swappiness and cache pressure to improve SSD lifetime?"
+msgstr "¿Reducir el swappiness y la presión de caché para mejorar la vida útil del SSD?"
+
+msgid "Refreshing repositories"
+msgstr "Actualizando repositorios"
+
+msgid "Repositories are already configured."
+msgstr "Los repositorios ya están configurados."
+
+msgid "Revert"
+msgstr "Revertir"
+
+msgid "Revert all MaxxedSUSE kernel parameter changes?"
+msgstr "¿Revertir todos los cambios de parámetros del kernel realizados por MaxxedSUSE?"
+
+msgid "SYSTEM CONFIGURATION"
+msgstr "CONFIGURACIÓN DEL SISTEMA"
+
+msgid "Select the interface language:"
+msgstr "Seleccione el idioma de la interfaz:"
+
+msgid "Select your graphics hardware:"
+msgstr "Seleccione su hardware gráfico:"
+
+msgid "Setup complete"
+msgstr "Configuración completada"
+
+msgid "Skip"
+msgstr "Omitir"
+
+msgid "Start"
+msgstr "Iniciar"
+
+msgid "Swap optimization"
+msgstr "Optimización de swap"
+
+msgid "Swap settings applied."
+msgstr "Ajustes de swap aplicados."
+
+msgid "System utilities"
+msgstr "Utilidades del sistema"
+
+msgid "This script requires ROOT permission. Run it with sudo."
+msgstr "Este script requiere permisos ROOT. Ejecútelo con sudo."
+
+msgid "Tools for advanced users"
+msgstr "Herramientas para usuarios avanzados"
+
+msgid "Tools for gaming"
+msgstr "Herramientas para juegos"
+
+msgid "Tools for working or studying"
+msgstr "Herramientas para trabajar o estudiar"
+
+msgid "UTILITIES"
+msgstr "UTILIDADES"
+
+msgid "Updating the system"
+msgstr "Actualizando el sistema"
+
+msgid "Use only letters, digits and hyphens. It must start with a letter or digit."
+msgstr "Use solo letras, dígitos y guiones. Debe empezar con una letra o dígito."
+
+msgid "Vulkan libraries (recommended)"
+msgstr "Bibliotecas Vulkan (recomendado)"
+
+msgid "WORK & SCHOOL"
+msgstr "TRABAJO Y ESTUDIO"
+
+msgid "Warning: neither sdbootutil nor update-bootloader is available; boot entries were not refreshed."
+msgstr "Aviso: ni sdbootutil ni update-bootloader están disponibles; las entradas de arranque no se actualizaron."
+
+msgid "\nInstallation finished.\n"
+msgstr "\nInstalación finalizada.\n"
+
+msgid "Applications"
+msgstr "Aplicaciones"
+
+msgid "Checking..."
+msgstr "Comprobando..."
+
+msgid "Could not start the installer."
+msgstr "No se pudo iniciar el instalador."
+
+msgid "Install selected"
+msgstr "Instalar seleccionados"
+
+msgid "Installing applications"
+msgstr "Instalando aplicaciones"
+
+msgid "No applications selected"
+msgstr "Ninguna aplicación seleccionada"
+
+msgid "Not installed"
+msgstr "No instalado"
+
+msgid "OK"
+msgstr "Aceptar"
+
+msgid "Refresh status"
+msgstr "Actualizar estado"
+
+msgid "Search applications"
+msgstr "Buscar aplicaciones"
+
+msgid "Setup utility for openSUSE Tumbleweed"
+msgstr "Utilidad de configuración para openSUSE Tumbleweed"
+
+msgid "Status unavailable"
+msgstr "Estado no disponible"
+
+msgid "Welcome"
+msgstr "Bienvenido"
+
+msgid "Run initial setup"
+msgstr "Ejecutar configuración inicial"
+
+msgid "Initial setup"
+msgstr "Configuración inicial"
+
+msgid "Could not start the setup."
+msgstr "No se pudo iniciar la configuración."
+
+msgid "Setup finished."
+msgstr "Configuración finalizada."
+
+msgid "Setup failed."
+msgstr "La configuración falló."
+
+msgid "Categories"
+msgstr "Categorías"
+
+msgid "Choose a section to browse"
+msgstr "Elija una sección para navegar"
+
+msgid "applications"
+msgstr "aplicaciones"
+
+msgid "Remove desktop shortcut"
+msgstr "Quitar acceso directo del menú"
+
+msgid "Desktop shortcut removed."
+msgstr "Acceso directo del menú eliminado."
+
+msgid "Could not remove the desktop shortcut."
+msgstr "No se pudo eliminar el acceso directo del menú."
+
+msgid " User-mode driver and GTK3 based GUI for Steam Controller "
+msgstr " Controlador en modo usuario e interfaz GTK3 para Steam Controller "
+
+msgid "A (h)top like task monitor for AMD and NVIDIA GPUs"
+msgstr "Monitor de tareas tipo (h)top para GPUs AMD y NVIDIA"
+
+msgid "A Fast, Scalable, Distributed Free & Open-Source VCS"
+msgstr "Un VCS rápido, escalable, distribuido, libre y de código abierto"
+
+msgid "A Graphical UI to help manage Linux monitoring overlays"
+msgstr "Interfaz gráfica para gestionar overlays de monitorización en Linux"
+
+msgid "A Smart Ethernet Switch for Earth"
+msgstr "Un conmutador Ethernet inteligente para el planeta"
+
+msgid "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."
+msgstr "Un overlay de Vulkan y OpenGL para monitorizar FPS, temperatura, CPU/GPU..."
+
+msgid "A Vulkan layer for runtime color grading on Linux"
+msgstr "Una capa Vulkan para ajuste de color en tiempo de ejecución en Linux"
+
+msgid "A cross-platform IDE for C and C++"
+msgstr "Un IDE multiplataforma para C y C++"
+
+msgid "A cross-platform graphical front-end for emulators"
+msgstr "Una interfaz gráfica multiplataforma para emuladores"
+
+msgid "A cross-platform web browser by Google"
+msgstr "Un navegador web multiplataforma de Google"
+
+msgid "A dynamicA dynamic tiling extension for KWin 6 only"
+msgstr "Una extensión de mosaico dinámico solo para KWin 6"
+
+msgid "A lightweight and efficient battery monitor for DualShock 4 controllers on Linux"
+msgstr "Un monitor de batería ligero y eficiente para mandos DualShock 4 en Linux"
+
+msgid "A modern, fast and productivity driven SQL client with a focus in UX"
+msgstr "Un cliente SQL moderno, rápido y orientado a la productividad, centrado en la UX"
+
+msgid "A native music streaming client, built with Rust and GPUI"
+msgstr "Un cliente nativo de streaming de música, creado con Rust y GPUI"
+
+msgid "A powerful OS image that copies images to drives byte by byte"
+msgstr "Una potente herramienta de imágenes de sistema que copia imágenes a unidades byte a byte"
+
+msgid "A powerful yt-dlp frontend"
+msgstr "Una potente interfaz para yt-dlp"
+
+msgid "A privacy and security-focused browser"
+msgstr "Un navegador centrado en la privacidad y la seguridad"
+
+msgid "A program to help you download, keep updated, and run the Tor Browser Bundle"
+msgstr "Un programa para descargar, mantener actualizado y ejecutar Tor Browser Bundle"
+
+msgid "A simple and modern GTK eBook reader"
+msgstr "Un lector de libros electrónicos GTK sencillo y moderno"
+
+msgid "A simple joystick tester based on Gtk+"
+msgstr "Un probador de joysticks sencillo basado en Gtk+"
+
+msgid "A simple, clean, beautiful view of the Web"
+msgstr "Una vista de la web sencilla, limpia y bonita"
+
+msgid "A tool for backing up your PC video game save data"
+msgstr "Una herramienta para hacer copias de seguridad de tus partidas guardadas en el PC"
+
+msgid "A translation app for GNOME"
+msgstr "Una aplicación de traducción para GNOME"
+
+msgid "Advanced System Tools"
+msgstr "Herramientas avanzadas del sistema"
+
+msgid "All features of the Whatpp Web are available and several others"
+msgstr "Todas las funciones de WhatsApp Web y algunas más"
+
+msgid "All-in-one voice and text chat for Gamers"
+msgstr "Chat de voz y texto todo en uno para jugadores"
+
+msgid "Allows for games to run in an isolated Xwayland instance"
+msgstr "Permite ejecutar juegos en una instancia aislada de Xwayland"
+
+msgid "Allows games to request a set of optimisations for a games process"
+msgstr "Permite a los juegos solicitar optimizaciones para su proceso"
+
+msgid "Allows to configure and switch GPUs on Optimus laptops using the tray menu"
+msgstr "Permite configurar y cambiar de GPU en portátiles Optimus desde el menú de la bandeja"
+
+msgid "An app for managing ROMs in Steam"
+msgstr "Una aplicación para gestionar ROMs en Steam"
+
+msgid "An easy to use BitTorrent client"
+msgstr "Un cliente BitTorrent fácil de usar"
+
+msgid "An interactive text-mode process viewer for Linux"
+msgstr "Un visor de procesos interactivo en modo texto para Linux"
+
+msgid "An open-source Bittorrent client"
+msgstr "Un cliente BitTorrent de código abierto"
+
+msgid "An open-source remote desktop, and alternative to TeamViewer"
+msgstr "Un escritorio remoto de código abierto, alternativa a TeamViewer"
+
+msgid "Android Studio IDE for Android"
+msgstr "IDE Android Studio para Android"
+
+msgid "Audio and Video"
+msgstr "Audio y vídeo"
+
+msgid "Browser designed to organize and run your Web applications"
+msgstr "Navegador diseñado para organizar y ejecutar tus aplicaciones web"
+
+msgid "Call and message skype users, with video chat support"
+msgstr "Llama y envía mensajes a usuarios de Skype, con soporte de videollamadas"
+
+msgid "Capable and Ergonomic Go IDE"
+msgstr "IDE de Go potente y ergonómico"
+
+msgid "Capable and Ergonomic Java IDE"
+msgstr "IDE de Java potente y ergonómico"
+
+msgid "Capture text from any screen area"
+msgstr "Captura texto de cualquier área de la pantalla"
+
+msgid "Capturing, compositing, recording, and streaming video content"
+msgstr "Captura, composición, grabación y transmisión de contenido de vídeo"
+
+msgid "Cartridges is an easy-to-use, elegant game launcher"
+msgstr "Cartridges es un lanzador de juegos elegante y fácil de usar"
+
+msgid "Code editing. Redefined"
+msgstr "Edición de código. Redefinida."
+
+msgid "Communication and Browsers"
+msgstr "Comunicación y navegadores"
+
+msgid "Connect to the Internet faster and in a more secure way"
+msgstr "Conéctate a Internet más rápido y de forma más segura"
+
+msgid "Connect to work, games, or projects wherever you are, whenever you want"
+msgstr "Conéctate al trabajo, a juegos o a proyectos dondequiera que estés, cuando quieras"
+
+msgid "Connect, control and sync devices"
+msgstr "Conecta, controla y sincroniza dispositivos"
+
+msgid "Container-based approach to boot a full Android system on GNU/Linux (version 1.4.x for running Android 11) "
+msgstr "Enfoque basado en contenedores para iniciar un sistema Android completo en GNU/Linux (versión 1.4.x para ejecutar Android 11) "
+
+msgid "Control the fans and overclock your NVIDIA video card"
+msgstr "Controla los ventiladores y haz overclock a tu tarjeta NVIDIA"
+
+msgid "Convert Images Into PDF File"
+msgstr "Convierte imágenes en archivos PDF"
+
+msgid "Create images and edit photographs"
+msgstr "Crea imágenes y edita fotografías"
+
+msgid "Create stories, games, and animations, share with others around the world"
+msgstr "Crea historias, juegos y animaciones, y compártelos con personas de todo el mundo"
+
+msgid "Create, view and edit text documents, spreadsheets and presentations of any size and complexity"
+msgstr "Crea, visualiza y edita documentos de texto, hojas de cálculo y presentaciones de cualquier tamaño y complejidad"
+
+msgid "Created to be a feature-rich and easy to handle CD burning application"
+msgstr "Creada para ser una aplicación de grabación de CD rica en funciones y fácil de usar"
+
+msgid "Cross-platform IDE tailored for maximum developer productivity"
+msgstr "IDE multiplataforma diseñado para la máxima productividad del desarrollador"
+
+msgid "Cross-platform tool to take screenshots with many built-in features"
+msgstr "Herramienta multiplataforma para tomar capturas de pantalla con muchas funciones integradas"
+
+msgid "Custom launcher for Minecraft that allows you to easily manage multiple installations"
+msgstr "Lanzador personalizado de Minecraft que permite gestionar fácilmente múltiples instalaciones"
+
+msgid "Deezer is a music streaming app"
+msgstr "Deezer es una aplicación de streaming de música"
+
+msgid "Desktop client using jellyfin-web with embedded MPV player"
+msgstr "Cliente de escritorio que usa jellyfin-web con el reproductor MPV integrado"
+
+msgid "Development"
+msgstr "Desarrollo"
+
+msgid "Docker Container Management"
+msgstr "Gestión de contenedores Docker"
+
+msgid "Easily manage wineprefix using environments"
+msgstr "Gestiona fácilmente prefijos de Wine mediante entornos"
+
+msgid "Easy way to switch between GPU modes on Nvidia Optimus systems"
+msgstr "Forma sencilla de cambiar entre modos de GPU en sistemas Nvidia Optimus"
+
+msgid "Elegantly record your screen"
+msgstr "Graba tu pantalla con elegancia"
+
+msgid "Emulators"
+msgstr "Emuladores"
+
+msgid "FDM is a powerful modern download accelerator and organizer"
+msgstr "FDM es un potente acelerador y organizador de descargas moderno"
+
+msgid "Fast & powerful, cross platform .NET IDE"
+msgstr "IDE de .NET rápido, potente y multiplataforma"
+
+msgid "Fast and secure file transfer"
+msgstr "Transferencia de archivos rápida y segura"
+
+msgid "Flatpak version of Lutris"
+msgstr "Versión Flatpak de Lutris"
+
+msgid "Flatpak version of Steam"
+msgstr "Versión Flatpak de Steam"
+
+msgid "Floorp is an open source browser built on Firefox"
+msgstr "Floorp es un navegador de código abierto basado en Firefox"
+
+msgid "Forget about forgetting things"
+msgstr "Olvídate de olvidar las cosas"
+
+msgid "Free Open Source PDF Editor"
+msgstr "Editor de PDF gratuito y de código abierto"
+
+msgid "Free and Open Source AI Image Upscaler"
+msgstr "Amplificador de imágenes con IA, gratuito y de código abierto"
+
+msgid "Free and open source email, newsfeed, chat, and calendaring client"
+msgstr "Cliente de correo, noticias, chat y calendario gratuito y de código abierto"
+
+msgid "Free file archiver utility, based on Open Source 7-Zip/p7zip"
+msgstr "Utilidad gratuita de archivado de archivos, basada en 7-Zip/p7zip de código abierto"
+
+msgid "Free partition editor for graphically managing your disk partitions"
+msgstr "Editor de particiones gratuito para gestionar gráficamente las particiones de tu disco"
+
+msgid "Free, Open-source, Non-Linear Video Editor by KDE"
+msgstr "Editor de vídeo no lineal gratuito y de código abierto de KDE"
+
+msgid "Free, open source image viewer"
+msgstr "Visor de imágenes gratuito y de código abierto"
+
+msgid "Frontend for emulators, game engines and media players"
+msgstr "Interfaz para emuladores, motores de juegos y reproductores multimedia"
+
+msgid "Full-featured digital art studio"
+msgstr "Estudio de arte digital con todas las funciones"
+
+msgid "GPU passthrough made easy"
+msgstr "Passthrough de GPU fácil de configurar"
+
+msgid "GUI Open source Electron-based GitHub app"
+msgstr "Aplicación de GitHub de código abierto basada en Electron con interfaz gráfica"
+
+msgid "GUI management tool to make managing a Btrfs filesystem easier"
+msgstr "Herramienta gráfica que facilita la gestión de sistemas de archivos Btrfs"
+
+msgid "GUI program that allows you to read useful data from the lm_sensors"
+msgstr "Programa gráfico que permite leer datos útiles de lm_sensors"
+
+msgid "Game Stores"
+msgstr "Tiendas de juegos"
+
+msgid "GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"
+msgstr "Cliente GameStream para PC (Windows, Mac, Linux y Steam Link)"
+
+msgid "Games and Tools"
+msgstr "Juegos y herramientas"
+
+msgid "Gathers information on CPU, motherboard and more"
+msgstr "Recopila información sobre la CPU, la placa base y más"
+
+msgid "Google Chromium, sans integration with Google"
+msgstr "Google Chromium sin integración con Google"
+
+msgid "Graphical Git client designed to help you understand and manage your source code history"
+msgstr "Cliente gráfico de Git diseñado para ayudarte a entender y gestionar el historial de tu código fuente"
+
+msgid "Graphical application to show where your disk space has gone"
+msgstr "Aplicación gráfica que muestra en qué se ha ido el espacio de tu disco"
+
+msgid "Graphical frontend for launching emulators and managing your game collection"
+msgstr "Interfaz gráfica para lanzar emuladores y gestionar tu colección de juegos"
+
+msgid "Helps you easily get rid of the residue of uninstall Flatpak package"
+msgstr "Ayuda a eliminar fácilmente los restos de paquetes Flatpak desinstalados"
+
+msgid "Hypnotix is an IPTV streaming application with support for live TV, movies and series"
+msgstr "Hypnotix es una aplicación de streaming IPTV con soporte para TV en directo, películas y series"
+
+msgid "Install and manage custom Proton and Wine-GE builds for Steam and Lutris"
+msgstr "Instala y gestiona compilaciones personalizadas de Proton y Wine-GE para Steam y Lutris"
+
+msgid "Install and use non-native applications on your favorite operating system"
+msgstr "Instala y usa aplicaciones no nativas en tu sistema operativo favorito"
+
+msgid "Is a command-line system information tool"
+msgstr "Es una herramienta de información del sistema en línea de comandos"
+
+msgid "Is a digital game distribution platform for computers"
+msgstr "Es una plataforma de distribución de juegos digitales para ordenadores"
+
+msgid "Is a lightweight, Free Software, cross-platform BitTorrent client"
+msgstr "Es un cliente BitTorrent ligero, de software libre y multiplataforma"
+
+msgid "Is a powerful office suite including Writer, Presentation and Spreadsheets"
+msgstr "Es una potente suite ofimática que incluye Writer, Presentación y Hojas de cálculo"
+
+msgid "Is a simple way to find, download and distribute indie games online"
+msgstr "Es una forma sencilla de encontrar, descargar y distribuir juegos indie en línea"
+
+msgid "Is an open-source software image viewer, image organizer"
+msgstr "Es un visor y organizador de imágenes de código abierto"
+
+msgid "It is a lightweight and functional file manager with many features"
+msgstr "Es un gestor de archivos ligero y funcional con muchas características"
+
+msgid "It will help you to manage wine prefixes and installed applications"
+msgstr "Te ayuda a gestionar prefijos de Wine y aplicaciones instaladas"
+
+msgid "Java IDE, a Git client, XML Editor, Maven and Gradle integration"
+msgstr "IDE de Java, cliente Git, editor XML e integración con Maven y Gradle"
+
+msgid "Keep your computer awake"
+msgstr "Mantiene tu ordenador despierto"
+
+msgid "Light-weight system monitor for X and Wayland"
+msgstr "Monitor del sistema ligero para X y Wayland"
+
+msgid "Lightweight open source audio player descendant of XMMS"
+msgstr "Reproductor de audio ligero y de código abierto descendiente de XMMS"
+
+msgid "Linux System Optimizer & Monitoring"
+msgstr "Optimización y monitorización del sistema Linux"
+
+msgid "Linux kernel driver for Xbox One and Xbox Series X|S accessories"
+msgstr "Controlador del kernel de Linux para accesorios de Xbox One y Xbox Series X|S"
+
+msgid "Mailspring is a new version of Nylas Mail"
+msgstr "Mailspring es una nueva versión de Nylas Mail"
+
+msgid "Manage Distrobox containers"
+msgstr "Gestiona contenedores Distrobox"
+
+msgid "Manage Flatpak permissions"
+msgstr "Gestiona permisos de Flatpak"
+
+msgid "Manage Podman and other container engines from a single UI and tray"
+msgstr "Gestiona Podman y otros motores de contenedores desde una sola interfaz y la bandeja"
+
+msgid "Markdown-based knowledge base"
+msgstr "Base de conocimientos basada en Markdown"
+
+msgid "Media System Manager that puts you in control of managing and streaming your media."
+msgstr "Gestor multimedia que te da el control de la administración y transmisión de tu contenido."
+
+msgid "Multiple Arcade Machine Emulator"
+msgstr "Emulador de máquinas recreativas múltiples"
+
+msgid "NES, FDS, Game Boy (Color|Advance), Super Nintendo, Virtual Boy"
+msgstr "NES, FDS, Game Boy (Color|Advance), Super Nintendo, Virtual Boy"
+
+msgid "NVM is a version manager for node.js"
+msgstr "NVM es un gestor de versiones para node.js"
+
+msgid "Nintendo Entertainment System/Famicom emulator"
+msgstr "Emulador de Nintendo Entertainment System/Famicom"
+
+msgid "OBS Package Installer is a tool that finds and installs packages for openSUSE in OBS or Packman"
+msgstr "OBS Package Installer es una herramienta que busca e instala paquetes para openSUSE en OBS o Packman"
+
+msgid "Official Desktop Client for the Telegram Messenger"
+msgstr "Cliente de escritorio oficial de Telegram Messenger"
+
+msgid "Open Source Game Launcher for Epic and GOG"
+msgstr "Lanzador de juegos de código abierto para Epic y GOG"
+
+msgid "Open source RGB lighting control that doesn't depend on manufacturer software"
+msgstr "Control de iluminación RGB de código abierto que no depende del software del fabricante"
+
+msgid "Open, extract, burn, create, edit, compress, encrypt, split and convert ISO files"
+msgstr "Abre, extrae, graba, crea, edita, comprime, cifra, divide y convierte archivos ISO"
+
+msgid "Open-source 3DS emulator project based on Citra."
+msgstr "Proyecto de emulador de 3DS de código abierto basado en Citra."
+
+msgid "Open-source browser project that aims to build a safer, faster, and more stable"
+msgstr "Proyecto de navegador de código abierto que busca ser más seguro, rápido y estable"
+
+msgid "PHP IDE for Professional Development"
+msgstr "IDE de PHP para desarrollo profesional"
+
+msgid "Parley is a local language tutor for the Linux and Windows desktop"
+msgstr "Parley es un tutor de idiomas local para escritorio Linux y Windows"
+
+msgid "Peer-to-peer file synchronization application"
+msgstr "Aplicación de sincronización de archivos entre pares"
+
+msgid "Play all your games on Linux"
+msgstr "Juega a todos tus juegos en Linux"
+
+msgid "PlayStation 3 emulator/debugger"
+msgstr "Emulador/depurador de PlayStation 3"
+
+msgid "PlayStation Portable Emulator"
+msgstr "Emulador de PlayStation Portable"
+
+msgid "Plex client for desktop computers"
+msgstr "Cliente de Plex para ordenadores de escritorio"
+
+msgid "Plugin-Based Nintendo 64 Emulator"
+msgstr "Emulador de Nintendo 64 basado en plugins"
+
+msgid "Pods is a frontend for Podman/Docker"
+msgstr "Pods es una interfaz para Podman/Docker"
+
+msgid "Pomodoro is a timer utility with rules, ideal for better productivity"
+msgstr "Pomodoro es un temporizador con reglas, ideal para mejorar la productividad"
+
+msgid "Portable, freeware Super Nintendo Entertainment System (TM) emulator"
+msgstr "Emulador portátil y gratuito de Super Nintendo Entertainment System (TM)"
+
+msgid "Powerful utility for writing raw disk images & ISOs to USB keys"
+msgstr "Potente utilidad para grabar imágenes de disco e ISOs en memorias USB"
+
+msgid "Powerful virtualization product for enterprise as well as home use"
+msgstr "Potente producto de virtualización para empresas y uso doméstico"
+
+msgid "Provides various features to integrate your phone and your computer"
+msgstr "Ofrece diversas funciones para integrar tu teléfono y tu ordenador"
+
+msgid "Reading and translating with offline Speech to Text, Text to Speech and Machine Translation"
+msgstr "Lee y traduce con reconocimiento de voz, síntesis de voz y traducción automática sin conexión"
+
+msgid "Resource monitor that shows usage and stats for processor, memory, disks, network and processes"
+msgstr "Monitor de recursos que muestra el uso y las estadísticas de procesador, memoria, discos, red y procesos"
+
+msgid "Run websites as if they were apps"
+msgstr "Ejecuta sitios web como si fueran aplicaciones"
+
+msgid "Scalable Vector Graphics editor"
+msgstr "Editor de gráficos vectoriales escalables"
+
+msgid "Secure, Fast & Private Brave Browser with Adblocker"
+msgstr "Navegador Brave seguro, rápido y privado con bloqueador de anuncios"
+
+msgid "Securely store passwords using industry standard encryption"
+msgstr "Guarda contraseñas de forma segura con cifrado estándar de la industria"
+
+msgid "Self-host your own RustDesk server, it is free and open source"
+msgstr "Aloja tu propio servidor RustDesk: es gratuito y de código abierto"
+
+msgid "Signal - Private Messenger: Say Hello to Privacy"
+msgstr "Signal - Mensajería privada: di hola a la privacidad"
+
+msgid "Slack is a cloud-based team communication platform"
+msgstr "Slack es una plataforma de comunicación de equipos en la nube"
+
+msgid "Sony PlayStation 2 Emulator"
+msgstr "Emulador de Sony PlayStation 2"
+
+msgid "Sony PlayStation(TM) Emulator"
+msgstr "Emulador de Sony PlayStation(TM)"
+
+msgid "Spotify Music Player"
+msgstr "Reproductor de música Spotify"
+
+msgid "Steering Wheel Manager for GNU/Linux"
+msgstr "Gestor de volantes para GNU/Linux"
+
+msgid "Sunshine is a Gamestream host for Moonlight"
+msgstr "Sunshine es un host de Gamestream para Moonlight"
+
+msgid "Synchronize games from other platforms into your Steam library"
+msgstr "Sincroniza juegos de otras plataformas con tu biblioteca de Steam"
+
+msgid "System snapshots backup and restore tool for Linux"
+msgstr "Herramienta de copia y restauración de instantáneas del sistema para Linux"
+
+msgid "TeamViewer: The Remote Desktop Software"
+msgstr "TeamViewer: el software de escritorio remoto"
+
+msgid "The Wake On Lan client wakes up magic packet"
+msgstr "El cliente Wake on LAN envía el paquete mágico para despertar el equipo"
+
+msgid "The most intelligent Python IDE"
+msgstr "El IDE de Python más inteligente"
+
+msgid "This Python script moves the window with focus on an adjacent monitor"
+msgstr "Este script de Python mueve la ventana enfocada a un monitor adyacente"
+
+msgid "Tool for converting video from nearly any format to a selection of modern"
+msgstr "Herramienta para convertir vídeo de casi cualquier formato a una selección de formatos modernos"
+
+msgid "Tool that displays AMD GPU utilization"
+msgstr "Herramienta que muestra el uso de la GPU AMD"
+
+msgid "Ultimate entertainment center"
+msgstr "El centro de entretenimiento definitivo"
+
+msgid "Universal Database Manager"
+msgstr "Gestor universal de bases de datos"
+
+msgid "Unofficial Microsoft Teams client for Linux using Electron"
+msgstr "Cliente no oficial de Microsoft Teams para Linux basado en Electron"
+
+msgid "Use any linux distribution inside your terminal"
+msgstr "Usa cualquier distribución de Linux dentro de tu terminal"
+
+msgid "Used to map gamepad keys to keyboard, mouse, scripts and macros"
+msgstr "Permite asignar los botones del mando a teclado, ratón, scripts y macros"
+
+msgid "Userspace Xbox gamepad driver and input remapper"
+msgstr "Controlador de mando Xbox en espacio de usuario y remapeador de entradas"
+
+msgid "Utilities"
+msgstr "Utilidades"
+
+msgid "Utility for running a single virtual machine on a Windows or Linux PC"
+msgstr "Utilidad para ejecutar una sola máquina virtual en un PC con Windows o Linux"
+
+msgid "Utility that enables you to create your own bootable Windows USB"
+msgstr "Utilidad que te permite crear tu propia USB de Windows arrancable"
+
+msgid "VLC Media Player"
+msgstr "Reproductor multimedia VLC"
+
+msgid "VSCodium is a community-driven, freely distribution of Microsoft's editor VS Code"
+msgstr "VSCodium es una distribución libre y comunitaria del editor VS Code de Microsoft"
+
+msgid "Video wallpaper for Linux written in Python"
+msgstr "Fondo de pantalla en vídeo para Linux escrito en Python"
+
+msgid "View, modify and configure disks and media"
+msgstr "Visualiza, modifica y configura discos y soportes"
+
+msgid "Vulkan post processing layer to enhance the visual graphics of games"
+msgstr "Capa de posprocesado Vulkan para mejorar los gráficos de los juegos"
+
+msgid "Watch videos, movies, TV series and TV channels instantly"
+msgstr "Mira vídeos, películas, series y canales de TV al instante"
+
+msgid "Waydroid Vanilla Images (Lineage 18.1)"
+msgstr "Imágenes Vanilla de Waydroid (Lineage 18.1)"
+
+msgid "Waydroid uses Linux namespaces to run a full Android system in a container"
+msgstr "Waydroid usa espacios de nombres de Linux para ejecutar un sistema Android completo en un contenedor"
+
+msgid "Work and Studies"
+msgstr "Trabajo y estudios"
+
+msgid "World's most popular audio editing and recording app"
+msgstr "La aplicación de edición y grabación de audio más popular del mundo"
+
+msgid "Xbox 360 emulator"
+msgstr "Emulador de Xbox 360"
+
+msgid "Xbox Classic EMUlator"
+msgstr "Emulador de Xbox Classic"
+
+msgid "Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes"
+msgstr "Xwiimote-ng es un controlador de código abierto para mandos de Nintendo Wii / Wii U"
+
+msgid "drmcru is a Linux DRM/KMS custom resolution utility."
+msgstr "drmcru es una utilidad de resolución personalizada para DRM/KMS en Linux."

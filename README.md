@@ -1,115 +1,93 @@
-# MaxxedSUSE
+<h1 align="center">MaxxedSUSE</h1>
 
-This project is a script to install main and most common day-to-day applications of a common Windows user and also to facilitate the installation of Applications, Tools and Games for those who are not familiar with Linux.
+<p align="center">
+  <img src="data/maxxedsuse.svg" alt="MaxxedSUSE" width="180">
+</p>
 
-    * --- This Script is to run on a clean install of OpenSUSE Leap 15.6 and Tumbleweed (Possibly works in 15.5)--- *
+MaxxedSUSE is a setup utility for openSUSE Tumbleweed. It helps users coming from Windows configure a fresh installation and install common applications, games and tools without having to learn the terminal.
 
-# Installation
+> Supported distribution: **openSUSE Tumbleweed only**.
 
-    Run directly from terminal with this command:
+## Features
 
-    curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE.sh | bash
+- Simple first-run setup: adds the MaxxedSUSE and Flathub repositories and updates the system.
+- System configuration: hostname, graphics drivers, kernel parameters and swap tuning.
+- Application catalog organized into categories.
+- Installation status for every application.
+- Interface available in Portuguese (Brazil), English (US), Spanish, Italian and French. The language is detected from the system locale and can be changed on the first page with immediate effect. Categories and application descriptions follow the selected language.
 
-    or
-    Download the zip, extract, and "sudo -sE bash Start.sh"
+## How to run
 
+Just run this command:
 
+```bash
+curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/MaxxedSUSE.sh | bash
+```
 
-# Description
-This project is intended for those migrating from Windows to Linux who are generally unfamiliar with Linux distributions and looking for a fast and stable system to work, play or both, so they don't have to spend hours reading tutorials to find out how to install the day-to-day software and that in a simple way leave the system ready for use.
+`MaxxedSUSE.sh` downloads or updates the project, prepares the dependencies and starts the application. With the RPM installed, the same application is available from the desktop menu or as `maxxedsuse`.
 
-For those who don't know how to use the terminal and aren't familiar with Linux systems, it makes a total difference using just one command that do all. I added sections separated by category to make it easier for beginner users, making advanced changes to the system's kernel in an automated and safe way to make the experience easier. for beginners as pleasant and simple as possible.
+When the project is run directly from the command without installing the RPM, a user-level launcher is added to the System menu using the project icon. The **Remove desktop shortcut** action on the first page removes it.
 
-I made the script as transparent as possible for anyone to understand and verify the commands executed, not needing to consult a huge amount of source code to trust or not the execution, just checking the changes that will be made, obviously there is still a lot to simplify and optimize.
+The first page lets you choose the language and run the initial setup. The next page lists the sections; each section opens its own page with its applications.
 
-Now about the script:
-I tried to make the installation tasks for basic applications as simple as Windows and not too confusing as a Linux beginner might find, and as selective as possible to let the user correctly choose what type of changes they would like to use.
-The focus here is not to use a modified image of the system, so that the user can have the confidence of a stable Opensuse system and Rolling Release straight from the original source without hidden modifications and without having to check everything that has been modified, he can do a simple uncomplicated check in the script code to see exactly what is being installed and choose not to make changes you don't want.
-I am fully aware that this script needs to be improved, reduced and simplified, but I am new to Shell Script. Any contribution to this project will be welcome.
+RPM packages for Tumbleweed are published in the `home:MaxxedSUSE` project on the Open Build Service.
 
-OpenSUSE Leap 15.6 / Tumbleweed:
-The choice of OpenSUSE was based on several tests that I performed on many distributions, and Opensuse in my opinion (I know it's completely questionable) is the most stable, safe and with the best performance, both in games and in general system performance, for open applications and perform daily tasks.
-In particular, I noticed that in Wine the performance is much superior to other distributions, due to Opensuse always delivering the latest updates, it makes the system fluids impeccable, With better results on Tumbleweed for being Rolling Release!
-In tests that I carried out in games via Wine, they showed a much higher margin than other distros focused on games such as Nobara Project and winesapOS, I used these two distros in particular as an example because both have several modifications aimed at Games, especially via Wine, modifications that for the most part, Opensuse dispenses, with these fixes already applied in the most recent updates.
-Another factor is that for me Opensuse has become an "unbreakable" system, even if it's Rolling Release in the case of Tumbleweed, because with the use of Snapper (already integrated into the system) I can revert the whatever changes to the system without difficulty, not to mention the possibility of using Timeshift for full system backups to be facilitated by using standard BTRFS partitioning.
+An AppImage can also be built from the source tree:
 
-My work here consists of small modifications to enable PCI Passthrough for those who want to use a Virtual Machine with a dedicated GPU, changes to kernel settings to enable advanced features, shortcuts for easy installation of common and advanced applications, and some minor edits to boot configurations for some applications.
+```bash
+bash packaging/build-appimage.sh
+```
 
+The resulting file is written to `build/`. Set `VERSION` to choose the artifact name. The AppImage bundles the Python runtime, GTK4/libadwaita stack, introspection data, native libraries and application files. `libfuse2` is required to run it.
 
-What system modifications does the MaxxedSUSE Script perform?
+## Application catalog
 
-Opensuse 15.6:
+`catalog/apps.json` is the single source of truth for applications. The graphical interface, package checks, RPM and AppImage all read it, so add or update applications there.
 
-    Added repositories:
+Each entry uses these fields:
 
-    Exclusive MaxxedSUSE repository to bring some useful tools to Leap 15.6:
-    https://download.opensuse.org/repositories/home:/MaxxedSUSE:15.6/ MaxxedSUSE
+- `id` — unique lowercase identifier.
+- `name` and `description` — text shown in the interface.
+- `category` and `category_name` — section slug and visible title.
+- `backend` — `zypper`, `flatpak` or `script`.
+- `packages` — RPM names for `zypper`, one Flatpak application ID for `flatpak`, or an empty list for `script`.
+- `check` — RPM name, absolute installed path, or Flatpak application ID used to show the status icon. Leave it empty if no reliable check exists.
+- `script` — required only for `backend: "script"`; a self-contained shell snippet that runs as root. Do not call local shell helpers.
 
-    https://download.opensuse.org/repositories/Emulators:/Wine/15.5/ Wine
-    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.5/ snappy
-    http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.6/ packman
+After changing the catalog, regenerate the documentation list:
 
-Opensuse Tumbleweed:
+```bash
+python3 packaging/update-package-list.py
+```
 
-    Added repositories:
+## Repositories
 
-    Exclusive MaxxedSUSE repository to bring some useful tools to Tumbleweed:
-    https://download.opensuse.org/repositories/home:/MaxxedSUSE/openSUSE_Tumbleweed
+MaxxedSUSE uses only two repositories:
 
-    https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy
-    https://mirrorcache-us.opensuse.org/repositories/Emulators:/Wine/openSUSE_Tumbleweed/ Wine
-    http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+- `home:MaxxedSUSE` — packages maintained by this project.
+- Flathub — Flatpak applications.
 
+Leap repositories were removed because maintaining a separate set of packages for a fixed release is no longer practical. The Emulators repository was removed because virtually all emulators are now available directly from Tumbleweed. The Wine repository is no longer used or referenced.
 
+## Kernel parameters
 
-Some kernel parameters loaded for better Nvidia driver operation and to enable GPU PCI Passthrough.
-added depending on the processor options selected during script execution:
+Tumbleweed no longer uses `/etc/default/grub` or `grub2-mkconfig`. Both systemd-boot and GRUB2-BLS read the kernel command line from `/etc/kernel/cmdline` and regenerate boot entries with `sdbootutil`.
 
-    nvidia-drm.modeset=1
-    intel_iommu=on
-    amd_iommu=on
-    iommu=en rd.driver.pre=vfio-pci
+If kernel parameter management is exposed in the interface, it must detect the bootloader with `update-bootloader --show`, write to `/etc/kernel/cmdline` and run `sdbootutil update-all-entries`. Do not use `/etc/default/grub`, `grub2-mkconfig`, `mkinitrd` or `dracut -f --regenerate-all`. A reboot is required for parameter changes to take effect.
 
-    For waydroid only (optional installation)
-    psi=1
+## Project structure
 
-Snap daemon configuration to allow installation of Snaps.
+```
+MaxxedSUSE.sh             single entry point
+catalog/apps.json         application catalog
+src/maxxedsuse/           GTK4 interface
+src/maxxedsuseapp.py      application launcher
+src/maxxedsuse-helper.py  privileged helper
+po/                       gettext translation catalogs
+data/                     desktop file, icon and polkit policy
+packaging/                RPM spec and AppImage build script
+```
 
-    zypper --non-interactive dup --from snappy
-    zypper --non-interactive install snapd
-    systemctl enable --now snapd
-    systemctl enable --now snapd.apparmor
-    systemctl start snapd.apparmor
-    systemctl start snapd
+## License
 
-Initial flathub setup to allow flatpak installations:
-
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-
-Added parameters to launch some applications:
-
-    Balena Etcher:
-
-     --no-sandbox
-
-    Itch.io:
-
-    --no-sandbox
-
-
-### ****** End of system changes. ****
-
-- All other modifications or installations are done at the user's discretion during the script.
-
-
-### If you need to add an application to the repository, please open an issue, I don't promise anything, but I will do my best to add it.
-
-
-Best regards, Jonatas Gonçalves
-
-Linkedin: https://www.linkedin.com/in/jonatasgonçalves/
-Twitter: https://twitter.com/jsougoncalves
-
-
-GPLv3
+See [LICENSE](LICENSE).

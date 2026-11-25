@@ -1,0 +1,1 @@
+"""MaxxedSUSE graphical application."""

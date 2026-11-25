@@ -1,0 +1,92 @@
+name: Build and publish packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - '[0-9]*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (for example 4.0)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.opensuse.org/opensuse/tumbleweed:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: version
+        shell: bash
+        run: |
+          if [[ -n "${{ github.event.inputs.version }}" ]]; then
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          RPM_VERSION="${VERSION%%-*}"
+          RPM_RELEASE="1"
+          if [[ "$VERSION" == *-* ]]; then
+            RPM_RELEASE="0.${VERSION#*-}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "rpm_version=$RPM_VERSION" >> "$GITHUB_OUTPUT"
+          echo "rpm_release=$RPM_RELEASE" >> "$GITHUB_OUTPUT"
+
+      - name: Install build dependencies
+        run: |
+          zypper --non-interactive refresh
+          zypper --non-interactive install --no-recommends \
+            python3 python3-gobject gtk4 libadwaita-1-0 \
+            typelib-1_0-Gtk-4_0 typelib-1_0-Adw-1 \
+            gettext-runtime gettext-tools patchelf \
+            curl file rpm-build tar gzip github-cli
+
+      - name: Build AppImage
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: bash packaging/build-appimage.sh
+
+      - name: Build RPM
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          RPM_VERSION: ${{ steps.version.outputs.rpm_version }}
+          RPM_RELEASE: ${{ steps.version.outputs.rpm_release }}
+        run: |
+          mkdir -p build/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
+          NAME="maxxedsuse-${RPM_VERSION}"
+          SOURCE_DIR="build/${NAME}"
+          mkdir -p "$SOURCE_DIR"
+          cp -r MaxxedSUSE.sh README.md LICENSE PackageList.md catalog data po \
+            src packaging "$SOURCE_DIR/"
+          tar -czf "build/rpmbuild/SOURCES/${NAME}.tar.gz" -C build "$NAME"
+          sed -e "s/^Version:.*/Version:        ${RPM_VERSION}/" \
+              -e "s/^Release:.*/Release:        ${RPM_RELEASE}/" \
+              packaging/maxxedsuse.spec > build/rpmbuild/SPECS/maxxedsuse.spec
+          rpmbuild -bb \
+            --define "_topdir $PWD/build/rpmbuild" \
+            build/rpmbuild/SPECS/maxxedsuse.spec
+          cp build/rpmbuild/RPMS/noarch/*.rpm build/
+
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          TAG="v${VERSION}"
+          gh release view "$TAG" >/dev/null 2>&1 || \
+            gh release create "$TAG" --title "MaxxedSUSE $VERSION" \
+              --notes "Packages for MaxxedSUSE $VERSION"
+          gh release upload "$TAG" \
+            build/MaxxedSUSE-${VERSION}-x86_64.AppImage \
+            build/*.rpm \
+            --clobber

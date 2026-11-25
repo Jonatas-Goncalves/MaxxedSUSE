@@ -1,97 +1,105 @@
 #!/bin/bash
 
-ESC_SEQ="\x1b["
-COL_RESET=$ESC_SEQ"39;49;00m"
-RED=$ESC_SEQ"31;01m"
-GREEN=$ESC_SEQ"32;01m"
+# MaxxedSUSE entry point for openSUSE Tumbleweed.
 
+set -e
 
-    output() {
-    printf "\E[0;33;40m"
-    echo $1
-    printf "\E[0m"ku
-    }
+REPO_URL="https://github.com/Jonatas-Goncalves/MaxxedSUSE.git"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+INSTALL_DIR="$HOME/MaxxedSUSE"
+LOCAL_CHECKOUT=0
 
-    displayErr() {
-    echo
-    echo $1;
-    echo
-    exit 1;
-    }
+if [[ -f "$SCRIPT_DIR/src/maxxedsuseapp.py" && -f "$SCRIPT_DIR/catalog/apps.json" ]]; then
+	INSTALL_DIR="$SCRIPT_DIR"
+	LOCAL_CHECKOUT=1
+fi
 
-    clear
-    echo
-    echo
-    echo
-    echo
-    echo
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo
-    echo -e "$GREEN                                               MaxxedSUSE Install Script                                          $COL_RESET"
-    echo
-    echo -e "$GREEN                                            Starting Maxxeding your SUSE !!!                                       $COL_RESET"
-    echo
-    echo
-    echo -e "$GREEN                                All changes of this script are described on github !!!                        $COL_RESET"
-    echo
-    echo -e "$RED                                              DON'T TRUST ME, VERIFY !!!                                      $COL_RESET"
-    echo
-    echo -e "$GREEN                       Check for updates at https://github.com/Jonatas-Goncalves/MaxxedSUSE                   $COL_RESET"
-    echo
-    echo
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo -e "$GREEN**************************************************************************************************************$COL_RESET"
-    echo
-    echo
-    echo
-    echo
-    echo
-    echo
-    sleep 5
-    clear
+info() {
+	printf '\033[1;32m%s\033[0m\n' "$1"
+}
 
-    echo
-    echo Installing git to download MaxxedSUSE!!
-    # Instaling git to get MaxxedSUSE
-    if ! rpm -q git &>/dev/null; then
-        xdg-su -c "zypper --non-interactive install git" 2>/dev/null
+warn() {
+	printf '\033[1;33m%s\033[0m\n' "$1"
+}
+
+create_desktop_launcher() {
+	local desktop_dir desktop_file exec_line
+	desktop_dir="${XDG_DATA_HOME:-$HOME/.local/share}/applications"
+	desktop_file="$desktop_dir/maxxedsuse-user.desktop"
+	mkdir -p "$desktop_dir"
+
+	exec_line="env PYTHONPATH=\"$INSTALL_DIR/src\" MXX_DATADIR=\"$INSTALL_DIR\" MXX_LOCALEDIR=\"$INSTALL_DIR/po/locale\" python3 \"$INSTALL_DIR/src/maxxedsuseapp.py\""
+
+	cat > "$desktop_file" <<EOF
+[Desktop Entry]
+# Created by MaxxedSUSE.sh
+Type=Application
+Name=MaxxedSUSE
+GenericName=openSUSE Setup Utility
+Comment=Configure openSUSE Tumbleweed and install applications
+Exec=$exec_line
+Icon=$INSTALL_DIR/data/maxxedsuse.svg
+Terminal=false
+Categories=System;
+StartupNotify=true
+EOF
+	info "Desktop shortcut created in the System menu."
+}
+
+if ! grep -q '^ID="\?opensuse-tumbleweed' /etc/os-release 2>/dev/null; then
+	warn "MaxxedSUSE supports openSUSE Tumbleweed only."
+	exit 1
+fi
+
+info "MaxxedSUSE"
+
+if (( LOCAL_CHECKOUT )); then
+	info "Using the local checkout: $INSTALL_DIR"
+else
+	if ! rpm -q git >/dev/null 2>&1; then
+		info "Installing git..."
+		xdg-su -c "zypper --non-interactive install git" 2>/dev/null || {
+			warn "Could not install git. Install it manually and run this script again."
+			exit 1
+		}
 	fi
-    echo
-    echo
 
-    echo Checking for updates in MaxxedSUSE Script...
-    # Check if MaxxedSUSE directory exists
-    if [ -d "$HOME/MaxxedSUSE" ]; then
-    echo "MaxxedSUSE directory found. Checking for updates..."
+	if [[ -d "$INSTALL_DIR/.git" ]]; then
+		info "Updating the local copy..."
+		git -C "$INSTALL_DIR" fetch origin
+		git -C "$INSTALL_DIR" pull --ff-only origin main
+	else
+		info "Downloading MaxxedSUSE..."
+		git clone --single-branch --branch main "$REPO_URL" "$INSTALL_DIR"
+	fi
+fi
 
-    # Change directory to MaxxedSUSE
-    cd "$HOME/MaxxedSUSE"
+cd "$INSTALL_DIR"
 
-    # Fetch updates from the remote repository
-    git fetch origin
+missing=()
+for pkg in python3 python3-gobject gtk4 libadwaita-1-0 typelib-1_0-Gtk-4_0 typelib-1_0-Adw-1; do
+	rpm -q "$pkg" >/dev/null 2>&1 || missing+=("$pkg")
+done
 
-    # Check if there are changes in the remote branch
-    if git rev-parse --quiet --verify main@{upstream} >/dev/null; then
-        # There are changes, pull the latest changes
-        echo "Updating MaxxedSUSE repository..."
-        git pull origin main
-    else
-        # No changes, repository is up to date
-        echo "MaxxedSUSE repository is already up to date."
-    fi
-    else
-    # The directory does not exist, so we clone the repository
-    echo "MaxxedSUSE directory not found. Cloning repository..."
-    git clone --single-branch --branch main https://github.com/Jonatas-Goncalves/MaxxedSUSE "$HOME/MaxxedSUSE"
-    fi
-    cd /home/$USER/MaxxedSUSE
-    clear
+if (( ${#missing[@]} )); then
+	info "Installing required components: ${missing[*]}"
+	if ! xdg-su -c "zypper --non-interactive install ${missing[*]}" 2>/dev/null; then
+		warn "Could not install the required components automatically."
+		warn "Install them manually: sudo zypper install ${missing[*]}"
+		exit 1
+	fi
+fi
 
-    echo
-    echo
-    echo Need root password once again to start MaxxedSUSE !!
-    echo
-    echo
-    # Starting MaxxedSUSE
-    xdg-su -c "sudo -sE bash Start.sh" 2>/dev/null
+if ! python3 -c 'import gi; gi.require_version("Gtk", "4.0"); gi.require_version("Adw", "1"); from gi.repository import Adw' 2>/dev/null; then
+	warn "GTK4/libadwaita bindings are still unavailable to Python."
+	exit 1
+fi
+
+if (( ! LOCAL_CHECKOUT )) && ! rpm -q maxxedsuse >/dev/null 2>&1; then
+	create_desktop_launcher
+fi
+
+info "Starting MaxxedSUSE..."
+export PYTHONPATH="$INSTALL_DIR/src${PYTHONPATH:+:$PYTHONPATH}"
+export MXX_LOCALEDIR="$INSTALL_DIR/po/locale"
+exec python3 "$INSTALL_DIR/src/maxxedsuseapp.py" "$@"

@@ -1,152 +1,202 @@
 # Package List
 
-## Applications
-- AdGuardHome
-- adguard-exporter
-- alien
-- amdgpu_top
-- AMF
-- anbox-modules
-- android-studio
-- apr
-- apr-util
-- balena-etcher
-- btrfs-assistant
-- btop
-- caffeine
-- caffeine-ng
-- clamtk-kde
-- cloudflare-warp
-- conky-manager2
-- cpu-x
-- cuda-6.5
-- d3d9
-- davinci-resolve-updater
-- deezer
-- dialect
-- discord-canary-npe
-- discord-rpc
-- dkms-nvidia
-- dkms-nvidia-uvm
-- dwarves
-- element-web
+Applications available in MaxxedSUSE, grouped by category.
+
+## Audio and Video
+- Audacious
+- Audacity
+- Boxy SVG
+- Deezer
+- Kdenlive
+- GIMP
+- gThumb
+- HandBrake
+- Hypnotix
+- Jellyfin
+- Jellyfin Server
+- Kodi
+- Kooha
+- Krita
+- Nomacs
+- OBS Studio
+- Parabolic
+- Plex
+- Sonora
+- Spotify
+- Stremio
+- Upscayl
+- VLC
+
+## Advanced System Tools
+- AmdGpuTop
+- Bottles
+- BTOP
+- Btrfs Assistant
+- ClamTk
 - EnvyControl
-- fmt-9
-- gamehub
-- go1.17-devel-container
-- goverlay
-- gpu-passthrough-manager
-- gwe
-- Heisenbridge
-- HeroicGamesLauncher
-- incus
-- jamesdsp
-- java-3d
-- jellyfin-media-player
-- jstest-gtk-git
-- kernel-firmware-nvidia-gspx-G06
-- libcuda
-- libfakegpgpu
-- libgbinder
-- libglibutil
-- libnvidia-container
-- librewolf
-- linux-wifi-hotspot
-- looking-glass
-- matterbridge
-- matrix-dendrite
-- matrix-synapse
-- matrix-python-common
-- matrix-sliding-sync
-- megacubo
-- moonlight-qt
-- movescreen
-- nsis
-- nvidia-compute-G06
-- nvidia-container-runtime
-- nvidia-container-toolkit
-- nvidia-driver-G06 ------ x
-- nvidia-prime
-- normcap
-- obs-studio
-- obs-vkcapture
-- onlyoffice-desktopeditors
-- optimus-manager
-- optimus-manager-qt
-- oversteer
-- owncloud-apps-mozilla_sync
-- peazip
-- pegasus-frontend
-- perl-macros
-- PlayOnLinux
-- podman-desktop ----------- x
-- prismlauncher-qt5
-- protonmail-bridge
-- protonup-qt
-- pycharm-community
-- python-Cython
-- python-dataclasses
-- python-gbinder
-- python-matrix-synapse-ldap3
-- python-mautrix-telegram
-- python-mock
-- python-pyclip
-- python-txredisapi
-- python-uinput
-- qtutilities
-- replay-sorcery
-- rosa-imagewriter
-- rustdesk
-- rustdesk-server
-- SDL2
-- shanwan-gamepad
-- signal-desktop
-- SpeechNote
-- stremio
-- sunshine
-- SUSEPrimeQt
-- syncthingtray
-- SweetHome3D
-- SweetHome3D-3DModels
-- SweetHome3D-Textures
-- Tangram
-- ungoogled-chromium ----------- x
-- valent
-- virtualbox-guest-tools-iso
-- vmware-host-modules
-- vmware-player-updater
-- warp
-- warsaw
-- waydroid
-- waydroid-magisk
-- wayland-protocols-1.27
-- webapp-manager
-- WoeUSB
-- wol
-- wps-office
-- xboxdrv --------------- x
-- xone
+- Gnome Disk
+- Gparted
+- GreenWithEnvy
+- Gpu-Passthrough-Manager
+- HTOP
+- Imagewriter
+- NVTOP
+- OPI
+- Optimus Manager QT
+- Stimulator
+- Timeshift
+- WoeUSB-NG
+- Wake On Lan
 - xsensors
-- xwiimote-ng
-- zerotier-one
-- zoom-updater
+
+## Communication and Browsers
+- Brave
+- Chromium
+- Cloudflare Warp
+- Deluge
+- Discord
+- Epiphany
+- Floorp
+- Fragments
+- Google Chrome
+- LibreWolf
+- Mailspring
+- Signal
+- Skype
+- Slack
+- SyncThing
+- Tangram
+- Telegram Desktop
+- Tor Browser Launcher
+- Ungoogled-Chromium
+- Warp
+- Webapp Manager
+- Valent
+- ZapZap
+- ZeroTier One
+
+## Development
+- Android Studio
+- Antares SQL
+- CLion
+- DBeaver Community
+- Distrobox
+- Eclipse IDE JAVA
+- Git
+- Github
+- Gittyup
+- GoLand
+- IntelliJ IDEA Community
+- Kontainer
+- NVM
+- Obsidian
+- PhpStorm
+- Pods
+- Podman Desktop
+- PyCharm-Community
+- Rider
+- Scratch
+- Qt Creator
+- Visual Studio Code
+- VSCodium
+- Whaler
 
 ## Emulators
-- cartridges
-- Citra
-- duckstation
 - EmulationStation
-- MAME
+- Cartridges
+- Azahar
+- Duckstation
+- Mame
 - Mednafen
 - Mupen64plus
 - Nestopia
-- pcsx2-git
-- pcsxr
-- Pegasus-frontend
-- ppsspp
-- Retroarch
-- rpcs3
-- snes9x
+- PCSX2
+- Pegasus-Frontend
+- PPSSPP
+- RetroArch
+- RPCS3
+- SNES9X
 - Steam ROM Manager
-- xemu
+- Xemu
 - Xenia
+
+## Games and Tools
+- AntimicroX
+- BoilR
+- ds4-battery-monitor
+- Ludusavi
+- Gamemode
+- Gamescope
+- GOverlay
+- Jstest-GTK
+- MangoHud
+- Moonlight-QT
+- Oversteer
+- vkBasalt
+- Parsec
+- PrismLauncher
+- ProtonUP-rs
+- SC-Controller
+- Sunshine
+- vkSumi
+- XWiimote-ng
+- XboxDrv
+- Xone
+
+## Game Stores
+- HeroicGamesLauncher
+- Itch.io
+- Lutris
+- PlayOnLinux
+- Steam
+- Lutris-Flatpak
+- Steam-Flatpak
+
+## Utilities
+- Balena Etcher
+- Conky Manager 2
+- CPU-X
+- drmcru
+- FDM
+- Flameshot
+- Flatseal
+- Flatsweep
+- K3B
+- Hidamari
+- KeePassxc
+- KDE Connect
+- krohnkite
+- Movescreen
+- Nemo
+- Neofetch
+- OpenRGB
+- Peazip
+- PowerISO
+- Q4Wine
+- qBittorrent
+- QDirStat
+- RustDesk Client
+- RustDesk Server
+- Stacer
+- TeamViewer
+- Virtualbox
+- VMware Workstation 17 Player
+- Waydroid
+- Waydroid-Image-Lineage18
+- Waydroid14x
+
+## Work and Studies
+- Dialect
+- Foliate
+- JPEG2PDF
+- Normcap
+- Obsidian
+- OnlyOffice
+- Parley
+- PDF4QT
+- Planify
+- Pomodoro
+- SpeechNote
+- Teams-For-Linux
+- Thunderbird
+- WPS-OFFICE

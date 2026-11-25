@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=MaxxedSUSE
+GenericName=openSUSE Setup Utility
+Comment=Configure openSUSE Tumbleweed and install applications
+Exec=maxxedsuse
+Icon=maxxedsuse
+Terminal=false
+Categories=System;Settings;
+Keywords=opensuse;setup;install;packages;
+StartupNotify=true

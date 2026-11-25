@@ -1,0 +1,1058 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MaxxedSUSE\n"
+"Report-Msgid-Bugs-To: https://github.com/Jonatas-Goncalves/MaxxedSUSE/issues\n"
+"POT-Creation-Date: 2026-11-22 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: MaxxedSUSE contributors\n"
+"Language-Team: MaxxedSUSE\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Scripts/Functions/Flatpak.sh:11
+#: Scripts/Functions/Zypper.sh:16
+msgid "\n$name is already installed"
+msgstr ""
+
+#: Scripts/Functions/Flatpak.sh:20
+#: Scripts/Functions/Zypper.sh:37
+msgid "\nInstallation complete"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:82
+msgid "# Adding Flathub"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:56
+msgid "# Adding the MaxxedSUSE repository"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:79
+msgid "# Installing Flatpak"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:99
+msgid "# Installing media codecs"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:60
+msgid "# Refreshing repositories"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:63
+msgid "# Updating the system"
+msgstr ""
+
+#: Start.sh:85
+msgid "<b>START MAXXEDING YOUR openSUSE!</b>"
+msgstr ""
+
+#: Start.sh:98
+#: Start.sh:126
+msgid "ADVANCED SYSTEM TOOLS"
+msgstr ""
+
+#: Scripts/MXD.sh:53
+msgid "AMD Radeon open-source drivers"
+msgstr ""
+
+#: Start.sh:90
+#: Start.sh:118
+msgid "AUDIO & VIDEO"
+msgstr ""
+
+#: Scripts/MXD.sh:98
+msgid "Additional kernel parameters (space-separated)"
+msgstr ""
+
+#: Scripts/MXD.sh:121
+#: Start.sh:47
+msgid "Apply"
+msgstr ""
+
+#: Start.sh:90
+msgid "Audio and video software"
+msgstr ""
+
+#: Start.sh:91
+msgid "Browsers and communication"
+msgstr ""
+
+#: Start.sh:91
+#: Start.sh:119
+msgid "COMMUNICATION & BROWSERS"
+msgstr ""
+
+#: Start.sh:102
+msgid "Cancelled"
+msgstr ""
+
+#: Scripts/MXD.sh:22
+msgid "Change"
+msgstr ""
+
+#: Scripts/MXD.sh:21
+msgid "Change the device hostname?"
+msgstr ""
+
+#: Start.sh:88
+msgid "Change the interface language"
+msgstr ""
+
+#: Scripts/MXD.sh:112
+msgid "Close"
+msgstr ""
+
+#: Start.sh:46
+msgid "Code"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:93
+msgid "Codecs are already configured."
+msgstr ""
+
+#: Start.sh:131
+msgid "Complete"
+msgstr ""
+
+#: Scripts/MXD.sh:52
+msgid "Component"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:86
+msgid "Configuring Flatpak"
+msgstr ""
+
+#: Start.sh:47
+msgid "Continue"
+msgstr ""
+
+#: Start.sh:93
+#: Start.sh:121
+msgid "DEVELOPMENT"
+msgstr ""
+
+#: Scripts/MXD.sh:52
+#: Start.sh:87
+msgid "Description"
+msgstr ""
+
+#: Scripts/Functions/Bootloader.sh:68
+msgid "Detected bootloader: $loader"
+msgstr ""
+
+#: Scripts/Functions/Flatpak.sh:17
+msgid "Downloading $name..."
+msgstr ""
+
+#: Start.sh:97
+#: Start.sh:125
+msgid "EMULATORS"
+msgstr ""
+
+#: Start.sh:131
+msgid "Enjoy your system!"
+msgstr ""
+
+#: Scripts/MXD.sh:25
+msgid "Enter a hostname (letters, digits and hyphens; up to 63 characters):"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:122
+msgid "Error"
+msgstr ""
+
+#: Start.sh:86
+msgid "Exit"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:73
+msgid "Flatpak is already configured."
+msgstr ""
+
+#: Start.sh:96
+#: Start.sh:124
+msgid "GAME STORES"
+msgstr ""
+
+#: Start.sh:95
+#: Start.sh:123
+msgid "GAMES & TOOLS"
+msgstr ""
+
+#: Start.sh:96
+msgid "Game launchers and stores"
+msgstr ""
+
+#: Scripts/MXD.sh:50
+msgid "Graphics drivers"
+msgstr ""
+
+#: Scripts/MXD.sh:21
+#: Scripts/MXD.sh:24
+#: Scripts/MXD.sh:40
+msgid "Hostname"
+msgstr ""
+
+#: Start.sh:89
+msgid "Hostname, drivers and optimizations"
+msgstr ""
+
+#: Start.sh:74
+msgid "Initial setup finished."
+msgstr ""
+
+#: Scripts/MXD.sh:51
+msgid "Install"
+msgstr ""
+
+#: Scripts/Functions/Flatpak.sh:12
+#: Scripts/Functions/Zypper.sh:17
+msgid "Installed"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:104
+msgid "Installing codecs"
+msgstr ""
+
+#: Scripts/MXD.sh:89
+msgid "Installing drivers"
+msgstr ""
+
+#: Scripts/MXD.sh:54
+msgid "Intel integrated graphics drivers"
+msgstr ""
+
+#: Scripts/MXD.sh:30
+msgid "Invalid hostname"
+msgstr ""
+
+#: Scripts/MXD.sh:96
+#: Scripts/MXD.sh:104
+#: Scripts/MXD.sh:110
+msgid "Kernel parameters"
+msgstr ""
+
+#: Start.sh:45
+#: Start.sh:46
+#: Start.sh:88
+#: Start.sh:116
+msgid "Language"
+msgstr ""
+
+#: Scripts/MXD.sh:97
+msgid "Manage kernel parameters for GPU optimization and PCI passthrough."
+msgstr ""
+
+#: Start.sh:85
+msgid "MaxxedSUSE"
+msgstr ""
+
+#: Start.sh:69
+msgid "MaxxedSUSE setup"
+msgstr ""
+
+#: Scripts/Functions/Bootloader.sh:69
+msgid "MaxxedSUSE-managed parameters: ${params:-none}"
+msgstr ""
+
+#: Scripts/MXD.sh:57
+msgid "NVIDIA drivers (390 series)"
+msgstr ""
+
+#: Scripts/MXD.sh:56
+msgid "NVIDIA drivers (470 series)"
+msgstr ""
+
+#: Scripts/MXD.sh:55
+msgid "NVIDIA drivers (620 series, open kernel modules)"
+msgstr ""
+
+#: Scripts/Functions/Bootloader.sh:74
+msgid "No kernel changes to revert."
+msgstr ""
+
+#: Start.sh:109
+msgid "No option selected. Nothing will be done."
+msgstr ""
+
+#: Start.sh:70
+msgid "On first use, MaxxedSUSE will:\n\n- Add the MaxxedSUSE repository\n- Add Flathub\n- Install required dependencies\n- Update the system\n\nThis process should not be interrupted. Continue?"
+msgstr ""
+
+#: Start.sh:87
+msgid "Operation"
+msgstr ""
+
+#: Start.sh:103
+msgid "Operation cancelled. Nothing was changed."
+msgstr ""
+
+#: Scripts/Functions/Bootloader.sh:78
+msgid "Original parameters restored."
+msgstr ""
+
+#: Scripts/MXD.sh:105
+msgid "Parameters applied. Reboot to activate them.\nIf the system fails to boot, select an earlier snapshot or run the revert option."
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:66
+#: Scripts/Functions/Functions.sh:86
+#: Scripts/Functions/Functions.sh:104
+msgid "Please wait..."
+msgstr ""
+
+#: Start.sh:97
+msgid "Popular emulators"
+msgstr ""
+
+#: Start.sh:93
+msgid "Programming and development tools"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:120
+msgid "ROOT permission required"
+msgstr ""
+
+#: Scripts/MXD.sh:120
+msgid "Reduce swappiness and cache pressure to improve SSD lifetime?"
+msgstr ""
+
+#: Scripts/Functions/Zypper.sh:32
+msgid "Refreshing repositories"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:50
+msgid "Repositories are already configured."
+msgstr ""
+
+#: Scripts/MXD.sh:112
+msgid "Revert"
+msgstr ""
+
+#: Scripts/MXD.sh:111
+msgid "Revert all MaxxedSUSE kernel parameter changes?"
+msgstr ""
+
+#: Start.sh:89
+#: Start.sh:117
+msgid "SYSTEM CONFIGURATION"
+msgstr ""
+
+#: Start.sh:45
+msgid "Select the interface language:"
+msgstr ""
+
+#: Scripts/MXD.sh:50
+msgid "Select your graphics hardware:"
+msgstr ""
+
+#: Start.sh:74
+msgid "Setup complete"
+msgstr ""
+
+#: Scripts/MXD.sh:22
+#: Scripts/MXD.sh:51
+#: Scripts/MXD.sh:121
+msgid "Skip"
+msgstr ""
+
+#: Start.sh:86
+msgid "Start"
+msgstr ""
+
+#: Scripts/MXD.sh:119
+#: Scripts/MXD.sh:124
+msgid "Swap optimization"
+msgstr ""
+
+#: Scripts/MXD.sh:124
+msgid "Swap settings applied."
+msgstr ""
+
+#: Start.sh:94
+msgid "System utilities"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:121
+msgid "This script requires ROOT permission. Run it with sudo."
+msgstr ""
+
+#: Start.sh:98
+msgid "Tools for advanced users"
+msgstr ""
+
+#: Start.sh:95
+msgid "Tools for gaming"
+msgstr ""
+
+#: Start.sh:92
+msgid "Tools for working or studying"
+msgstr ""
+
+#: Start.sh:94
+#: Start.sh:122
+msgid "UTILITIES"
+msgstr ""
+
+#: Scripts/Functions/Functions.sh:66
+msgid "Updating the system"
+msgstr ""
+
+#: Scripts/MXD.sh:31
+msgid "Use only letters, digits and hyphens. It must start with a letter or digit."
+msgstr ""
+
+#: Scripts/MXD.sh:58
+msgid "Vulkan libraries (recommended)"
+msgstr ""
+
+#: Start.sh:92
+#: Start.sh:120
+msgid "WORK & SCHOOL"
+msgstr ""
+
+#: Scripts/Functions/Bootloader.sh:40
+msgid "Warning: neither sdbootutil nor update-bootloader is available; boot entries were not refreshed."
+msgstr ""
+
+msgid "\nInstallation finished.\n"
+msgstr ""
+
+msgid "Applications"
+msgstr ""
+
+msgid "Checking..."
+msgstr ""
+
+msgid "Could not start the installer."
+msgstr ""
+
+msgid "Install selected"
+msgstr ""
+
+msgid "Installing applications"
+msgstr ""
+
+msgid "No applications selected"
+msgstr ""
+
+msgid "Not installed"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Refresh status"
+msgstr ""
+
+msgid "Search applications"
+msgstr ""
+
+msgid "Setup utility for openSUSE Tumbleweed"
+msgstr ""
+
+msgid "Status unavailable"
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "Run initial setup"
+msgstr ""
+
+msgid "Initial setup"
+msgstr ""
+
+msgid "Could not start the setup."
+msgstr ""
+
+msgid "Setup finished."
+msgstr ""
+
+msgid "Setup failed."
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Choose a section to browse"
+msgstr ""
+
+msgid "applications"
+msgstr ""
+
+msgid "Remove desktop shortcut"
+msgstr ""
+
+msgid "Desktop shortcut removed."
+msgstr ""
+
+msgid "Could not remove the desktop shortcut."
+msgstr ""
+
+msgid " User-mode driver and GTK3 based GUI for Steam Controller "
+msgstr ""
+
+msgid "A (h)top like task monitor for AMD and NVIDIA GPUs"
+msgstr ""
+
+msgid "A Fast, Scalable, Distributed Free & Open-Source VCS"
+msgstr ""
+
+msgid "A Graphical UI to help manage Linux monitoring overlays"
+msgstr ""
+
+msgid "A Smart Ethernet Switch for Earth"
+msgstr ""
+
+msgid "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU..."
+msgstr ""
+
+msgid "A Vulkan layer for runtime color grading on Linux"
+msgstr ""
+
+msgid "A cross-platform IDE for C and C++"
+msgstr ""
+
+msgid "A cross-platform graphical front-end for emulators"
+msgstr ""
+
+msgid "A cross-platform web browser by Google"
+msgstr ""
+
+msgid "A dynamicA dynamic tiling extension for KWin 6 only"
+msgstr ""
+
+msgid "A lightweight and efficient battery monitor for DualShock 4 controllers on Linux"
+msgstr ""
+
+msgid "A modern, fast and productivity driven SQL client with a focus in UX"
+msgstr ""
+
+msgid "A native music streaming client, built with Rust and GPUI"
+msgstr ""
+
+msgid "A powerful OS image that copies images to drives byte by byte"
+msgstr ""
+
+msgid "A powerful yt-dlp frontend"
+msgstr ""
+
+msgid "A privacy and security-focused browser"
+msgstr ""
+
+msgid "A program to help you download, keep updated, and run the Tor Browser Bundle"
+msgstr ""
+
+msgid "A simple and modern GTK eBook reader"
+msgstr ""
+
+msgid "A simple joystick tester based on Gtk+"
+msgstr ""
+
+msgid "A simple, clean, beautiful view of the Web"
+msgstr ""
+
+msgid "A tool for backing up your PC video game save data"
+msgstr ""
+
+msgid "A translation app for GNOME"
+msgstr ""
+
+msgid "Advanced System Tools"
+msgstr ""
+
+msgid "All features of the Whatpp Web are available and several others"
+msgstr ""
+
+msgid "All-in-one voice and text chat for Gamers"
+msgstr ""
+
+msgid "Allows for games to run in an isolated Xwayland instance"
+msgstr ""
+
+msgid "Allows games to request a set of optimisations for a games process"
+msgstr ""
+
+msgid "Allows to configure and switch GPUs on Optimus laptops using the tray menu"
+msgstr ""
+
+msgid "An app for managing ROMs in Steam"
+msgstr ""
+
+msgid "An easy to use BitTorrent client"
+msgstr ""
+
+msgid "An interactive text-mode process viewer for Linux"
+msgstr ""
+
+msgid "An open-source Bittorrent client"
+msgstr ""
+
+msgid "An open-source remote desktop, and alternative to TeamViewer"
+msgstr ""
+
+msgid "Android Studio IDE for Android"
+msgstr ""
+
+msgid "Audio and Video"
+msgstr ""
+
+msgid "Browser designed to organize and run your Web applications"
+msgstr ""
+
+msgid "Call and message skype users, with video chat support"
+msgstr ""
+
+msgid "Capable and Ergonomic Go IDE"
+msgstr ""
+
+msgid "Capable and Ergonomic Java IDE"
+msgstr ""
+
+msgid "Capture text from any screen area"
+msgstr ""
+
+msgid "Capturing, compositing, recording, and streaming video content"
+msgstr ""
+
+msgid "Cartridges is an easy-to-use, elegant game launcher"
+msgstr ""
+
+msgid "Code editing. Redefined"
+msgstr ""
+
+msgid "Communication and Browsers"
+msgstr ""
+
+msgid "Connect to the Internet faster and in a more secure way"
+msgstr ""
+
+msgid "Connect to work, games, or projects wherever you are, whenever you want"
+msgstr ""
+
+msgid "Connect, control and sync devices"
+msgstr ""
+
+msgid "Container-based approach to boot a full Android system on GNU/Linux (version 1.4.x for running Android 11) "
+msgstr ""
+
+msgid "Control the fans and overclock your NVIDIA video card"
+msgstr ""
+
+msgid "Convert Images Into PDF File"
+msgstr ""
+
+msgid "Create images and edit photographs"
+msgstr ""
+
+msgid "Create stories, games, and animations, share with others around the world"
+msgstr ""
+
+msgid "Create, view and edit text documents, spreadsheets and presentations of any size and complexity"
+msgstr ""
+
+msgid "Created to be a feature-rich and easy to handle CD burning application"
+msgstr ""
+
+msgid "Cross-platform IDE tailored for maximum developer productivity"
+msgstr ""
+
+msgid "Cross-platform tool to take screenshots with many built-in features"
+msgstr ""
+
+msgid "Custom launcher for Minecraft that allows you to easily manage multiple installations"
+msgstr ""
+
+msgid "Deezer is a music streaming app"
+msgstr ""
+
+msgid "Desktop client using jellyfin-web with embedded MPV player"
+msgstr ""
+
+msgid "Development"
+msgstr ""
+
+msgid "Docker Container Management"
+msgstr ""
+
+msgid "Easily manage wineprefix using environments"
+msgstr ""
+
+msgid "Easy way to switch between GPU modes on Nvidia Optimus systems"
+msgstr ""
+
+msgid "Elegantly record your screen"
+msgstr ""
+
+msgid "Emulators"
+msgstr ""
+
+msgid "FDM is a powerful modern download accelerator and organizer"
+msgstr ""
+
+msgid "Fast & powerful, cross platform .NET IDE"
+msgstr ""
+
+msgid "Fast and secure file transfer"
+msgstr ""
+
+msgid "Flatpak version of Lutris"
+msgstr ""
+
+msgid "Flatpak version of Steam"
+msgstr ""
+
+msgid "Floorp is an open source browser built on Firefox"
+msgstr ""
+
+msgid "Forget about forgetting things"
+msgstr ""
+
+msgid "Free Open Source PDF Editor"
+msgstr ""
+
+msgid "Free and Open Source AI Image Upscaler"
+msgstr ""
+
+msgid "Free and open source email, newsfeed, chat, and calendaring client"
+msgstr ""
+
+msgid "Free file archiver utility, based on Open Source 7-Zip/p7zip"
+msgstr ""
+
+msgid "Free partition editor for graphically managing your disk partitions"
+msgstr ""
+
+msgid "Free, Open-source, Non-Linear Video Editor by KDE"
+msgstr ""
+
+msgid "Free, open source image viewer"
+msgstr ""
+
+msgid "Frontend for emulators, game engines and media players"
+msgstr ""
+
+msgid "Full-featured digital art studio"
+msgstr ""
+
+msgid "GPU passthrough made easy"
+msgstr ""
+
+msgid "GUI Open source Electron-based GitHub app"
+msgstr ""
+
+msgid "GUI management tool to make managing a Btrfs filesystem easier"
+msgstr ""
+
+msgid "GUI program that allows you to read useful data from the lm_sensors"
+msgstr ""
+
+msgid "Game Stores"
+msgstr ""
+
+msgid "GameStream client for PCs (Windows, Mac, Linux, and Steam Link)"
+msgstr ""
+
+msgid "Games and Tools"
+msgstr ""
+
+msgid "Gathers information on CPU, motherboard and more"
+msgstr ""
+
+msgid "Google Chromium, sans integration with Google"
+msgstr ""
+
+msgid "Graphical Git client designed to help you understand and manage your source code history"
+msgstr ""
+
+msgid "Graphical application to show where your disk space has gone"
+msgstr ""
+
+msgid "Graphical frontend for launching emulators and managing your game collection"
+msgstr ""
+
+msgid "Helps you easily get rid of the residue of uninstall Flatpak package"
+msgstr ""
+
+msgid "Hypnotix is an IPTV streaming application with support for live TV, movies and series"
+msgstr ""
+
+msgid "Install and manage custom Proton and Wine-GE builds for Steam and Lutris"
+msgstr ""
+
+msgid "Install and use non-native applications on your favorite operating system"
+msgstr ""
+
+msgid "Is a command-line system information tool"
+msgstr ""
+
+msgid "Is a digital game distribution platform for computers"
+msgstr ""
+
+msgid "Is a lightweight, Free Software, cross-platform BitTorrent client"
+msgstr ""
+
+msgid "Is a powerful office suite including Writer, Presentation and Spreadsheets"
+msgstr ""
+
+msgid "Is a simple way to find, download and distribute indie games online"
+msgstr ""
+
+msgid "Is an open-source software image viewer, image organizer"
+msgstr ""
+
+msgid "It is a lightweight and functional file manager with many features"
+msgstr ""
+
+msgid "It will help you to manage wine prefixes and installed applications"
+msgstr ""
+
+msgid "Java IDE, a Git client, XML Editor, Maven and Gradle integration"
+msgstr ""
+
+msgid "Keep your computer awake"
+msgstr ""
+
+msgid "Light-weight system monitor for X and Wayland"
+msgstr ""
+
+msgid "Lightweight open source audio player descendant of XMMS"
+msgstr ""
+
+msgid "Linux System Optimizer & Monitoring"
+msgstr ""
+
+msgid "Linux kernel driver for Xbox One and Xbox Series X|S accessories"
+msgstr ""
+
+msgid "Mailspring is a new version of Nylas Mail"
+msgstr ""
+
+msgid "Manage Distrobox containers"
+msgstr ""
+
+msgid "Manage Flatpak permissions"
+msgstr ""
+
+msgid "Manage Podman and other container engines from a single UI and tray"
+msgstr ""
+
+msgid "Markdown-based knowledge base"
+msgstr ""
+
+msgid "Media System Manager that puts you in control of managing and streaming your media."
+msgstr ""
+
+msgid "Multiple Arcade Machine Emulator"
+msgstr ""
+
+msgid "NES, FDS, Game Boy (Color|Advance), Super Nintendo, Virtual Boy"
+msgstr ""
+
+msgid "NVM is a version manager for node.js"
+msgstr ""
+
+msgid "Nintendo Entertainment System/Famicom emulator"
+msgstr ""
+
+msgid "OBS Package Installer is a tool that finds and installs packages for openSUSE in OBS or Packman"
+msgstr ""
+
+msgid "Official Desktop Client for the Telegram Messenger"
+msgstr ""
+
+msgid "Open Source Game Launcher for Epic and GOG"
+msgstr ""
+
+msgid "Open source RGB lighting control that doesn't depend on manufacturer software"
+msgstr ""
+
+msgid "Open, extract, burn, create, edit, compress, encrypt, split and convert ISO files"
+msgstr ""
+
+msgid "Open-source 3DS emulator project based on Citra."
+msgstr ""
+
+msgid "Open-source browser project that aims to build a safer, faster, and more stable"
+msgstr ""
+
+msgid "PHP IDE for Professional Development"
+msgstr ""
+
+msgid "Parley is a local language tutor for the Linux and Windows desktop"
+msgstr ""
+
+msgid "Peer-to-peer file synchronization application"
+msgstr ""
+
+msgid "Play all your games on Linux"
+msgstr ""
+
+msgid "PlayStation 3 emulator/debugger"
+msgstr ""
+
+msgid "PlayStation Portable Emulator"
+msgstr ""
+
+msgid "Plex client for desktop computers"
+msgstr ""
+
+msgid "Plugin-Based Nintendo 64 Emulator"
+msgstr ""
+
+msgid "Pods is a frontend for Podman/Docker"
+msgstr ""
+
+msgid "Pomodoro is a timer utility with rules, ideal for better productivity"
+msgstr ""
+
+msgid "Portable, freeware Super Nintendo Entertainment System (TM) emulator"
+msgstr ""
+
+msgid "Powerful utility for writing raw disk images & ISOs to USB keys"
+msgstr ""
+
+msgid "Powerful virtualization product for enterprise as well as home use"
+msgstr ""
+
+msgid "Provides various features to integrate your phone and your computer"
+msgstr ""
+
+msgid "Reading and translating with offline Speech to Text, Text to Speech and Machine Translation"
+msgstr ""
+
+msgid "Resource monitor that shows usage and stats for processor, memory, disks, network and processes"
+msgstr ""
+
+msgid "Run websites as if they were apps"
+msgstr ""
+
+msgid "Scalable Vector Graphics editor"
+msgstr ""
+
+msgid "Secure, Fast & Private Brave Browser with Adblocker"
+msgstr ""
+
+msgid "Securely store passwords using industry standard encryption"
+msgstr ""
+
+msgid "Self-host your own RustDesk server, it is free and open source"
+msgstr ""
+
+msgid "Signal - Private Messenger: Say Hello to Privacy"
+msgstr ""
+
+msgid "Slack is a cloud-based team communication platform"
+msgstr ""
+
+msgid "Sony PlayStation 2 Emulator"
+msgstr ""
+
+msgid "Sony PlayStation(TM) Emulator"
+msgstr ""
+
+msgid "Spotify Music Player"
+msgstr ""
+
+msgid "Steering Wheel Manager for GNU/Linux"
+msgstr ""
+
+msgid "Sunshine is a Gamestream host for Moonlight"
+msgstr ""
+
+msgid "Synchronize games from other platforms into your Steam library"
+msgstr ""
+
+msgid "System snapshots backup and restore tool for Linux"
+msgstr ""
+
+msgid "TeamViewer: The Remote Desktop Software"
+msgstr ""
+
+msgid "The Wake On Lan client wakes up magic packet"
+msgstr ""
+
+msgid "The most intelligent Python IDE"
+msgstr ""
+
+msgid "This Python script moves the window with focus on an adjacent monitor"
+msgstr ""
+
+msgid "Tool for converting video from nearly any format to a selection of modern"
+msgstr ""
+
+msgid "Tool that displays AMD GPU utilization"
+msgstr ""
+
+msgid "Ultimate entertainment center"
+msgstr ""
+
+msgid "Universal Database Manager"
+msgstr ""
+
+msgid "Unofficial Microsoft Teams client for Linux using Electron"
+msgstr ""
+
+msgid "Use any linux distribution inside your terminal"
+msgstr ""
+
+msgid "Used to map gamepad keys to keyboard, mouse, scripts and macros"
+msgstr ""
+
+msgid "Userspace Xbox gamepad driver and input remapper"
+msgstr ""
+
+msgid "Utilities"
+msgstr ""
+
+msgid "Utility for running a single virtual machine on a Windows or Linux PC"
+msgstr ""
+
+msgid "Utility that enables you to create your own bootable Windows USB"
+msgstr ""
+
+msgid "VLC Media Player"
+msgstr ""
+
+msgid "VSCodium is a community-driven, freely distribution of Microsoft's editor VS Code"
+msgstr ""
+
+msgid "Video wallpaper for Linux written in Python"
+msgstr ""
+
+msgid "View, modify and configure disks and media"
+msgstr ""
+
+msgid "Vulkan post processing layer to enhance the visual graphics of games"
+msgstr ""
+
+msgid "Watch videos, movies, TV series and TV channels instantly"
+msgstr ""
+
+msgid "Waydroid Vanilla Images (Lineage 18.1)"
+msgstr ""
+
+msgid "Waydroid uses Linux namespaces to run a full Android system in a container"
+msgstr ""
+
+msgid "Work and Studies"
+msgstr ""
+
+msgid "World's most popular audio editing and recording app"
+msgstr ""
+
+msgid "Xbox 360 emulator"
+msgstr ""
+
+msgid "Xbox Classic EMUlator"
+msgstr ""
+
+msgid "Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes"
+msgstr ""
+
+msgid "drmcru is a Linux DRM/KMS custom resolution utility."
+msgstr ""

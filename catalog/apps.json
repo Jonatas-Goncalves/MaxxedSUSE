@@ -1,0 +1,2167 @@
+[
+  {
+    "id": "audacious",
+    "name": "Audacious",
+    "description": "Lightweight open source audio player descendant of XMMS",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "audacious"
+    ],
+    "check": "audacious"
+  },
+  {
+    "id": "audacity",
+    "name": "Audacity",
+    "description": "World's most popular audio editing and recording app",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "audacity"
+    ],
+    "check": "audacity"
+  },
+  {
+    "id": "boxy-svg",
+    "name": "Boxy SVG",
+    "description": "Scalable Vector Graphics editor",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "com.boxy_svg.BoxySVG"
+    ],
+    "check": "com.boxy_svg.BoxySVG"
+  },
+  {
+    "id": "deezer",
+    "name": "Deezer",
+    "description": "Deezer is a music streaming app",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "dev.aunetx.deezer"
+    ],
+    "check": "dev.aunetx.deezer"
+  },
+  {
+    "id": "kdenlive",
+    "name": "Kdenlive",
+    "description": "Free, Open-source, Non-Linear Video Editor by KDE",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "kdenlive"
+    ],
+    "check": "kdenlive"
+  },
+  {
+    "id": "gimp",
+    "name": "GIMP",
+    "description": "Create images and edit photographs",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "gimp"
+    ],
+    "check": "gimp"
+  },
+  {
+    "id": "gthumb",
+    "name": "gThumb",
+    "description": "Is an open-source software image viewer, image organizer",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "gthumb"
+    ],
+    "check": "gthumb"
+  },
+  {
+    "id": "handbrake",
+    "name": "HandBrake",
+    "description": "Tool for converting video from nearly any format to a selection of modern",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "fr.handbrake.ghb"
+    ],
+    "check": "fr.handbrake.ghb"
+  },
+  {
+    "id": "hypnotix",
+    "name": "Hypnotix",
+    "description": "Hypnotix is an IPTV streaming application with support for live TV, movies and series",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "hypnotix"
+    ],
+    "check": "hypnotix"
+  },
+  {
+    "id": "jellyfin",
+    "name": "Jellyfin",
+    "description": "Desktop client using jellyfin-web with embedded MPV player",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "jellyfin-media-player"
+    ],
+    "check": "jellyfin-media-player"
+  },
+  {
+    "id": "jellyfin-server",
+    "name": "Jellyfin Server",
+    "description": "Media System Manager that puts you in control of managing and streaming your media.",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "org.jellyfin.JellyfinServer"
+    ],
+    "check": "org.jellyfin.JellyfinServer"
+  },
+  {
+    "id": "kodi",
+    "name": "Kodi",
+    "description": "Ultimate entertainment center",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "tv.kodi.Kodi"
+    ],
+    "check": "tv.kodi.Kodi"
+  },
+  {
+    "id": "kooha",
+    "name": "Kooha",
+    "description": "Elegantly record your screen",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.seadve.Kooha"
+    ],
+    "check": "io.github.seadve.Kooha"
+  },
+  {
+    "id": "krita",
+    "name": "Krita",
+    "description": "Full-featured digital art studio",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "krita"
+    ],
+    "check": "krita"
+  },
+  {
+    "id": "nomacs",
+    "name": "Nomacs",
+    "description": "Free, open source image viewer",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "nomacs"
+    ],
+    "check": "nomacs"
+  },
+  {
+    "id": "obs-studio",
+    "name": "OBS Studio",
+    "description": "Capturing, compositing, recording, and streaming video content",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "obs-studio"
+    ],
+    "check": "obs-studio"
+  },
+  {
+    "id": "parabolic",
+    "name": "Parabolic",
+    "description": "A powerful yt-dlp frontend",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "org.nickvision.tubeconverter"
+    ],
+    "check": "org.nickvision.tubeconverter"
+  },
+  {
+    "id": "plex",
+    "name": "Plex",
+    "description": "Plex client for desktop computers",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "tv.plex.PlexDesktop"
+    ],
+    "check": "tv.plex.PlexDesktop"
+  },
+  {
+    "id": "sonora",
+    "name": "Sonora",
+    "description": "A native music streaming client, built with Rust and GPUI",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "sonora"
+    ],
+    "check": "sonora"
+  },
+  {
+    "id": "spotify",
+    "name": "Spotify",
+    "description": "Spotify Music Player",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "spotify-client"
+    ],
+    "check": "spotify-client"
+  },
+  {
+    "id": "stremio",
+    "name": "Stremio",
+    "description": "Watch videos, movies, TV series and TV channels instantly",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "stremio-linux-shell"
+    ],
+    "check": "stremio-linux-shell"
+  },
+  {
+    "id": "upscayl",
+    "name": "Upscayl",
+    "description": "Free and Open Source AI Image Upscaler",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "flatpak",
+    "packages": [
+      "org.upscayl.Upscayl"
+    ],
+    "check": "org.upscayl.Upscayl"
+  },
+  {
+    "id": "vlc",
+    "name": "VLC",
+    "description": "VLC Media Player",
+    "category": "audio-video",
+    "category_name": "Audio and Video",
+    "backend": "zypper",
+    "packages": [
+      "vlc"
+    ],
+    "check": "vlc"
+  },
+  {
+    "id": "amdgputop",
+    "name": "AmdGpuTop",
+    "description": "Tool that displays AMD GPU utilization",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "amdgpu_top"
+    ],
+    "check": "amdgpu_top"
+  },
+  {
+    "id": "bottles",
+    "name": "Bottles",
+    "description": "Easily manage wineprefix using environments",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "Bottles"
+    ],
+    "check": "Bottles"
+  },
+  {
+    "id": "btop",
+    "name": "BTOP",
+    "description": "Resource monitor that shows usage and stats for processor, memory, disks, network and processes",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "btop"
+    ],
+    "check": "btop"
+  },
+  {
+    "id": "btrfs-assistant",
+    "name": "Btrfs Assistant",
+    "description": "GUI management tool to make managing a Btrfs filesystem easier",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "btrfs-assistant"
+    ],
+    "check": "btrfs-assistant"
+  },
+  {
+    "id": "clamtk",
+    "name": "ClamTk",
+    "description": "Easily manage wineprefix using environments",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "clamtk"
+    ],
+    "check": "clamtk"
+  },
+  {
+    "id": "envycontrol",
+    "name": "EnvyControl",
+    "description": "Easy way to switch between GPU modes on Nvidia Optimus systems",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "EnvyControl"
+    ],
+    "check": "EnvyControl"
+  },
+  {
+    "id": "gnome-disk",
+    "name": "Gnome Disk",
+    "description": "View, modify and configure disks and media",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "gnome-disk-utility"
+    ],
+    "check": "gnome-disk-utility"
+  },
+  {
+    "id": "gparted",
+    "name": "Gparted",
+    "description": "Free partition editor for graphically managing your disk partitions",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "gparted"
+    ],
+    "check": "gparted"
+  },
+  {
+    "id": "greenwithenvy",
+    "name": "GreenWithEnvy",
+    "description": "Control the fans and overclock your NVIDIA video card",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "gwe"
+    ],
+    "check": "gwe"
+  },
+  {
+    "id": "gpu-passthrough-manager",
+    "name": "Gpu-Passthrough-Manager",
+    "description": "GPU passthrough made easy",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "gpu-passthrough-manager"
+    ],
+    "check": "gpu-passthrough-manager"
+  },
+  {
+    "id": "htop",
+    "name": "HTOP",
+    "description": "An interactive text-mode process viewer for Linux",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "htop"
+    ],
+    "check": "htop"
+  },
+  {
+    "id": "imagewriter",
+    "name": "Imagewriter",
+    "description": "A powerful OS image that copies images to drives byte by byte",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "imagewriter"
+    ],
+    "check": "imagewriter"
+  },
+  {
+    "id": "nvtop",
+    "name": "NVTOP",
+    "description": "A (h)top like task monitor for AMD and NVIDIA GPUs",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "nvtop"
+    ],
+    "check": "nvtop"
+  },
+  {
+    "id": "opi",
+    "name": "OPI",
+    "description": "OBS Package Installer is a tool that finds and installs packages for openSUSE in OBS or Packman",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "opi"
+    ],
+    "check": "opi"
+  },
+  {
+    "id": "optimus-manager-qt",
+    "name": "Optimus Manager QT",
+    "description": "Allows to configure and switch GPUs on Optimus laptops using the tray menu",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "optimus-manager-qt"
+    ],
+    "check": "optimus-manager-qt"
+  },
+  {
+    "id": "stimulator",
+    "name": "Stimulator",
+    "description": "Keep your computer awake",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.sigmasd.stimulator"
+    ],
+    "check": "io.github.sigmasd.stimulator"
+  },
+  {
+    "id": "timeshift",
+    "name": "Timeshift",
+    "description": "System snapshots backup and restore tool for Linux",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "timeshift"
+    ],
+    "check": "timeshift"
+  },
+  {
+    "id": "woeusb-ng",
+    "name": "WoeUSB-NG",
+    "description": "Utility that enables you to create your own bootable Windows USB",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "WoeUSB-ng"
+    ],
+    "check": "WoeUSB-ng"
+  },
+  {
+    "id": "wake-on-lan",
+    "name": "Wake On Lan",
+    "description": "The Wake On Lan client wakes up magic packet",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "wol"
+    ],
+    "check": "wol"
+  },
+  {
+    "id": "xsensors",
+    "name": "xsensors",
+    "description": "GUI program that allows you to read useful data from the lm_sensors",
+    "category": "advanced-system",
+    "category_name": "Advanced System Tools",
+    "backend": "zypper",
+    "packages": [
+      "xsensors"
+    ],
+    "check": "xsensors"
+  },
+  {
+    "id": "brave",
+    "name": "Brave",
+    "description": "Secure, Fast & Private Brave Browser with Adblocker",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "script",
+    "packages": [],
+    "check": "brave-browser",
+    "script": "rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc\nzypper --non-interactive --gpg-auto-import-keys addrepo --refresh https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo brave-browser\nzypper --non-interactive --gpg-auto-import-keys refresh\nzypper --non-interactive --gpg-auto-import-keys install --auto-agree-with-licenses brave-browser"
+  },
+  {
+    "id": "chromium",
+    "name": "Chromium",
+    "description": "Open-source browser project that aims to build a safer, faster, and more stable",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "chromium"
+    ],
+    "check": "chromium"
+  },
+  {
+    "id": "cloudflare-warp",
+    "name": "Cloudflare Warp",
+    "description": "Connect to the Internet faster and in a more secure way",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "cloudflare_warp"
+    ],
+    "check": "cloudflare_warp"
+  },
+  {
+    "id": "deluge",
+    "name": "Deluge",
+    "description": "Is a lightweight, Free Software, cross-platform BitTorrent client",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "deluge"
+    ],
+    "check": "deluge"
+  },
+  {
+    "id": "discord",
+    "name": "Discord",
+    "description": "All-in-one voice and text chat for Gamers",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "discord"
+    ],
+    "check": "discord"
+  },
+  {
+    "id": "epiphany",
+    "name": "Epiphany",
+    "description": "A simple, clean, beautiful view of the Web",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "epiphany"
+    ],
+    "check": "epiphany"
+  },
+  {
+    "id": "floorp",
+    "name": "Floorp",
+    "description": "Floorp is an open source browser built on Firefox",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "floorp"
+    ],
+    "check": "floorp"
+  },
+  {
+    "id": "fragments",
+    "name": "Fragments",
+    "description": "An easy to use BitTorrent client",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "flatpak",
+    "packages": [
+      "de.haeckerfelix.Fragments"
+    ],
+    "check": "de.haeckerfelix.Fragments"
+  },
+  {
+    "id": "google-chrome",
+    "name": "Google Chrome",
+    "description": "A cross-platform web browser by Google",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "script",
+    "packages": [],
+    "check": "google-chrome-stable",
+    "script": "Arch=\"$(uname -m)\"\nrpm --import https://dl.google.com/linux/linux_signing_key.pub\nzypper --non-interactive --gpg-auto-import-keys addrepo --refresh \"http://dl.google.com/linux/chrome/rpm/stable/$Arch\" google-chrome\nzypper --non-interactive --gpg-auto-import-keys refresh\nzypper --non-interactive --gpg-auto-import-keys install --auto-agree-with-licenses google-chrome-stable"
+  },
+  {
+    "id": "librewolf",
+    "name": "LibreWolf",
+    "description": "A privacy and security-focused browser",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "librewolf"
+    ],
+    "check": "librewolf"
+  },
+  {
+    "id": "mailspring",
+    "name": "Mailspring",
+    "description": "Mailspring is a new version of Nylas Mail",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "flatpak",
+    "packages": [
+      "com.getmailspring.Mailspring"
+    ],
+    "check": "com.getmailspring.Mailspring"
+  },
+  {
+    "id": "signal",
+    "name": "Signal",
+    "description": "Signal - Private Messenger: Say Hello to Privacy",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "flatpak",
+    "packages": [
+      "org.signal.Signal"
+    ],
+    "check": "org.signal.Signal"
+  },
+  {
+    "id": "skype",
+    "name": "Skype",
+    "description": "Call and message skype users, with video chat support",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "flatpak",
+    "packages": [
+      "com.skype.Client"
+    ],
+    "check": "com.skype.Client"
+  },
+  {
+    "id": "slack",
+    "name": "Slack",
+    "description": "Slack is a cloud-based team communication platform",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "flatpak",
+    "packages": [
+      "com.slack.Slack"
+    ],
+    "check": "com.slack.Slack"
+  },
+  {
+    "id": "syncthing",
+    "name": "SyncThing",
+    "description": "Peer-to-peer file synchronization application",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "syncthing"
+    ],
+    "check": "syncthing"
+  },
+  {
+    "id": "tangram",
+    "name": "Tangram",
+    "description": "Browser designed to organize and run your Web applications",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "tangram"
+    ],
+    "check": "tangram"
+  },
+  {
+    "id": "telegram-desktop",
+    "name": "Telegram Desktop",
+    "description": "Official Desktop Client for the Telegram Messenger",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "telegram-desktop"
+    ],
+    "check": "telegram-desktop"
+  },
+  {
+    "id": "tor-browser-launcher",
+    "name": "Tor Browser Launcher",
+    "description": "A program to help you download, keep updated, and run the Tor Browser Bundle",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "torbrowser-launcher"
+    ],
+    "check": "torbrowser-launcher"
+  },
+  {
+    "id": "ungoogled-chromium",
+    "name": "Ungoogled-Chromium",
+    "description": "Google Chromium, sans integration with Google",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "ungoogled-chromium"
+    ],
+    "check": "ungoogled-chromium"
+  },
+  {
+    "id": "warp",
+    "name": "Warp",
+    "description": "Fast and secure file transfer",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "Warp"
+    ],
+    "check": "Warp"
+  },
+  {
+    "id": "webapp-manager",
+    "name": "Webapp Manager",
+    "description": "Run websites as if they were apps",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "webapp-manager"
+    ],
+    "check": "webapp-manager"
+  },
+  {
+    "id": "valent",
+    "name": "Valent",
+    "description": "Connect, control and sync devices",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "valent"
+    ],
+    "check": "valent"
+  },
+  {
+    "id": "zapzap",
+    "name": "ZapZap",
+    "description": "All features of the Whatpp Web are available and several others",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "flatpak",
+    "packages": [
+      "com.rtosta.zapzap"
+    ],
+    "check": "com.rtosta.zapzap"
+  },
+  {
+    "id": "zerotier-one",
+    "name": "ZeroTier One",
+    "description": "A Smart Ethernet Switch for Earth",
+    "category": "communication",
+    "category_name": "Communication and Browsers",
+    "backend": "zypper",
+    "packages": [
+      "zerotier-one"
+    ],
+    "check": "zerotier-one"
+  },
+  {
+    "id": "android-studio",
+    "name": "Android Studio",
+    "description": "Android Studio IDE for Android",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "android-studio"
+    ],
+    "check": "android-studio"
+  },
+  {
+    "id": "antares-sql",
+    "name": "Antares SQL",
+    "description": "A modern, fast and productivity driven SQL client with a focus in UX",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "it.fabiodistasio.AntaresSQL"
+    ],
+    "check": "it.fabiodistasio.AntaresSQL"
+  },
+  {
+    "id": "clion",
+    "name": "CLion",
+    "description": "A cross-platform IDE for C and C++",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.jetbrains.CLion"
+    ],
+    "check": "com.jetbrains.CLion"
+  },
+  {
+    "id": "dbeaver-community",
+    "name": "DBeaver Community",
+    "description": "Universal Database Manager",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "io.dbeaver.DBeaverCommunity"
+    ],
+    "check": "io.dbeaver.DBeaverCommunity"
+  },
+  {
+    "id": "distrobox",
+    "name": "Distrobox",
+    "description": "Use any linux distribution inside your terminal",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "distrobox"
+    ],
+    "check": "distrobox"
+  },
+  {
+    "id": "eclipse-ide-java",
+    "name": "Eclipse IDE JAVA",
+    "description": "Java IDE, a Git client, XML Editor, Maven and Gradle integration",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "org.eclipse.Java"
+    ],
+    "check": "org.eclipse.Java"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "description": "A Fast, Scalable, Distributed Free & Open-Source VCS",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "git"
+    ],
+    "check": "git"
+  },
+  {
+    "id": "github",
+    "name": "Github",
+    "description": "GUI Open source Electron-based GitHub app",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.shiftey.Desktop"
+    ],
+    "check": "io.github.shiftey.Desktop"
+  },
+  {
+    "id": "gittyup",
+    "name": "Gittyup",
+    "description": "Graphical Git client designed to help you understand and manage your source code history",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "gittyup"
+    ],
+    "check": "gittyup"
+  },
+  {
+    "id": "goland",
+    "name": "GoLand",
+    "description": "Capable and Ergonomic Go IDE",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.jetbrains.GoLand"
+    ],
+    "check": "com.jetbrains.GoLand"
+  },
+  {
+    "id": "intellij-idea-community",
+    "name": "IntelliJ IDEA Community",
+    "description": "Capable and Ergonomic Java IDE",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.jetbrains.IntelliJ-IDEA-Community"
+    ],
+    "check": "com.jetbrains.IntelliJ-IDEA-Community"
+  },
+  {
+    "id": "kontainer",
+    "name": "Kontainer",
+    "description": "Manage Distrobox containers",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "kontainer"
+    ],
+    "check": "kontainer"
+  },
+  {
+    "id": "nvm",
+    "name": "NVM",
+    "description": "NVM is a version manager for node.js",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "script",
+    "packages": [],
+    "check": "/opt/nvm/nvm.sh",
+    "script": "NVM_VERSION=\"v0.39.7\"\nNVM_DIR=\"/opt/nvm\"\nmkdir -p \"$NVM_DIR\"\ncurl -fsSL \"https://github.com/nvm-sh/nvm/archive/refs/tags/${NVM_VERSION}.tar.gz\" | tar -xz --strip-components=1 -C \"$NVM_DIR\"\ncat > /etc/profile.d/nvm.sh <<'NVM_PROFILE'\nexport NVM_DIR=/opt/nvm\n[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"\nNVM_PROFILE\nchmod 644 /etc/profile.d/nvm.sh"
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "description": "Markdown-based knowledge base",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "md.obsidian.Obsidian"
+    ],
+    "check": "md.obsidian.Obsidian"
+  },
+  {
+    "id": "phpstorm",
+    "name": "PhpStorm",
+    "description": "PHP IDE for Professional Development",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.jetbrains.PhpStorm"
+    ],
+    "check": "com.jetbrains.PhpStorm"
+  },
+  {
+    "id": "pods",
+    "name": "Pods",
+    "description": "Pods is a frontend for Podman/Docker",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.github.marhkb.Pods"
+    ],
+    "check": "com.github.marhkb.Pods"
+  },
+  {
+    "id": "podman-desktop",
+    "name": "Podman Desktop",
+    "description": "Manage Podman and other container engines from a single UI and tray",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "io.podman_desktop.PodmanDesktop"
+    ],
+    "check": "io.podman_desktop.PodmanDesktop"
+  },
+  {
+    "id": "pycharm-community",
+    "name": "PyCharm-Community",
+    "description": "The most intelligent Python IDE",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.jetbrains.PyCharm-Community"
+    ],
+    "check": "com.jetbrains.PyCharm-Community"
+  },
+  {
+    "id": "rider",
+    "name": "Rider",
+    "description": "Fast & powerful, cross platform .NET IDE",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.jetbrains.Rider"
+    ],
+    "check": "com.jetbrains.Rider"
+  },
+  {
+    "id": "scratch",
+    "name": "Scratch",
+    "description": "Create stories, games, and animations, share with others around the world",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "edu.mit.Scratch"
+    ],
+    "check": "edu.mit.Scratch"
+  },
+  {
+    "id": "qt-creator",
+    "name": "Qt Creator",
+    "description": "Cross-platform IDE tailored for maximum developer productivity",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "qt6-creator"
+    ],
+    "check": "qt6-creator"
+  },
+  {
+    "id": "visual-studio-code",
+    "name": "Visual Studio Code",
+    "description": "Code editing. Redefined",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "flatpak",
+    "packages": [
+      "com.visualstudio.code"
+    ],
+    "check": "com.visualstudio.code"
+  },
+  {
+    "id": "vscodium",
+    "name": "VSCodium",
+    "description": "VSCodium is a community-driven, freely distribution of Microsoft's editor VS Code",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "script",
+    "packages": [],
+    "check": "",
+    "script": "ASSET=\"$(curl -fsSL https://api.github.com/repos/VSCodium/vscodium/releases/latest | python3 -c 'import json,sys,platform; a=platform.machine(); d=json.load(sys.stdin); print(next((x[\"browser_download_url\"] for x in d[\"assets\"] if x[\"name\"].endswith(\".\" + a + \".rpm\")), \"\"))')\"\n[ -n \"$ASSET\" ] || { echo \"No VSCodium RPM for $(uname -m)\" >&2; exit 1; }\nRPM_FILE=/tmp/vscodium.rpm\ncurl -fL \"$ASSET\" -o \"$RPM_FILE\"\nzypper --non-interactive --gpg-auto-import-keys install --allow-unsigned-rpm --auto-agree-with-licenses \"$RPM_FILE\""
+  },
+  {
+    "id": "whaler",
+    "name": "Whaler",
+    "description": "Docker Container Management",
+    "category": "development",
+    "category_name": "Development",
+    "backend": "zypper",
+    "packages": [
+      "com.github.sdv43.whaler"
+    ],
+    "check": "com.github.sdv43.whaler"
+  },
+  {
+    "id": "emulationstation",
+    "name": "EmulationStation",
+    "description": "A cross-platform graphical front-end for emulators",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "emulationstation-de"
+    ],
+    "check": "emulationstation-de"
+  },
+  {
+    "id": "cartridges",
+    "name": "Cartridges",
+    "description": "Cartridges is an easy-to-use, elegant game launcher",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "cartridges"
+    ],
+    "check": "cartridges"
+  },
+  {
+    "id": "azahar",
+    "name": "Azahar",
+    "description": "Open-source 3DS emulator project based on Citra.",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "org.azahar_emu.Azahar"
+    ],
+    "check": "org.azahar_emu.Azahar"
+  },
+  {
+    "id": "duckstation",
+    "name": "Duckstation",
+    "description": "Sony PlayStation(TM) Emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "duckstation"
+    ],
+    "check": "duckstation"
+  },
+  {
+    "id": "mame",
+    "name": "Mame",
+    "description": "Multiple Arcade Machine Emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "mame"
+    ],
+    "check": "mame"
+  },
+  {
+    "id": "mednafen",
+    "name": "Mednafen",
+    "description": "NES, FDS, Game Boy (Color|Advance), Super Nintendo, Virtual Boy",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "mednafen"
+    ],
+    "check": "mednafen"
+  },
+  {
+    "id": "mupen64plus",
+    "name": "Mupen64plus",
+    "description": "Plugin-Based Nintendo 64 Emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "mupen64plus"
+    ],
+    "check": "mupen64plus"
+  },
+  {
+    "id": "nestopia",
+    "name": "Nestopia",
+    "description": "Nintendo Entertainment System/Famicom emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "nestopia"
+    ],
+    "check": "nestopia"
+  },
+  {
+    "id": "pcsx2",
+    "name": "PCSX2",
+    "description": "Sony PlayStation 2 Emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "pcsx2-git"
+    ],
+    "check": "pcsx2-git"
+  },
+  {
+    "id": "pegasus-frontend",
+    "name": "Pegasus-Frontend",
+    "description": "Graphical frontend for launching emulators and managing your game collection",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "flatpak",
+    "packages": [
+      "org.pegasus_frontend.Pegasus"
+    ],
+    "check": "org.pegasus_frontend.Pegasus"
+  },
+  {
+    "id": "ppsspp",
+    "name": "PPSSPP",
+    "description": "PlayStation Portable Emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "ppsspp"
+    ],
+    "check": "ppsspp"
+  },
+  {
+    "id": "retroarch",
+    "name": "RetroArch",
+    "description": "Frontend for emulators, game engines and media players",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "retroarch"
+    ],
+    "check": "retroarch"
+  },
+  {
+    "id": "rpcs3",
+    "name": "RPCS3",
+    "description": "PlayStation 3 emulator/debugger",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "rpcs3"
+    ],
+    "check": "rpcs3"
+  },
+  {
+    "id": "snes9x",
+    "name": "SNES9X",
+    "description": "Portable, freeware Super Nintendo Entertainment System (TM) emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "snes9x"
+    ],
+    "check": "snes9x"
+  },
+  {
+    "id": "steam-rom-manager",
+    "name": "Steam ROM Manager",
+    "description": "An app for managing ROMs in Steam",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "flatpak",
+    "packages": [
+      "com.steamgriddb.steam-rom-manager"
+    ],
+    "check": "com.steamgriddb.steam-rom-manager"
+  },
+  {
+    "id": "xemu",
+    "name": "Xemu",
+    "description": "Xbox Classic EMUlator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "xemu"
+    ],
+    "check": "xemu"
+  },
+  {
+    "id": "xenia",
+    "name": "Xenia",
+    "description": "Xbox 360 emulator",
+    "category": "emulators",
+    "category_name": "Emulators",
+    "backend": "zypper",
+    "packages": [
+      "xenia"
+    ],
+    "check": "xenia"
+  },
+  {
+    "id": "antimicrox",
+    "name": "AntimicroX",
+    "description": "Used to map gamepad keys to keyboard, mouse, scripts and macros",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "antimicrox"
+    ],
+    "check": "antimicrox"
+  },
+  {
+    "id": "boilr",
+    "name": "BoilR",
+    "description": "Synchronize games from other platforms into your Steam library",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.philipk.boilr"
+    ],
+    "check": "io.github.philipk.boilr"
+  },
+  {
+    "id": "ds4-battery-monitor",
+    "name": "ds4-battery-monitor",
+    "description": "A lightweight and efficient battery monitor for DualShock 4 controllers on Linux",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "ds4-battery-monitor"
+    ],
+    "check": "ds4-battery-monitor"
+  },
+  {
+    "id": "ludusavi",
+    "name": "Ludusavi",
+    "description": "A tool for backing up your PC video game save data",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "flatpak",
+    "packages": [
+      "com.github.mtkennerly.ludusavi"
+    ],
+    "check": "com.github.mtkennerly.ludusavi"
+  },
+  {
+    "id": "gamemode",
+    "name": "Gamemode",
+    "description": "Allows games to request a set of optimisations for a games process",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "gamemoded"
+    ],
+    "check": "gamemoded"
+  },
+  {
+    "id": "gamescope",
+    "name": "Gamescope",
+    "description": "Allows for games to run in an isolated Xwayland instance",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "gamescope"
+    ],
+    "check": "gamescope"
+  },
+  {
+    "id": "goverlay",
+    "name": "GOverlay",
+    "description": "A Graphical UI to help manage Linux monitoring overlays",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "goverlay"
+    ],
+    "check": "goverlay"
+  },
+  {
+    "id": "jstest-gtk",
+    "name": "Jstest-GTK",
+    "description": "A simple joystick tester based on Gtk+",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "jstest-gtk"
+    ],
+    "check": "jstest-gtk"
+  },
+  {
+    "id": "mangohud",
+    "name": "MangoHud",
+    "description": "A Vulkan and OpenGL overlay for monitoring FPS, temp, CPU/GPU...",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "mangohud"
+    ],
+    "check": "mangohud"
+  },
+  {
+    "id": "moonlight-qt",
+    "name": "Moonlight-QT",
+    "description": "GameStream client for PCs (Windows, Mac, Linux, and Steam Link)",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "moonlight-qt"
+    ],
+    "check": "moonlight-qt"
+  },
+  {
+    "id": "oversteer",
+    "name": "Oversteer",
+    "description": "Steering Wheel Manager for GNU/Linux",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "oversteer"
+    ],
+    "check": "oversteer"
+  },
+  {
+    "id": "vkbasalt",
+    "name": "vkBasalt",
+    "description": "Vulkan post processing layer to enhance the visual graphics of games",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "vkbasalt"
+    ],
+    "check": "vkbasalt"
+  },
+  {
+    "id": "parsec",
+    "name": "Parsec",
+    "description": "Connect to work, games, or projects wherever you are, whenever you want",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "flatpak",
+    "packages": [
+      "com.parsecgaming.parsec"
+    ],
+    "check": "com.parsecgaming.parsec"
+  },
+  {
+    "id": "prismlauncher",
+    "name": "PrismLauncher",
+    "description": "Custom launcher for Minecraft that allows you to easily manage multiple installations",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "prismlauncher"
+    ],
+    "check": "prismlauncher"
+  },
+  {
+    "id": "protonup-rs",
+    "name": "ProtonUP-rs",
+    "description": "Install and manage custom Proton and Wine-GE builds for Steam and Lutris",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "protonup-rs"
+    ],
+    "check": "protonup-rs"
+  },
+  {
+    "id": "sc-controller",
+    "name": "SC-Controller",
+    "description": " User-mode driver and GTK3 based GUI for Steam Controller ",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "sc-controller"
+    ],
+    "check": "sc-controller"
+  },
+  {
+    "id": "sunshine",
+    "name": "Sunshine",
+    "description": "Sunshine is a Gamestream host for Moonlight",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "sunshine"
+    ],
+    "check": "sunshine"
+  },
+  {
+    "id": "vksumi",
+    "name": "vkSumi",
+    "description": "A Vulkan layer for runtime color grading on Linux",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "vkSumi"
+    ],
+    "check": "vkSumi"
+  },
+  {
+    "id": "xwiimote-ng",
+    "name": "XWiimote-ng",
+    "description": "Xwiimote-ng is an open-source device driver for Nintendo Wii / Wii U remotes",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "xwiimote-ng"
+    ],
+    "check": "xwiimote-ng"
+  },
+  {
+    "id": "xboxdrv",
+    "name": "XboxDrv",
+    "description": "Userspace Xbox gamepad driver and input remapper",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "xboxdrv"
+    ],
+    "check": "xboxdrv"
+  },
+  {
+    "id": "xone",
+    "name": "Xone",
+    "description": "Linux kernel driver for Xbox One and Xbox Series X|S accessories",
+    "category": "games-tools",
+    "category_name": "Games and Tools",
+    "backend": "zypper",
+    "packages": [
+      "xone"
+    ],
+    "check": "xone"
+  },
+  {
+    "id": "heroicgameslauncher",
+    "name": "HeroicGamesLauncher",
+    "description": "Open Source Game Launcher for Epic and GOG",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "zypper",
+    "packages": [
+      "heroic-games-launcher"
+    ],
+    "check": "heroic-games-launcher"
+  },
+  {
+    "id": "itch-io",
+    "name": "Itch.io",
+    "description": "Is a simple way to find, download and distribute indie games online",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "script",
+    "packages": [],
+    "check": "/opt/itch/itch.AppImage",
+    "script": "INSTALL_DIR=/opt/itch\nmkdir -p \"$INSTALL_DIR\"\ncurl -fL --user-agent Linux https://itch.io/app/download -o \"$INSTALL_DIR/itch.AppImage\"\nchmod +x \"$INSTALL_DIR/itch.AppImage\"\ncat > /usr/share/applications/io.itch.itch.desktop <<'ITCH_DESKTOP'\n[Desktop Entry]\nType=Application\nName=itch\nExec=/opt/itch/itch.AppImage --no-sandbox %U\nIcon=applications-games\nCategories=Game;\nITCH_DESKTOP\nchmod 644 /usr/share/applications/io.itch.itch.desktop"
+  },
+  {
+    "id": "lutris",
+    "name": "Lutris",
+    "description": "Play all your games on Linux",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "zypper",
+    "packages": [
+      "lutris"
+    ],
+    "check": "lutris"
+  },
+  {
+    "id": "playonlinux",
+    "name": "PlayOnLinux",
+    "description": "Install and use non-native applications on your favorite operating system",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "zypper",
+    "packages": [
+      "PlayOnLinux"
+    ],
+    "check": "PlayOnLinux"
+  },
+  {
+    "id": "steam",
+    "name": "Steam",
+    "description": "Is a digital game distribution platform for computers",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "zypper",
+    "packages": [
+      "steam"
+    ],
+    "check": "steam"
+  },
+  {
+    "id": "lutris-flatpak",
+    "name": "Lutris-Flatpak",
+    "description": "Flatpak version of Lutris",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "flatpak",
+    "packages": [
+      "net.lutris.Lutris"
+    ],
+    "check": "net.lutris.Lutris"
+  },
+  {
+    "id": "steam-flatpak",
+    "name": "Steam-Flatpak",
+    "description": "Flatpak version of Steam",
+    "category": "game-stores",
+    "category_name": "Game Stores",
+    "backend": "flatpak",
+    "packages": [
+      "com.valvesoftware.Steam"
+    ],
+    "check": "com.valvesoftware.Steam"
+  },
+  {
+    "id": "balena-etcher",
+    "name": "Balena Etcher",
+    "description": "Powerful utility for writing raw disk images & ISOs to USB keys",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "script",
+    "packages": [],
+    "check": "balena-etcher-electron",
+    "script": "curl -1sLf 'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh' | codename=\"tumbleweed\" bash\nzypper --non-interactive --gpg-auto-import-keys install --auto-agree-with-licenses balena-etcher-electron\nDESKTOP=/usr/share/applications/balena-etcher-electron.desktop\nif [[ -f \"$DESKTOP\" ]]; then\n    sed -i '3 c Exec=/opt/balenaEtcher/balena-etcher-electron --no-sandbox %U' \"$DESKTOP\"\nfi"
+  },
+  {
+    "id": "conky-manager-2",
+    "name": "Conky Manager 2",
+    "description": "Light-weight system monitor for X and Wayland",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "conky-manager2"
+    ],
+    "check": "conky-manager2"
+  },
+  {
+    "id": "cpu-x",
+    "name": "CPU-X",
+    "description": "Gathers information on CPU, motherboard and more",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "cpu-x"
+    ],
+    "check": "cpu-x"
+  },
+  {
+    "id": "drmcru",
+    "name": "drmcru",
+    "description": "drmcru is a Linux DRM/KMS custom resolution utility.",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "drmcru"
+    ],
+    "check": "drmcru"
+  },
+  {
+    "id": "fdm",
+    "name": "FDM",
+    "description": "FDM is a powerful modern download accelerator and organizer",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "flatpak",
+    "packages": [
+      "org.freedownloadmanager.Manager"
+    ],
+    "check": "org.freedownloadmanager.Manager"
+  },
+  {
+    "id": "flameshot",
+    "name": "Flameshot",
+    "description": "Cross-platform tool to take screenshots with many built-in features",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "flameshot"
+    ],
+    "check": "flameshot"
+  },
+  {
+    "id": "flatseal",
+    "name": "Flatseal",
+    "description": "Manage Flatpak permissions",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "flatpak",
+    "packages": [
+      "com.github.tchx84.Flatseal"
+    ],
+    "check": "com.github.tchx84.Flatseal"
+  },
+  {
+    "id": "flatsweep",
+    "name": "Flatsweep",
+    "description": "Helps you easily get rid of the residue of uninstall Flatpak package",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.giantpinkrobots.flatsweep"
+    ],
+    "check": "io.github.giantpinkrobots.flatsweep"
+  },
+  {
+    "id": "k3b",
+    "name": "K3B",
+    "description": "Created to be a feature-rich and easy to handle CD burning application",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "k3b"
+    ],
+    "check": "k3b"
+  },
+  {
+    "id": "hidamari",
+    "name": "Hidamari",
+    "description": "Video wallpaper for Linux written in Python",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.jeffshee.Hidamari"
+    ],
+    "check": "io.github.jeffshee.Hidamari"
+  },
+  {
+    "id": "keepassxc",
+    "name": "KeePassxc",
+    "description": "Securely store passwords using industry standard encryption",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "keepassxc"
+    ],
+    "check": "keepassxc"
+  },
+  {
+    "id": "kde-connect",
+    "name": "KDE Connect",
+    "description": "Provides various features to integrate your phone and your computer",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "kdeconnect-kde"
+    ],
+    "check": "kdeconnect-kde"
+  },
+  {
+    "id": "krohnkite",
+    "name": "krohnkite",
+    "description": "A dynamicA dynamic tiling extension for KWin 6 only",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "krohnkite"
+    ],
+    "check": "krohnkite"
+  },
+  {
+    "id": "movescreen",
+    "name": "Movescreen",
+    "description": "This Python script moves the window with focus on an adjacent monitor",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "movescreen"
+    ],
+    "check": "movescreen"
+  },
+  {
+    "id": "nemo",
+    "name": "Nemo",
+    "description": "It is a lightweight and functional file manager with many features",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "nemo"
+    ],
+    "check": "nemo"
+  },
+  {
+    "id": "neofetch",
+    "name": "Neofetch",
+    "description": "Is a command-line system information tool",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "neofetch"
+    ],
+    "check": "neofetch"
+  },
+  {
+    "id": "openrgb",
+    "name": "OpenRGB",
+    "description": "Open source RGB lighting control that doesn't depend on manufacturer software",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "OpenRGB"
+    ],
+    "check": "OpenRGB"
+  },
+  {
+    "id": "peazip",
+    "name": "Peazip",
+    "description": "Free file archiver utility, based on Open Source 7-Zip/p7zip",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "peazip"
+    ],
+    "check": "peazip"
+  },
+  {
+    "id": "poweriso",
+    "name": "PowerISO",
+    "description": "Open, extract, burn, create, edit, compress, encrypt, split and convert ISO files",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "flatpak",
+    "packages": [
+      "com.poweriso.PowerISO"
+    ],
+    "check": "com.poweriso.PowerISO"
+  },
+  {
+    "id": "q4wine",
+    "name": "Q4Wine",
+    "description": "It will help you to manage wine prefixes and installed applications",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "q4wine"
+    ],
+    "check": "q4wine"
+  },
+  {
+    "id": "qbittorrent",
+    "name": "qBittorrent",
+    "description": "An open-source Bittorrent client",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "qbittorrent"
+    ],
+    "check": "qbittorrent"
+  },
+  {
+    "id": "qdirstat",
+    "name": "QDirStat",
+    "description": "Graphical application to show where your disk space has gone",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "qdirstat"
+    ],
+    "check": "qdirstat"
+  },
+  {
+    "id": "rustdesk-client",
+    "name": "RustDesk Client",
+    "description": "An open-source remote desktop, and alternative to TeamViewer",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "rustdesk"
+    ],
+    "check": "rustdesk"
+  },
+  {
+    "id": "rustdesk-server",
+    "name": "RustDesk Server",
+    "description": "Self-host your own RustDesk server, it is free and open source",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "rustdesk-server"
+    ],
+    "check": "rustdesk-server"
+  },
+  {
+    "id": "stacer",
+    "name": "Stacer",
+    "description": "Linux System Optimizer & Monitoring",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "stacer"
+    ],
+    "check": "stacer"
+  },
+  {
+    "id": "teamviewer",
+    "name": "TeamViewer",
+    "description": "TeamViewer: The Remote Desktop Software",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "script",
+    "packages": [],
+    "check": "teamviewer",
+    "script": "Arch=\"$(uname -m)\"\nRPM_FILE=\"/tmp/teamviewer-suse.$Arch.rpm\"\ncurl -fL \"https://download.teamviewer.com/download/linux/teamviewer-suse.$Arch.rpm\" -o \"$RPM_FILE\"\nzypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install --allow-unsigned-rpm --auto-agree-with-licenses \"$RPM_FILE\""
+  },
+  {
+    "id": "virtualbox",
+    "name": "Virtualbox",
+    "description": "Powerful virtualization product for enterprise as well as home use",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "virtualbox"
+    ],
+    "check": "virtualbox"
+  },
+  {
+    "id": "vmware-workstation-17-player",
+    "name": "VMware Workstation 17 Player",
+    "description": "Utility for running a single virtual machine on a Windows or Linux PC",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "vmware-player-updater"
+    ],
+    "check": "vmware-player-updater"
+  },
+  {
+    "id": "waydroid",
+    "name": "Waydroid",
+    "description": "Waydroid uses Linux namespaces to run a full Android system in a container",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "waydroid"
+    ],
+    "check": "waydroid"
+  },
+  {
+    "id": "waydroid-image-lineage18",
+    "name": "Waydroid-Image-Lineage18",
+    "description": "Waydroid Vanilla Images (Lineage 18.1)",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "waydroid-image-lineage18"
+    ],
+    "check": "waydroid-image-lineage18"
+  },
+  {
+    "id": "waydroid14x",
+    "name": "Waydroid14x",
+    "description": "Container-based approach to boot a full Android system on GNU/Linux (version 1.4.x for running Android 11) ",
+    "category": "utilities",
+    "category_name": "Utilities",
+    "backend": "zypper",
+    "packages": [
+      "waydroid14x"
+    ],
+    "check": "waydroid14x"
+  },
+  {
+    "id": "dialect",
+    "name": "Dialect",
+    "description": "A translation app for GNOME",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "dialect"
+    ],
+    "check": "dialect"
+  },
+  {
+    "id": "foliate",
+    "name": "Foliate",
+    "description": "A simple and modern GTK eBook reader",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "foliate"
+    ],
+    "check": "foliate"
+  },
+  {
+    "id": "jpeg2pdf",
+    "name": "JPEG2PDF",
+    "description": "Convert Images Into PDF File",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "com.warlordsoftwares.jpeg2pdf"
+    ],
+    "check": "com.warlordsoftwares.jpeg2pdf"
+  },
+  {
+    "id": "normcap",
+    "name": "Normcap",
+    "description": "Capture text from any screen area",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "normcap"
+    ],
+    "check": "normcap"
+  },
+  {
+    "id": "obsidian-work-study",
+    "name": "Obsidian",
+    "description": "Markdown-based knowledge base",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "md.obsidian.Obsidian"
+    ],
+    "check": "md.obsidian.Obsidian"
+  },
+  {
+    "id": "onlyoffice",
+    "name": "OnlyOffice",
+    "description": "Create, view and edit text documents, spreadsheets and presentations of any size and complexity",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "onlyoffice-desktopeditors"
+    ],
+    "check": "onlyoffice-desktopeditors"
+  },
+  {
+    "id": "parley-ai",
+    "name": "Parley",
+    "description": "Parley is a local language tutor for the Linux and Windows desktop",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "parley-ai"
+    ],
+    "check": "parley-ai"
+  },
+  {
+    "id": "pdf4qt",
+    "name": "PDF4QT",
+    "description": "Free Open Source PDF Editor",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.JakubMelka.Pdf4qt"
+    ],
+    "check": "io.github.JakubMelka.Pdf4qt"
+  },
+  {
+    "id": "planify",
+    "name": "Planify",
+    "description": "Forget about forgetting things",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "io.github.alainm23.planify"
+    ],
+    "check": "io.github.alainm23.planify"
+  },
+  {
+    "id": "pomodoro",
+    "name": "Pomodoro",
+    "description": "Pomodoro is a timer utility with rules, ideal for better productivity",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "io.gitlab.idevecore.Pomodoro"
+    ],
+    "check": "io.gitlab.idevecore.Pomodoro"
+  },
+  {
+    "id": "speechnote",
+    "name": "SpeechNote",
+    "description": "Reading and translating with offline Speech to Text, Text to Speech and Machine Translation",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "net.mkiol.SpeechNote"
+    ],
+    "check": "net.mkiol.SpeechNote"
+  },
+  {
+    "id": "teams-for-linux",
+    "name": "Teams-For-Linux",
+    "description": "Unofficial Microsoft Teams client for Linux using Electron",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "flatpak",
+    "packages": [
+      "com.github.IsmaelMartinez.teams_for_linux"
+    ],
+    "check": "com.github.IsmaelMartinez.teams_for_linux"
+  },
+  {
+    "id": "thunderbird",
+    "name": "Thunderbird",
+    "description": "Free and open source email, newsfeed, chat, and calendaring client",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "MozillaThunderbird"
+    ],
+    "check": "MozillaThunderbird"
+  },
+  {
+    "id": "wps-office",
+    "name": "WPS-OFFICE",
+    "description": "Is a powerful office suite including Writer, Presentation and Spreadsheets",
+    "category": "work-study",
+    "category_name": "Work and Studies",
+    "backend": "zypper",
+    "packages": [
+      "wps-office"
+    ],
+    "check": "wps-office"
+  }
+]
