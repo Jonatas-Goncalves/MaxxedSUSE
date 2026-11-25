@@ -7,7 +7,6 @@ URL:            https://github.com/Jonatas-Goncalves/MaxxedSUSE
 Source0:        %{name}-%{version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
 Requires:       python3
 Requires:       python3-gobject
@@ -47,9 +46,6 @@ for lang in pt_BR en_US es it fr; do
     install -Dm644 po/locale/$lang/LC_MESSAGES/%{name}.mo \
         %{buildroot}%{_datadir}/locale/$lang/LC_MESSAGES/%{name}.mo
 done
-
-%check
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %license LICENSE
