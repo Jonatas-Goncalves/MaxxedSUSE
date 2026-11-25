@@ -39,11 +39,7 @@ def install(app):
     name = app["name"]
     if backend == "zypper":
         packages = " ".join(shlex.quote(p) for p in app["packages"])
-        return run(
-            f"zypper --non-interactive --gpg-auto-import-keys install "
-            f"--allow-unsigned-rpm --auto-agree-with-licenses {packages}",
-            f"Installing {name}",
-        )
+        return run(f"{ZYPPER_INSTALL} {packages}", f"Installing {name}")
     if backend == "flatpak":
         app_id = app["packages"][0]
         return run(
@@ -58,10 +54,14 @@ def install(app):
 
 REPO_ALIAS = "MaxxedSUSE"
 REPO_URL = "https://download.opensuse.org/repositories/home:MaxxedSUSE/openSUSE_Tumbleweed/"
+ZYPPER = "zypper --non-interactive --gpg-auto-import-keys"
+ZYPPER_INSTALL = (f"{ZYPPER} install --no-force-resolution "
+                  "--allow-unsigned-rpm --auto-agree-with-licenses")
 
 
 def add_repository():
-    result = subprocess.run(["zypper", "--xmlout", "lr"], capture_output=True, text=True, check=False)
+    result = subprocess.run(["zypper", "--non-interactive", "--xmlout", "lr"],
+                            capture_output=True, text=True, check=False)
     if result.returncode == 0:
         try:
             repos = ET.fromstring(result.stdout)
@@ -71,19 +71,19 @@ def add_repository():
             print("==> Adding the MaxxedSUSE repository", flush=True)
             print(f"Repository '{REPO_ALIAS}' is already configured.", flush=True)
             return True
-    return run(f"zypper --gpg-auto-import-keys addrepo --refresh {REPO_URL} {REPO_ALIAS}",
+    return run(f"{ZYPPER} addrepo --refresh {REPO_URL} {REPO_ALIAS}",
                "Adding the MaxxedSUSE repository")
 
 
 SETUP_STEPS = [
     ("Adding the MaxxedSUSE repository", add_repository),
-    ("Refreshing repositories", "zypper --gpg-auto-import-keys refresh"),
-    ("Updating the system", "zypper --non-interactive dup --auto-agree-with-licenses --no-recommends"),
-    ("Installing Flatpak", "zypper --non-interactive install flatpak"),
+    ("Refreshing repositories", f"{ZYPPER} refresh"),
+    ("Updating the system", f"{ZYPPER} dup --no-force-resolution --auto-agree-with-licenses --no-recommends"),
+    ("Installing Flatpak", f"{ZYPPER_INSTALL} flatpak"),
     ("Adding Flathub",
      "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"),
     ("Installing media codecs",
-     "zypper --non-interactive install --allow-vendor-change ffmpeg-7 gstreamer-plugins-bad "
+     f"{ZYPPER_INSTALL} --allow-vendor-change ffmpeg-7 gstreamer-plugins-bad "
      "lame gstreamer-plugins-libav gstreamer-plugins-ugly libavresample4_0 libavdevice60 "
      "vlc-codec-gstreamer"),
 ]

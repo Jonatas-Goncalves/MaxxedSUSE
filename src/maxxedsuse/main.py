@@ -414,8 +414,17 @@ class MaxxedSUSEApp(Adw.Application):
         content.set_margin_end(12)
         content.append(scroll)
         dialog.add_button(_("Close"), Gtk.ResponseType.CLOSE)
+
+        def scroll_to_end(_buffer):
+            end = buffer.get_end_iter()
+            buffer.place_cursor(end)
+            view.scroll_to_iter(end, 0.0, False, 0.0, 0.0)
+
+        buffer = view.get_buffer()
+        scroll_handler = buffer.connect("changed", scroll_to_end)
+        dialog.connect("destroy", lambda _w: buffer.disconnect(scroll_handler))
         dialog.present()
-        return dialog, view.get_buffer()
+        return dialog, buffer
 
     def show_message(self, text):
         dialog = Adw.MessageDialog(transient_for=self.window, heading=text)
