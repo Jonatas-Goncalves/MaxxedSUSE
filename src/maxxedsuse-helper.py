@@ -26,12 +26,36 @@ def load_catalog():
         return {app["id"]: app for app in json.load(handle)}
 
 
-def run(command, description):
-    print(f"==> {description}", flush=True)
-    result = subprocess.run(command, shell=True, check=False)
+def run(command, description, header=True):
+    if header:
+        print(f"==> {description}", flush=True)
+    result = subprocess.run(command, shell=True, stdin=subprocess.DEVNULL, check=False)
     if result.returncode != 0:
         print(f"Command failed with status {result.returncode}: {command}", file=sys.stderr, flush=True)
     return result.returncode == 0
+
+
+def has_conflict(result):
+    text = f"{getattr(result, 'stdout', '')}{getattr(result, 'stderr', '')}".casefold()
+    return any(word in text for word in (
+        "conflito", "conflict", "solução", "solution", "escolha", "choose",
+    ))
+
+
+def run_checked(command, description):
+    """Skip zypper jobs whose dependency conflicts cannot be resolved cleanly."""
+    print(f"==> {description}", flush=True)
+    for verb in ("install", "dup"):
+        marker = f" {verb} "
+        if marker not in command:
+            continue
+        dry_run = command.replace(marker, f"{marker}--dry-run ", 1)
+        result = subprocess.run(dry_run, shell=True, stdin=subprocess.DEVNULL,
+                                capture_output=True, text=True, check=False)
+        if result.returncode != 0 and has_conflict(result):
+            print("Skipping: unresolved package conflicts.", flush=True)
+            return True
+    return run(command, description, header=False)
 
 
 def install(app):
@@ -39,7 +63,7 @@ def install(app):
     name = app["name"]
     if backend == "zypper":
         packages = " ".join(shlex.quote(p) for p in app["packages"])
-        return run(f"{ZYPPER_INSTALL} {packages}", f"Installing {name}")
+        return run_checked(f"{ZYPPER_INSTALL} {packages}", f"Installing {name}")
     if backend == "flatpak":
         app_id = app["packages"][0]
         return run(
@@ -96,7 +120,7 @@ def setup_system():
             if not ok:
                 print(f"Step failed: {description}", file=sys.stderr, flush=True)
         else:
-            ok = run(command, description)
+            ok = run_checked(command, description)
         if not ok:
             return False
     state = Path("/var/lib/maxxedsuse/state")

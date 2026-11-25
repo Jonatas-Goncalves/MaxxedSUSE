@@ -423,6 +423,7 @@ class MaxxedSUSEApp(Adw.Application):
         buffer = view.get_buffer()
         scroll_handler = buffer.connect("changed", scroll_to_end)
         dialog.connect("destroy", lambda _w: buffer.disconnect(scroll_handler))
+        dialog.connect("response", lambda current, _response: current.destroy())
         dialog.present()
         return dialog, buffer
 

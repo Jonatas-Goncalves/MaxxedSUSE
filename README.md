@@ -28,7 +28,7 @@ curl -L https://raw.githubusercontent.com/Jonatas-Goncalves/MaxxedSUSE/main/Maxx
 
 When the project is run directly from the command without installing the RPM, a user-level launcher is added to the System menu using the project icon. The **Remove desktop shortcut** action on the first page removes it.
 
-The first page lets you choose the language and run the initial setup. Privileged actions ask for the administrator password in a graphical dialog; the setup also skips the MaxxedSUSE repository when it is already configured. Zypper never forces conflict resolution, so conflicting packages are left uninstalled. The next page lists the sections; each section opens its own page with its applications.
+The first page lets you choose the language and run the initial setup. Privileged actions ask for the administrator password in a graphical dialog; the setup also skips the MaxxedSUSE repository when it is already configured. Zypper never forces conflict resolution; a transaction with unresolved conflicts is skipped without installing it. The next page lists the sections; each section opens its own page with its applications.
 
 RPM packages for Tumbleweed are published in the `home:MaxxedSUSE` project on the Open Build Service.
 
